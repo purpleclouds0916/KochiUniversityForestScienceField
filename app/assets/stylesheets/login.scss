@@ -1,0 +1,158 @@
+// -----
+// 設定
+// -----
+
+// 色
+$color-main: #738851; // ベース色
+$color-active: #e81919; // アクティブ色
+$color-background-base: #fff; // 背景色
+$color-text-base: #333; // テキスト色
+$hover-opacity: 0.6; // 透過度
+
+// レイアウト幅
+$layout-width-canvas: 1280px;
+$layout-width-inner: 1200px;
+
+// 階層
+$layer: (
+	modal: 100, // モダール
+	drawer: 40, // ドロワー
+	floating: 30, // フローティングアイテム
+	header: 20, // ヘッダー
+	footer: 10, // フッター
+	default: 1,
+);
+
+// 余白
+$padding-pc: 24px;
+$padding-tab: 24px;
+$padding-sp: 16px;
+
+// ヘッダー高さ
+$header-height-pc: 100px;
+$header-height-sp: 60px;
+
+// フォント
+$font-family-default: "游ゴシック体", "Yu Gothic", yugothic, "ヒラギノ角ゴ Pro", "Hiragino Kaku Gothic Pro", "メイリオ", meiryo, "MS Pゴシック", "MS PGothic", sans-serif; // 標準フォント
+$font-family-english: sans-serif;
+$font-family-base: $font-family-default;
+$font-size-base: 16px;
+$font-weight-base: 400;
+$line-height-base: 1.6;
+
+// ブレークポイント
+$breakpoints: (
+	"sp": "(max-width: 767px)",
+	"tab-only": "(min-width: 768px) and (max-width: #{$layout-width-inner + $padding-pc * 2 - 1px})",
+	"tab": "(max-width: #{$layout-width-inner + $padding-pc * 2 - 1px})",
+	"pc": "(min-width: #{$layout-width-inner})",
+);
+
+// メディアクエリー
+@mixin mq($breakpoint: sp) {
+	@media #{map-get($breakpoints, $breakpoint)} {
+		@content;
+	}
+}
+
+body {
+  padding-top: 0px;
+}
+
+.login-title {
+  padding: 0 0 28px;
+	text-align: center;
+  line-height: 1;
+
+  img {
+    width: 600px;
+
+    @include mq('tab') {
+      width: 500px;
+    }
+
+    @include mq('sp') {
+      margin-top: -30px;
+      width: 300px;
+    }
+  }
+}
+
+.contact__item {
+	margin: 0px auto 0;
+	padding: 0 60px;
+	width: 600px;
+	max-width: 100%;
+}
+
+.contact__control {
+  @include mq('sp') {
+    margin-bottom: 10px;
+  }
+
+  dt {
+    width: 100px;
+  }
+} 
+
+.contact__control__password {
+  margin-bottom: 20px;
+}
+
+
+.checkbox-input{
+  display: none;
+}
+.checkbox-parts{
+  padding-left: 20px;
+  position:relative;
+  margin-right: 20px;
+  
+  @include mq('sp') {
+    font-size: $font-size-base - 4px;
+  }
+}
+.checkbox-parts::before{
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 15px;
+  height: 15px;
+  border: 1px solid #999;
+  border-radius: 4px;
+}
+.checkbox-input:checked + .checkbox-parts{
+  color: #738851;
+}
+.checkbox-input:checked + .checkbox-parts::after{
+  content: "";
+  display: block;
+  position: absolute;
+  top: -5px;
+  left: 5px;
+  width: 7px;
+  height: 14px;
+  transform: rotate(40deg);
+  border-bottom: 3px solid #738851;
+  border-right: 3px solid #738851;
+}
+
+.forget__password {
+  margin-top: 25.5px;
+
+  @include mq('sp') {
+    font-size: $font-size-base - 4px;
+  }
+
+  a {
+    text-decoration: none;
+    color: $color-text-base;
+  }
+
+  :hover {
+    border-bottom: 1px solid;
+  }
+}
+

@@ -1,0 +1,329 @@
+// -----
+// 設定
+// -----
+
+// 色
+$color-main: #738851; // ベース色
+$color-active: #e81919; // アクティブ色
+$color-background-base: #fff; // 背景色
+$color-text-base: #333; // テキスト色
+$hover-opacity: 0.6; // 透過度
+
+// レイアウト幅
+$layout-width-canvas: 1280px;
+$layout-width-inner: 1200px;
+
+// 階層
+$layer: (
+	modal: 100, // モダール
+	drawer: 40, // ドロワー
+	floating: 30, // フローティングアイテム
+	header: 20, // ヘッダー
+	footer: 10, // フッター
+	default: 1,
+);
+
+// 余白
+$padding-pc: 24px;
+$padding-tab: 24px;
+$padding-sp: 16px;
+
+// ヘッダー高さ
+$header-height-pc: 100px;
+$header-height-sp: 60px;
+
+// フォント
+$font-family-default: "游ゴシック体", "Yu Gothic", yugothic, "ヒラギノ角ゴ Pro", "Hiragino Kaku Gothic Pro", "メイリオ", meiryo, "MS Pゴシック", "MS PGothic", sans-serif; // 標準フォント
+$font-family-english: sans-serif;
+$font-family-base: $font-family-default;
+$font-size-base: 16px;
+$font-weight-base: 400;
+$line-height-base: 1.6;
+
+// ブレークポイント
+$breakpoints: (
+	"sp": "(max-width: 767px)",
+	"tab-only": "(min-width: 768px) and (max-width: #{$layout-width-inner + $padding-pc * 2 - 1px})",
+	"tab": "(max-width: #{$layout-width-inner + $padding-pc * 2 - 1px})",
+	"pc": "(min-width: #{$layout-width-inner})",
+);
+
+// メディアクエリー
+@mixin mq($breakpoint: sp) {
+	@media #{map-get($breakpoints, $breakpoint)} {
+		@content;
+	}
+}
+
+// -----
+// 初期化
+// -----
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	font-family: $font-family-base;
+	font-size: $font-size-base;
+	font-weight: $font-weight-base;
+	color: $color-text-base;
+	line-height: $line-height-base;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	background: $color-background-base;
+	overflow-x: hidden;
+	overflow-wrap: break-word;
+	padding-top: $header-height-pc;
+
+	@include mq('sp') {
+		padding-top: $header-height-sp;
+	}
+}
+
+img {
+	max-width: 100%;
+	height: auto;
+	border: none;
+}
+
+// -----
+// 補完クラス
+// -----
+
+// PCだけ非表示
+.hidden-pc {
+	@include mq('pc') {
+		display: none;
+	}
+}
+
+// タブレットだけ非表示
+.hidden-tab {
+	@include mq('tab-only') {
+		display: none;
+	}
+}
+
+// スマホだけ非表示
+.hidden-sp {
+	@include mq('sp') {
+		display: none;
+	}
+}
+
+// セクション
+.section {
+	padding-top: 100px;
+	padding-bottom: 120px;
+
+	@include mq('sp') {
+		padding-top: 40px;
+		padding-bottom: 80px;
+	}
+}
+
+// -----
+// 投稿一覧
+// -----
+
+.posts_button {
+  text-align: right;
+  padding: 0 16px;
+
+  a {
+    text-decoration: none;
+    color: $color-background-base;
+    background: #336699;
+    font-weight: 700;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+
+    &:hover {
+
+    }
+  }
+}
+
+.post__thead__pc {
+  text-align: left;
+  @include mq('tab') {
+    display: none;
+  }
+}
+
+.post__table {
+  border-collapse:collapse; 
+  margin: 0 auto;
+  width: 100%;
+
+  @include mq('tab') {
+    width: 100%;
+    border-collapse:separate; border-spacing:20px;
+  }
+
+  tr {
+    @include mq('tab') {
+      width: 100%;
+    }
+  }
+  
+  th {
+    margin: 0;
+    padding: 6px 20px;
+    font-size: 18px;
+    font-weight: 700;
+    color: $color-background-base;
+    background-color: #336699;
+  }
+
+  td{
+    margin: 0;
+    padding: 6px 20px;
+    font-size: 18px;
+    font-weight: 700;
+    border: 0.5px solid #336699;
+
+    &:nth-child(2) {
+      width: 200px;
+    }
+    &:nth-child(3), &:nth-child(4) {
+      width: 150px;
+    }
+
+    &:before {
+      @include mq('tab') {
+        content: attr(data-label);
+        float: left;
+        font-weight: bold;
+        margin-right: 10px; 
+      }
+    }
+      
+    @include mq('tab') {
+      display: block;
+      text-align: left;
+      width: 100%; 
+      border-right: 2px solid #336699;
+      border-left: 2px solid #336699;
+  
+      &:first-child {
+        margin-top: -3px;
+      }
+    
+      &:last-child {
+        margin-bottom: -2px;
+        border-bottom: 2px solid #336699;
+      }
+
+      &:nth-child(2), &:nth-child(3), &:nth-child(4){
+        width: 100%;
+      }
+    }
+  }
+}
+
+.accordion__head {
+  color: $color-text-base;
+  background: #fff;
+  
+  .fas {
+    margin-right: 10px;
+    color: #336699;
+
+    @include mq('tab') {
+      color: #fff;
+    }
+  }
+
+  @include mq('tab') {
+    position: relative;
+    background-color:#336699	;
+    color: #fff;
+  }
+}
+
+.pagenation {
+	margin-top: 24px;
+	text-align: center;
+}
+
+.pagenation a {
+	transition: all 0.3s ease 0s;
+}
+
+.pagenation a:hover {
+	opacity: 0.6;
+}
+
+.pagenation a.next,
+.pagenation a.prev {
+	font-size: 30px;
+}
+
+.pagenation a.next:hover,
+.pagenation a.prev:hover {
+	opacity: 0.6;
+}
+
+.page-numbers {
+	background: #fff;
+	border: 1px solid #e2e2e2;
+	color: #808080;
+	display: inline-block;
+	font-family: "Lato", sans-serif;
+	font-size: 20px;
+	height: 40px;
+	line-height: 38px;
+	margin-right: 14px;
+	min-width: 40px;
+	text-align: center;
+	text-decoration: none;
+}
+
+.page-numbers:last-child {
+	margin-right: 0;
+}
+
+.page-numbers.current {
+	background: #336699;
+	border: 1px solid #336699;
+	color: #fff;
+	font-weight: 700;
+}
+
+.page-numbers.dots,
+.page-numbers.next,
+.page-numbers.prev {
+	border: none;
+	line-height: 40px;
+	min-width: 40px;
+	width: auto;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
