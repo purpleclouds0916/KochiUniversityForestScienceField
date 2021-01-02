@@ -1,24 +1,6 @@
-# README
+高知大学農林海洋科学部農林資源環境科学科森林科学領域の公式HPです。
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+ブログ機能を実装するために開発しております。
+現在は、HTML型式で、HPを後悔しています。
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+http://www.kochi-u.ac.jp/agrimar-skg/index.html
