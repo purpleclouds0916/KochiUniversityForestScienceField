@@ -59,7 +59,7 @@
 // 右矢印ボタン
 .button-arrow-right {
 	-webkit-appearance: none;
-	background: $color-main url(../img/icon-arrow-right.png) no-repeat center right 12px / 17px 16px;
+	background: $color-main image-url('icon-arrow-right.png') no-repeat center right 12px / 17px 16px;
 	box-shadow: 0 3px 6px rgba(#000, 0.16);
 	text-align: center;
 	border: none;
@@ -368,7 +368,7 @@ video {
 }
 
 .swiper-button-prev {
-	background: transparent url(../img/slide-arrow-left.png) no-repeat center center / contain;
+	background: transparent image-url('slide-arrow-left.png') no-repeat center center / contain;
 	left: calc(50% - #{$layout-width-inner / 2});
 
 	@include mq('tab') {
@@ -381,7 +381,7 @@ video {
 }
 
 .swiper-button-next {
-	background: transparent url(../img/slide-arrow-right.png) no-repeat center center / contain;
+	background: transparent image-url('slide-arrow-right.png') no-repeat center center / contain;
 	right: calc(50% - #{$layout-width-inner / 2});
 
 	@include mq('tab') {
@@ -1020,22 +1020,22 @@ video {
 .accordion__icon {
 	width: 12px;
 	height: 12px;
-	background: transparent url(../img/icon-plus.png) no-repeat center center / contain;
+	background: transparent image-url('icon-plus.png') no-repeat center center / contain;
 	position: absolute;
 	right: 14px;
 	top: 50%;
 	transform: translateY(-50%);
 
 	&.is-open {
-		background-image: url(../img/icon-minus.png);
+		background-image: image-url('icon-minus.png');
 	}
 }
 
 .accordion__icon__first {
-	background: transparent url(../img/icon-minus.png) no-repeat center center / contain;
+	background: transparent image-url('icon-minus.png') no-repeat center center / contain;
 
 	&.is-open {
-		background-image: url(../img/icon-plus.png);
+		background-image: image-url('icon-plus.png')
 	}
 }
 
@@ -1149,6 +1149,7 @@ video {
 			left: auto;
 			right: 0;
 			transform: translateY(-50%);
+			padding: 2px;
 		}
 	}
 }
@@ -1197,7 +1198,7 @@ video {
 	-moz-appearance: none;
 	-webkit-appearance: none;
 	appearance: none;
-	background: transparent url(../img/select-arrow.png) no-repeat center right 12px / 17px 14px;
+	background: transparent image-url('select-arrow.png') no-repeat center right 12px / 17px 14px;
 	border-radius: 0;
 	color: inherit;
 	cursor: pointer;

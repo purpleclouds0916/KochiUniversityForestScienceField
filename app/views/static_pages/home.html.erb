@@ -7,7 +7,8 @@
   <title>高知大学　森林科学領域</title>
   <meta name="description" content="高知大学農林海洋科学部農林資源環境科学科森林科学領域の公式ホームページです">
   <%= stylesheet_link_tag    'application', media: 'all' %>
-	<!--fontawesome-->
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <!--fontawesome-->
 	<script src="https://kit.fontawesome.com/c93c1bab3a.js" crossorigin="anonymous"></script>
 	<!-- OGP -->
 	<meta property="og:url" content="http://www.cc.kochi-u.ac.jp/~ichiura/index.html" />
@@ -23,7 +24,7 @@
 <body>
 	<header class="header">
 		<div class="inner header__inner">
-			<h1 class="header__logo"><img src="img/logo.png" alt="高知大学森林科学領域公式ホームページ"></h1><!-- /.header__logo -->
+			<h1 class="header__logo"><%= image_tag "logo.png", :alt => '高知大学森林科学領域ホームページ' %></h1><!-- /.header__logo -->
 			<nav class="header__nav">
 				<ul>
 					<li><a href="http://www.kochi-u.ac.jp/">高知大学トップ</a></li>
@@ -56,21 +57,21 @@
 		<div class="swiper-container">
 			<div class="swiper-wrapper">
 				<div class="swiper-slide swiper-slide-1">
-					<img src="./img/mainvisual-2.JPG" alt="">
+					<%= image_tag "mainvisual-2.JPG", :alt => '景色1' %>
 					<div class="mainvisual__content__1 mainvisual__content" id="a">
 						<div class="mainvisual__title__1 mainvisual__title"><span class="text-bg">木材は再生可能資源</span></div><!-- /.mainvisual__title -->
 						<div class="mainvisual__lead mainvisual__lead__1"><span class="text-bg">持続的な社会の構築に、木材は必要不可欠です</span></div>	<!-- /.mainvisual__lead -->
 					</div><!-- /.mainvisual__content -->
 				</div><!-- /.swiper-slide -->
 				<div class="swiper-slide swiper-slide-2">
-					<img src="./img/mainvisual-1.JPG" alt="">
+                    <%= image_tag "mainvisual-1.JPG", :alt => '景色2' %>
 					<div class="mainvisual__content__2 mainvisual__content">
 						<div class="mainvisual__title__2 mainvisual__title"><span class="text-bg">森林は生物の宝庫</span></div><!-- /.mainvisual__title -->
 						<div class="mainvisual__lead mainvisual__lead__2"><span class="text-bg">森林は生態系の保全に重要な役割を担っています</span></div>	<!-- /.mainvisual__lead -->
 					</div><!-- /.mainvisual__content -->
 				</div><!-- /.swiper-slide -->
 				<div class="swiper-slide swiper-slide-3">
-					<img src="./img/mainvisual-3.JPG" alt="">
+                    <%= image_tag "mainvisual-3.JPG", :alt => '景色3' %>
 					<div class="mainvisual__content__3 mainvisual__content">
 						<div class="mainvisual__title__3 mainvisual__title"><span class="text-bg">森林の多面的機能</span></div><!-- /.mainvisual__title -->
 						<div class="mainvisual__lead mainvisual__lead__3"><span class="text-bg">CO2の吸収、空気の浄化など森林には様々な機能があります
@@ -90,7 +91,7 @@
 			<div class="meaning__items">
 				<div class="meaning__item ">
 					<div class="meaning__img">
-						<img src="img/meaning-1.png" alt="003-three">
+                        <%= image_tag "meaning-1.png", :alt => '1' %>
 					</div><!-- /.meaning__img -->
 					<div class="meaning__body">
 						<div class="meaning__title">木材は再生可能資源</div><!-- /.meaning__title -->
@@ -98,8 +99,8 @@
 					</div><!-- /.meaning__body -->
 				</div><!-- /.meaning__item -->
 				<div class="meaning__item ">
-					<div class="meaning__img">
-						<img src="img/meaning-2.png" alt="001-one">
+					<div class="meaning__img">	
+                      <%= image_tag "meaning-2.png", :alt => '2' %>
 					</div><!-- /.meaning__img -->
 					<div class="meaning__body">
 						<div class="meaning__title">森林は生物の宝庫</div><!-- /.meaning__title -->
@@ -109,7 +110,7 @@
 				</div><!-- /.meaning__item -->		
 				<div class="meaning__item ">
 					<div class="meaning__img">
-						<img src="img/meaning-3.png" alt="002-two">
+                         <%= image_tag "meaning-3.png", :alt => '3' %>
 					</div><!-- /.meaning__img -->
 					<div class="meaning__body">
 						<div class="meaning__title">環境資源としての価値は年間70兆円</div><!-- /.meaning__title -->
@@ -143,7 +144,7 @@
 					<div class="course__video content__video">
 						<h3 class="video__title">森林科学領域の紹介動画</h3>
 						<div class="video__img" id="btn_modal_1" href="">
-							<img src="./img/forest-field.png" alt="森林科学領域の紹介動画">
+                             <%= image_tag "forest-field.png", :alt => '森林科学領域の紹介動画' %>
 						</div><!-- /.video__img -->
 					</div><!-- /.course__video -->
 				</div><!-- /.course__item -->
@@ -152,7 +153,7 @@
 		<div id="modal_1">
 			<div id="modal_content_1">
 				<video controls src="./movie/What-is-a-forest-area.mp4"></video>
-				<div class="btn_close"><img src="./img/close.png" alt="Close button"></div>
+				<div class="btn_close"><%= image_tag "close.png", :alt => 'Close button' %></div>
 			</div><!-- /.modal_content_1 -->
 		</div><!-- /.modal_1 -->
 	</section><!-- /.course -->
@@ -163,7 +164,7 @@
 			<div class="teacher__items">
 				<div class="teacher__item teacher__item__1">
 					<div class="teacher__media teacher__media__1" >
-						<div class="teacher__media__img"><img src="img/Ichie-teacher.jpg" alt="市栄 智明"></div><!-- /.teacher__media -->
+						<div class="teacher__media__img"><%= image_tag "Ichie-teacher.jpg", :alt => '市栄 智明' %></div><!-- /.teacher__media -->
 						<div class="teacher__media__body">
 							<div class="teacher__media__title">市栄 智明</div><!-- /.teacher__media__title -->
 							<div class="teacher__media__job">教授</div><!--./teacher__media__job-->
@@ -173,7 +174,7 @@
 				</div><!-- /.teacher__item -->
 				<div class="teacher__item  teacher__item__2">
 					<a class="teacher__media" href="http://www.cc.kochi-u.ac.jp/~ysuzuki/">
-						<div class="teacher__media__img"><img src="img/suzuki-teacher.jpg" alt=""></div><!-- /.teacher__media__img -->
+						<div class="teacher__media__img"><%= image_tag "suzuki-teacher.jpg", :alt => '鈴木 保志' %></div><!-- /.teacher__media__img -->
 						<div class="teacher__media__body">
 							<div class="teacher__media__title">鈴木 保志</div><!-- /.teacher__media__title -->
 							<div class="teacher__media__job">教授</div><!--./teacher__media__job-->
@@ -183,7 +184,7 @@
 				</div><!-- /.teacher__item -->
 				<div class="teacher__item  teacher__item__3">
 					<a class="teacher__media" href="http://www.cc.kochi-u.ac.jp/~ichiura/woodchem/ichiura/ichiurahome.html">
-						<div class="teacher__media__img"><img src="img/iciura-teacher.jpg" alt="市浦 英明"></div><!-- /.teacher__media__img -->
+						<div class="teacher__media__img"><%= image_tag "iciura-teacher.jpg", :alt => '市浦 英明' %></div><!-- /.teacher__media__img -->
 						<div class="teacher__media__body">
 							<div class="teacher__media__title">市浦 英明</div><!-- /.teacher__media__title -->
 							<div class="teacher__media__job">准教授</div><!--./teacher__media__job-->
@@ -193,7 +194,7 @@
 				</div><!-- /.teacher__item -->
 				<div class="teacher__item  teacher__item__4">
 					<a class="teacher__media teacher__media__4" href="http://www.cc.kochi-u.ac.jp/~matsumoto-mika/">
-						<div class="teacher__media__img"><img src="img/matumoto-teacher.JPG.png" alt="松本 美香"></div><!-- /.teacher__media__img -->
+						<div class="teacher__media__img"><%= image_tag "matumoto-teacher.png", :alt => '松本 美香' %></div><!-- /.teacher__media__img -->
 						<div class="teacher__media__body">
 							<div class="teacher__media__title">松本 美香</div><!-- /.teacher__media__title -->
 							<div class="teacher__media__job">講師</div><!--./teacher__media__job-->
@@ -204,7 +205,7 @@
 				</div><!-- /.teacher__item -->
 				<div class="teacher__item  teacher__item__5">
 					<a class="teacher__media teacher__media__5" href="https://kfplab.wordpress.com/home/">
-						<div class="teacher__media__img"><img src="img/moriguti-teacher.png" alt="守口 海"></div><!-- /.teacher__media__img -->
+						<div class="teacher__media__img"><%= image_tag "moriguti-teacher.png", :alt => '守口 海' %></div><!-- /.teacher__media__img -->
 						<div class="teacher__media__body">
 							<div class="teacher__media__title">守口 海</div><!-- /.teacher__media__title -->
 							<div class="teacher__media__job">講師</div><!--./teacher__media__job-->
@@ -218,7 +219,7 @@
 		<div id="modal_2">
 			<div id="modal_content_2">
 				<video controls src="./movie/teachers.mp4"></video>
-				<div class="btn_close"><img src="./img/close.png" alt="Close button"></div>
+				<div class="btn_close"><%= image_tag "close.png", :alt => 'Close button' %></div><!-- /.teacher__media__img --></div>
 			</div><!--modal_content_2 -->
 		</div><!--./modal_2 -->
 	</section><!-- /.teacher -->
@@ -232,7 +233,7 @@
 						<h3 class="video__title">授業の紹介動画</h3>
 						<div class="video__img">
 							<div id="btn_modal_3">
-								<img src="./img/lesson.png" alt="授業の紹介動画">
+                                <%= image_tag "lesson.png", :alt => '授業の紹介動画' %>
 							</div><!-- ./btn_modal_3 -->
 						</div><!-- ./video__img-->
 					</div><!-- ./lesson__video -->
@@ -248,7 +249,7 @@
 		<div id="modal_3">
 			<div id="modal_content_3">
 				<video  controls src="./movie/lesson.mp4"></video>
-				<div class="btn_close"><img src="./img/close.png" alt="Close button"></div>
+				<div class="btn_close"> <%= image_tag "close.png", :alt => 'Close button' %></div>
 			</div><!-- ./modal_content_3 -->
 		</div><!-- ./modal_3-->
 	</section><!-- ./lesson-->
@@ -287,7 +288,7 @@
 								 <span class="see-details">詳しく見る<i class="fas fa-arrow-right"></i></span>
 							</div><!-- /.graduate__media__table -->
 						</div><!-- /.graduate__media__body -->
-						<div class="graduate__media__img"><img src="./img/isikawa-prof.jpg" alt="石川いずみさんの写真"></div><!-- /.media__img -->
+						<div class="graduate__media__img"><%= image_tag "isikawa-prof.jpg", :alt => '石川いずみさんの写真' %></div><!-- /.media__img -->
 					</a><!-- /.graduate__media -->
 				</div><!-- /.graduate__item -->
 				<div class="graduate__item">
@@ -320,7 +321,7 @@
 								 <span class="see-details">詳しく見る<i class="fas fa-arrow-right"></i></span>
 							</div><!-- /.graduate__media__table -->
 						</div><!-- /.graduate__media__body -->
-						<div class="graduate__media__img"><img src="./img/tamurasae-prof.jpg" alt="田村彩恵さんの写真"></div><!-- /.media__img -->
+						<div class="graduate__media__img"><%= image_tag "tamurasae-prof.jpg", :alt => '田村彩恵さんの写真' %></div><!-- /.media__img -->
 					</a><!-- /.graduate__media -->
 				</div><!-- /.graduate__item -->
 			</div><!-- /.graduate__items -->
@@ -334,23 +335,23 @@
 				<div class="skill__top__text">高知大学森林領域では5つの資格を取得できます</div>
 				<div class="skill__top__items">
 					<div class="skill__top__item">
-						<img src="./img/skill-1.png" alt="測量士のアイコン">
+                        <%= image_tag "skill-1.png", :alt => '測量士のアイコン' %>
 						<p>測量士補</p>
 					</div>
 					<div class="skill__top__item">
-						<img src="./img/skill-2.png" alt="樹木医のアイコン">
+                        <%= image_tag "skill-2.png", :alt => '樹木医のアイコン' %>
 						<p>樹木医補</p>
 					</div>
 					<div class="skill__top__item">
-						<img src="./img/skill-3.png" alt="森林情報士のアイコン">
+                         <%= image_tag "skill-3.png", :alt => '森林情報士のアイコン' %>
 						<p>森林情報士二級</p>
 					</div>
 					<div class="skill__top__item">
-						<img src="./img/skill-4.png" alt="教員免許のアイコン">
+                         <%= image_tag "skill-4.png", :alt => '教員免許のアイコン' %>
 						<p>教員免許</p>
 					</div>
 					<div class="skill__top__item">
-						<img src="./img/skill-5.png" alt="学芸員のアイコン">
+                         <%= image_tag "skill-5.png", :alt => '学芸員のアイコン' %>
 						<p>学芸員</p>
 					</div><!-- ./skill__top__item -->
 				</div><!--./skill__top__items -->
@@ -360,7 +361,7 @@
 		<div class="skill__bottom__inner inner">
 			<dl class="skill__bottom__items">
 				<div class="skill__bottom__content accordion">
-					<dt class="accordion__head"><img src="./img/skill-1.png" alt="測量士アイコン">測量士補<span class="accordion__icon accordion__icon__first"></span></dt>
+					<dt class="accordion__head"><%= image_tag "skill-1.png", :alt => '測量士のアイコン' %>測量士補<span class="accordion__icon accordion__icon__first"></span></dt>
 					<dd class="accordion__body accordion__body__first">
 						<div class="accordion__body-in">技術者として「基本測量（すべての測量の基礎となる測量）」、「公共測量（国又は地方公共団体の実施する測量）」に従事するために必要な国家資格です。 測量士は、「測量に関する計画を作製し、又は実施する者」、 測量士補は、「測量士の作製した計画に従い、測量に従事する者」を指します。測量士補の資格取得後、1年以上の実務経験により測量士に昇格が可能です。
 						</div><!-- /.accordion__body-in -->
@@ -372,7 +373,7 @@
 					</dd><!-- /.accordion__body -->
 				</div><!-- /.skill__bottom__content -->
 				<div class="skill__bottom__content accordion">
-					<dt class="accordion__head"><img src="./img/skill-2.png" alt="樹木医アイコン">樹木医補<span class="accordion__icon"></span></dt>
+					<dt class="accordion__head"><%= image_tag "skill-2.png", :alt => '樹木医のアイコン' %>樹木医補<span class="accordion__icon"></span></dt>
 					<dd class="accordion__body">
 						<div class="accordion__body-in">樹木医とは、樹木の診断・治療、後継樹の保護育成、樹木保護などに関する知識の普及や指導を行う専門家のこと。 樹木医補は、樹木医を目指して樹木学や植物病理学、森林生態学などの基礎的な知識や技術を習得した学生を対象に認定を行ってます。高知大学は樹木医補資格養成機関として認定を受けています。全国で35ある認定大学のうち、四国では高知大学と愛媛大学が対象となっています。（令和2年4月現在）。
 						</div><!-- /.accordion__body-in -->
@@ -383,7 +384,7 @@
 					</dd><!-- /.accordion__body -->
 				</div><!-- /.skill__bottom__content -->
 				<div class="skill__bottom__content accordion">
-					<dt class="accordion__head"><img src="./img/skill-3.png" alt="森林情報士アイコン">森林情報士二級<span class="accordion__icon"></span></dt>
+					<dt class="accordion__head"><%= image_tag "skill-3.png", :alt => '森林情報士のアイコン' %>森林情報士二級<span class="accordion__icon"></span></dt>
 					<dd class="accordion__body">
 						<div class="accordion__body-in">森林情報士とは、空中写真やリモートセンシングからの情報の解析技術、GIS技術等をもちいて森林計画、治山、林道事業、さらには地球温暖化問題の解析などの事業分野に的確に対応できる専門技術者です。 2級は、森林系の大学専門課程修得１年以上、学士、修士、博士など森林・林業に関する資格を有する者を対象としています。高知大学は森林情報士2級養成機関として認定を受けています。全国で7つある認定大学のうち、四国では高知大学のみとなっています（令和2年4月現在）。
 						</div><!-- /.accordion__body-in -->
@@ -394,7 +395,7 @@
 					</dd><!-- /.accordion__body -->
 				</div><!-- /.skill__bottom__content -->
 				<div class="skill__bottom__content accordion">
-					<dt class="accordion__head"><img src="./img/skill-4.png" alt="教員アイコン">教員免許<span class="accordion__icon"></span></dt>
+					<dt class="accordion__head"><%= image_tag "skill-4.png", :alt => '教員免許のアイコン' %>教員免許<span class="accordion__icon"></span></dt>
 					<dd class="accordion__body">
 						<div class="accordion__body-in">教員になるための資格です。学校種ごとの教員免許状が必要で、中学校・高等学校は教科ごとの免許状になります。
 							取得要件の違いにより、専修免許状、一種免許状、二種免許状と区分されますが、職務上の差異はありません。
@@ -402,7 +403,7 @@
 					</dd><!-- /.accordion__body -->
 				</div><!-- /.skill__bottom__content -->
 				<div class="skill__bottom__content accordion">
-					<dt class="accordion__head"><img src="./img/skill-5.png" alt="学芸員アイコン">学芸員<span class="accordion__icon"></span></dt>
+					<dt class="accordion__head"><%= image_tag "skill-5.png", :alt => '学芸員のアイコン' %>学芸員<span class="accordion__icon"></span></dt>
 					<dd class="accordion__body">
 						<div class="accordion__body-in">学芸員とは、博物館（美術館、歴史民俗資料館、国際交流館、産業資料館、農林業資料館、文書館、文学館、水族館、動・植物園、地質館、各種記念館等）において、資料収集、展示、保存、調査研究、生涯教育、社会教育活動等の専門的活動に携わる職員の総称になります。</div><!-- /.accordion__body-in -->
 					</dd><!-- /.accordion__body -->
@@ -478,7 +479,7 @@
 		<div class="footer__inner inner">
 			<div class="footer__container">
 				<div class="footer__left">
-					<div class="footer__logo"><a href="http://www.kochi-u.ac.jp/"><img src="img/ftr_logo.png" alt="高知大学 フッター アイコン"></a>
+					<div class="footer__logo"><a href="http://www.kochi-u.ac.jp/"><%= image_tag "ftr_logo.png", :alt => '高知大学フッターアイコン' %></a>
 					</div><!-- /.footer__logo -->
 					<div class="footer__info">
 						<p>農林海洋科学部　農林資源環境科学科　森林科学領域</p>
@@ -507,8 +508,6 @@
 	<div id="page-top" class="page-top">
 		<p><a id="move-page-top" class="move-page-top">▲</a></p>
 	</div><!-- /.page-top -->
-
-
 
 </body>
 </html>
