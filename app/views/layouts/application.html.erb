@@ -1,12 +1,26 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>HpApp</title>
+    <title><%= yield(:title) %> </title>
+    <%= favicon_link_tag('icon.jpg') %>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+　	<!--fontawesome-->
+	  <script src="https://kit.fontawesome.com/c93c1bab3a.js" crossorigin="anonymous"></script>
+   	<%= stylesheet_link_tag    'application', media: 'all' %>
+	  <%= stylesheet_link_tag params[:controller] %>
 
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <!-- OGP -->
+    <meta property="og:url" content="http://www.kochi-u.ac.jp/agrimar-skg/isikawaizumi.html" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="高知大学 農林海洋科学部 森林科学領域" />
+    <meta property="og:description" content="森林率全国1位の高知県!林業や自然を学ぶためには絶好の環境です"/>
+    <meta property="og:site_name" content="高知大学 農林海洋科学部 農林資源環境科学科 森林科学領域" />
+    <meta property="og:image" content="http://www.kochi-u.ac.jp/agrimar-skg/img/isikawa-prof.jpg" />
+
+  	<!--twitter-card-->
+    <meta name="twitter:card" content="summary_large_image" /> 
+    <meta name="twitter:site" content="@KochiU_News"/>
   </head>
 
   <body>

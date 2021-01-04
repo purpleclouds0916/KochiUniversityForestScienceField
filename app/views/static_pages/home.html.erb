@@ -1,513 +1,431 @@
-<!DOCTYPE html>
-<html lang="ja">
-<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# website: http://ogp.me/ns/website#">
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="icon" href="img/icon.jpg">
-  <title>高知大学　森林科学領域</title>
-  <meta name="description" content="高知大学農林海洋科学部農林資源環境科学科森林科学領域の公式ホームページです">
-  <%= stylesheet_link_tag    'application', media: 'all' %>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <!--fontawesome-->
-	<script src="https://kit.fontawesome.com/c93c1bab3a.js" crossorigin="anonymous"></script>
-	<!-- OGP -->
-	<meta property="og:url" content="http://www.cc.kochi-u.ac.jp/~ichiura/index.html" />
-	<meta property="og:type" content="website" />
-	<meta property="og:title" content="高知大学 農林海洋科学部 森林科学領域" />
-	<meta property="og:description" content="森林率全国1位の高知県!林業や自然を学ぶためには絶好の環境です"/>
-	<meta property="og:site_name" content="高知大学 農林海洋科学部 農林資源環境科学科 森林科学領域" />
-	<meta property="og:image" content="http://www.cc.kochi-u.ac.jp/~ichiura/img/ogp.png" />
-	<!--twitter-card-->
-	<meta name="twitter:card" content="summary_large_image" /> 
-	<meta name="twitter:site" content="@KochiU_News"/>
-</head>
-<body>
-	<header class="header">
-		<div class="inner header__inner">
-			<h1 class="header__logo"><%= image_tag "logo.png", :alt => '高知大学森林科学領域ホームページ' %></h1><!-- /.header__logo -->
-			<nav class="header__nav">
-				<ul>
-					<li><a href="http://www.kochi-u.ac.jp/">高知大学トップ</a></li>
-					<li><a href="http://www.kochi-u.ac.jp/agrimar/">農林海洋科学部トップ</a></li>
-					<li><a href="http://www.kochi-u.ac.jp/agrimar/japan/gakubu/nourin.html">農林資源環境科学科トップ</a></li>
-					<li><a href="https://nyusi.kochi-u.jp/">入試情報</a></li>
-				</ul>
-			</nav><!-- /.header__nav -->
-		</div><!-- /.header__inner -->
-	</header><!-- /.header -->
-	<button class="drawer-icon js-drawer for-drawer" type="button" data-target="for-drawer">
-		<span class="drawer-bars">
-			<span class="drawer-bar"></span>
-			<span class="drawer-bar"></span>
-			<span class="drawer-bar"></span>
-		</span>
-		<span class="drawer-text">メニュー</span>
-	</button><!-- /drawer-icon -->
-	<div class="drawer-content-cover for-drawer">
-		<ul>
-			<li><a href="http://www.kochi-u.ac.jp/">高知大学トップ
-			</a></li>
-			<li><a href="http://www.kochi-u.ac.jp/agrimar/">農林海洋科学部トップ</a></li>
-			<li><a href="http://www.kochi-u.ac.jp/agrimar/japan/gakubu/nourin.html">農林資源環境科学科トップ</a></li>
-			<li><a href="https://nyusi.kochi-u.jp/">入試情報</a></li>
-		</ul>
-	</div><!-- /drawer-content -->
+<% provide(:title, "高知大学　森林科学領域") %>
+<%= render 'layouts/header' %>
 
-	<div class="mainvisual">
-		<div class="swiper-container">
-			<div class="swiper-wrapper">
-				<div class="swiper-slide swiper-slide-1">
-					<%= image_tag "mainvisual-2.JPG", :alt => '景色1' %>
-					<div class="mainvisual__content__1 mainvisual__content" id="a">
-						<div class="mainvisual__title__1 mainvisual__title"><span class="text-bg">木材は再生可能資源</span></div><!-- /.mainvisual__title -->
-						<div class="mainvisual__lead mainvisual__lead__1"><span class="text-bg">持続的な社会の構築に、木材は必要不可欠です</span></div>	<!-- /.mainvisual__lead -->
-					</div><!-- /.mainvisual__content -->
-				</div><!-- /.swiper-slide -->
-				<div class="swiper-slide swiper-slide-2">
-                    <%= image_tag "mainvisual-1.JPG", :alt => '景色2' %>
-					<div class="mainvisual__content__2 mainvisual__content">
-						<div class="mainvisual__title__2 mainvisual__title"><span class="text-bg">森林は生物の宝庫</span></div><!-- /.mainvisual__title -->
-						<div class="mainvisual__lead mainvisual__lead__2"><span class="text-bg">森林は生態系の保全に重要な役割を担っています</span></div>	<!-- /.mainvisual__lead -->
-					</div><!-- /.mainvisual__content -->
-				</div><!-- /.swiper-slide -->
-				<div class="swiper-slide swiper-slide-3">
-                    <%= image_tag "mainvisual-3.JPG", :alt => '景色3' %>
-					<div class="mainvisual__content__3 mainvisual__content">
-						<div class="mainvisual__title__3 mainvisual__title"><span class="text-bg">森林の多面的機能</span></div><!-- /.mainvisual__title -->
-						<div class="mainvisual__lead mainvisual__lead__3"><span class="text-bg">CO2の吸収、空気の浄化など森林には様々な機能があります
-						</span></div>	<!-- /.mainvisual__lead -->
-					</div><!-- /.mainvisual__content -->
-				</div><!-- /.swiper-slide -->
-			</div><!-- /.swiper-wrapper -->
-			<div class="swiper-button-prev"></div>
-			<div class="swiper-button-next"></div>
-			<div class="swiper-pagination"></div>
-		</div><!-- /.swiper-container -->
-	</div><!-- /.mainvisual -->
+<div class="mainvisual">
+	<div class="swiper-container">
+		<div class="swiper-wrapper">
+			<div class="swiper-slide swiper-slide-1">
+				<%= image_tag "mainvisual-2.JPG", :alt => '景色1' %>
+				<div class="mainvisual__content__1 mainvisual__content" id="a">
+					<div class="mainvisual__title__1 mainvisual__title"><span class="text-bg">木材は再生可能資源</span></div><!-- /.mainvisual__title -->
+					<div class="mainvisual__lead mainvisual__lead__1"><span class="text-bg">持続的な社会の構築に、木材は必要不可欠です</span></div>	<!-- /.mainvisual__lead -->
+				</div><!-- /.mainvisual__content -->
+			</div><!-- /.swiper-slide -->
+			<div class="swiper-slide swiper-slide-2">
+				<%= image_tag "mainvisual-1.JPG", :alt => '景色2' %>
+				<div class="mainvisual__content__2 mainvisual__content">
+					<div class="mainvisual__title__2 mainvisual__title"><span class="text-bg">森林は生物の宝庫</span></div><!-- /.mainvisual__title -->
+					<div class="mainvisual__lead mainvisual__lead__2"><span class="text-bg">森林は生態系の保全に重要な役割を担っています</span></div>	<!-- /.mainvisual__lead -->
+				</div><!-- /.mainvisual__content -->
+			</div><!-- /.swiper-slide -->
+			<div class="swiper-slide swiper-slide-3">
+				<%= image_tag "mainvisual-3.JPG", :alt => '景色3' %>
+				<div class="mainvisual__content__3 mainvisual__content">
+					<div class="mainvisual__title__3 mainvisual__title"><span class="text-bg">森林の多面的機能</span></div><!-- /.mainvisual__title -->
+					<div class="mainvisual__lead mainvisual__lead__3"><span class="text-bg">CO2の吸収、空気の浄化など森林には様々な機能があります
+					</span></div>	<!-- /.mainvisual__lead -->
+				</div><!-- /.mainvisual__content -->
+			</div><!-- /.swiper-slide -->
+		</div><!-- /.swiper-wrapper -->
+		<div class="swiper-button-prev"></div>
+		<div class="swiper-button-next"></div>
+		<div class="swiper-pagination"></div>
+	</div><!-- /.swiper-container -->
+</div><!-- /.mainvisual -->
 
-  <section id="" class="meaning section">
-		<div class="meaning__inner inner">
-			<h2 class="section-title">森林を学ぶ価値</h2><!-- /.section-title -->
-			<div class="meaning__items">
-				<div class="meaning__item ">
-					<div class="meaning__img">
-                        <%= image_tag "meaning-1.png", :alt => '1' %>
-					</div><!-- /.meaning__img -->
-					<div class="meaning__body">
-						<div class="meaning__title">木材は再生可能資源</div><!-- /.meaning__title -->
-						<div class="meaning__content">近年、木のストローの導入やレジ袋の有料化など、プラスチック製品を廃止する動きが強まっています。さらに、プラスチックの原料となる石油は将来的には枯渇してしまう化石資源です。<br><br><span class="text__important">持続的な経済発展をしていくためにも、木材のような再生可能資源の積極的な利用の推進、及び研究</span>が必要不可欠です。</div><!-- /.meaning__content -->
-					</div><!-- /.meaning__body -->
-				</div><!-- /.meaning__item -->
-				<div class="meaning__item ">
-					<div class="meaning__img">	
-                      <%= image_tag "meaning-2.png", :alt => '2' %>
-					</div><!-- /.meaning__img -->
-					<div class="meaning__body">
-						<div class="meaning__title">森林は生物の宝庫</div><!-- /.meaning__title -->
-						<div class="meaning__content">世界の陸地面積の約３割を占める森林に、<span class="text__important">陸上の生物種の約８割がその生息・生育を依存</span>しています。<br><br>しかし、1990～2015年までの過去25年間において森林面積は、1.29億haも減少しました。<span class="text__important"> 豊かな生態系を守っていくためにも、持続的な森林利用を考えていく必要</span>があります。
-						</div><!-- /.meaning__content -->
-					</div><!-- /.meaning__body -->
-				</div><!-- /.meaning__item -->		
-				<div class="meaning__item ">
-					<div class="meaning__img">
-                         <%= image_tag "meaning-3.png", :alt => '3' %>
-					</div><!-- /.meaning__img -->
-					<div class="meaning__body">
-						<div class="meaning__title">環境資源としての価値は年間70兆円</div><!-- /.meaning__title -->
-						<div class="meaning__content">森林は降った雨を蓄え、浄化をしながら少しずつ川に流します。そして、水と一緒に、たくさんの栄養が、川や海、そして農地に流れます。
-						<br><br>それにより、<span class="text__important">魚はもちろん豊かな農作物の生産にも繋がります。</span>それ以外にも、森林にはレクリエーションの役割から、キノコや木材の生産など多様な機能があります。そして、<span class="text__important">これらの機能を経済的価値に換算すると、年間70兆円にもなると言われています。</span>
-						<br><br>つまり、豊かな森林を守ることは、私達の豊かな生活を守ることにもつながるのです。
-						</div><!-- /.meaning__content -->
-					</div><!-- /.meaning__body -->
-				</div><!-- /.meaning__item -->	
-			</div><!-- /.meaning__items -->
-			<div class="meaning__reference">
-				<div class="meaning__reference__title">参考文献(閲覧日:2020/09/06)</div>
-				<div class="meaning__content"><a href="https://www.rinya.maff.go.jp/j/kaigai/attach/pdf/index-2.pdf">森林は生物の宝庫:世界森林資源評価（FRA）２０１５-世界の森林はどのように変化しているか-</a>
-				</div><!-- /.meaning__reference -->
-				<div class="meaning__content"><a href="https://www.maff.go.jp/j/kanbo/kankyo/seisaku/s_senryaku/seibutu_tayo/14/pdf/siryo1-2.pdf">環境資源としての価値は年間70兆円:森林における生物多様性の保全及び 持続可能な利用の推進方策・平成２１年７月 森林における生物多様性保全の推進方策検討会</a>
-				</div><!-- /.meaning__reference -->
-			</div>
-		</div><!-- /.meaning__inner -->
-  </section><!-- /.meaning -->
+<section id="" class="meaning section">
+	<div class="meaning__inner inner">
+		<h2 class="section-title">森林を学ぶ価値</h2><!-- /.section-title -->
+		<div class="meaning__items">
+			<div class="meaning__item ">
+				<div class="meaning__img">
+					<%= image_tag "meaning-1.png", :alt => '1' %>
+				</div><!-- /.meaning__img -->
+				<div class="meaning__body">
+					<div class="meaning__title">木材は再生可能資源</div><!-- /.meaning__title -->
+					<div class="meaning__content">近年、木のストローの導入やレジ袋の有料化など、プラスチック製品を廃止する動きが強まっています。さらに、プラスチックの原料となる石油は将来的には枯渇してしまう化石資源です。<br><br><span class="text__important">持続的な経済発展をしていくためにも、木材のような再生可能資源の積極的な利用の推進、及び研究</span>が必要不可欠です。</div><!-- /.meaning__content -->
+				</div><!-- /.meaning__body -->
+			</div><!-- /.meaning__item -->
+			<div class="meaning__item ">
+				<div class="meaning__img">	
+					<%= image_tag "meaning-2.png", :alt => '2' %>
+				</div><!-- /.meaning__img -->
+				<div class="meaning__body">
+					<div class="meaning__title">森林は生物の宝庫</div><!-- /.meaning__title -->
+					<div class="meaning__content">世界の陸地面積の約３割を占める森林に、<span class="text__important">陸上の生物種の約８割がその生息・生育を依存</span>しています。<br><br>しかし、1990～2015年までの過去25年間において森林面積は、1.29億haも減少しました。<span class="text__important"> 豊かな生態系を守っていくためにも、持続的な森林利用を考えていく必要</span>があります。
+					</div><!-- /.meaning__content -->
+				</div><!-- /.meaning__body -->
+			</div><!-- /.meaning__item -->		
+			<div class="meaning__item ">
+				<div class="meaning__img">
+						<%= image_tag "meaning-3.png", :alt => '3' %>
+				</div><!-- /.meaning__img -->
+				<div class="meaning__body">
+					<div class="meaning__title">環境資源としての価値は年間70兆円</div><!-- /.meaning__title -->
+					<div class="meaning__content">森林は降った雨を蓄え、浄化をしながら少しずつ川に流します。そして、水と一緒に、たくさんの栄養が、川や海、そして農地に流れます。
+					<br><br>それにより、<span class="text__important">魚はもちろん豊かな農作物の生産にも繋がります。</span>それ以外にも、森林にはレクリエーションの役割から、キノコや木材の生産など多様な機能があります。そして、<span class="text__important">これらの機能を経済的価値に換算すると、年間70兆円にもなると言われています。</span>
+					<br><br>つまり、豊かな森林を守ることは、私達の豊かな生活を守ることにもつながるのです。
+					</div><!-- /.meaning__content -->
+				</div><!-- /.meaning__body -->
+			</div><!-- /.meaning__item -->	
+		</div><!-- /.meaning__items -->
+		<div class="meaning__reference">
+			<div class="meaning__reference__title">参考文献(閲覧日:2020/09/06)</div>
+			<div class="meaning__content"><a href="https://www.rinya.maff.go.jp/j/kaigai/attach/pdf/index-2.pdf">森林は生物の宝庫:世界森林資源評価（FRA）２０１５-世界の森林はどのように変化しているか-</a>
+			</div><!-- /.meaning__reference -->
+			<div class="meaning__content"><a href="https://www.maff.go.jp/j/kanbo/kankyo/seisaku/s_senryaku/seibutu_tayo/14/pdf/siryo1-2.pdf">環境資源としての価値は年間70兆円:森林における生物多様性の保全及び 持続可能な利用の推進方策・平成２１年７月 森林における生物多様性保全の推進方策検討会</a>
+			</div><!-- /.meaning__reference -->
+		</div>
+	</div><!-- /.meaning__inner -->
+</section><!-- /.meaning -->
 
-	<section class="course content section wow fadeInUp">
-		<div class="course__inner content__inner inner">
-			<h2 class="section-title">森林科学領域</h2>
-			<div class="course__items content__items">
-				<div class="course__item content__item">
-					<div class="content__item__body">
-						<p>高知県は雨が非常に多く、木が成長するためにはとても良い環境です。<br><br><span class="text__important">それもあって、高知県の森林率は全国1位の83.4%！</span><br><br>大学から出てすぐが、実習のフィールドです。<span class="text__important">豊かな自然に囲まれた場所で、生態系や持続的な社会についてじっくり学ぶことができます。</span><br><br>また、高知県は昔から林業が非常に栄えており、今なお、その歴史を受け継いでいます。<br><br>そのため、<span class="text__important">行政機関や企業と連携し、地域の人たちと関わりながら林業を学ぶことができます。</span></p>
-					</div><!-- /.content__item__body -->
-				</div><!-- /.course__item -->
-				<div class="course__item content__item">
-					<div class="course__video content__video">
-						<h3 class="video__title">森林科学領域の紹介動画</h3>
-						<div class="video__img" id="btn_modal_1" href="">
-                             <%= image_tag "forest-field.png", :alt => '森林科学領域の紹介動画' %>
-						</div><!-- /.video__img -->
-					</div><!-- /.course__video -->
-				</div><!-- /.course__item -->
-			</div><!-- /.course__items -->
-		</div><!-- /.course__inner -->
-		<div id="modal_1">
-			<div id="modal_content_1">
-				<video controls src="./movie/What-is-a-forest-area.mp4"></video>
-				<div class="btn_close"><%= image_tag "close.png", :alt => 'Close button' %></div>
-			</div><!-- /.modal_content_1 -->
-		</div><!-- /.modal_1 -->
-	</section><!-- /.course -->
+<section class="course content section wow fadeInUp">
+	<div class="course__inner content__inner inner">
+		<h2 class="section-title">森林科学領域</h2>
+		<div class="course__items content__items">
+			<div class="course__item content__item">
+				<div class="content__item__body">
+					<p>高知県は雨が非常に多く、木が成長するためにはとても良い環境です。<br><br><span class="text__important">それもあって、高知県の森林率は全国1位の83.4%！</span><br><br>大学から出てすぐが、実習のフィールドです。<span class="text__important">豊かな自然に囲まれた場所で、生態系や持続的な社会についてじっくり学ぶことができます。</span><br><br>また、高知県は昔から林業が非常に栄えており、今なお、その歴史を受け継いでいます。<br><br>そのため、<span class="text__important">行政機関や企業と連携し、地域の人たちと関わりながら林業を学ぶことができます。</span></p>
+				</div><!-- /.content__item__body -->
+			</div><!-- /.course__item -->
+			<div class="course__item content__item">
+				<div class="course__video content__video">
+					<h3 class="video__title">森林科学領域の紹介動画</h3>
+					<div class="video__img" id="btn_modal_1" href="">
+							<%= image_tag "forest-field.png", :alt => '森林科学領域の紹介動画' %>
+					</div><!-- /.video__img -->
+				</div><!-- /.course__video -->
+			</div><!-- /.course__item -->
+		</div><!-- /.course__items -->
+	</div><!-- /.course__inner -->
+	<div id="modal_1">
+		<div id="modal_content_1">
+			<video controls src="./movie/What-is-a-forest-area.mp4"></video>
+			<div class="btn_close"><%= image_tag "close.png", :alt => 'Close button' %></div>
+		</div><!-- /.modal_content_1 -->
+	</div><!-- /.modal_1 -->
+</section><!-- /.course -->
 
-  <section id="" class="teacher section  wow fadeInUp">
-		<div class="teacher__inner inner">
-			<h2 class="section-title">先生の紹介</h2><!-- /.section-title -->
-			<div class="teacher__items">
-				<div class="teacher__item teacher__item__1">
-					<div class="teacher__media teacher__media__1" >
-						<div class="teacher__media__img"><%= image_tag "Ichie-teacher.jpg", :alt => '市栄 智明' %></div><!-- /.teacher__media -->
-						<div class="teacher__media__body">
-							<div class="teacher__media__title">市栄 智明</div><!-- /.teacher__media__title -->
-							<div class="teacher__media__job">教授</div><!--./teacher__media__job-->
-							<div class="teacher__media__content">森林を構成する多様な樹木は、それぞれ様々な個性を持ち、厳しい自然界の競争に打ち勝って今日存在しています。</br>私の研究室では、日本や東南アジアの森林に生育する樹木の個性を森林生態学や生理生態学の観点からひも解き、それを森林の保全や生態系修復・再生に活かす研究に取り組んでいます。</div><!-- /.teacher__media__content -->
-						</div><!-- teacher__/.media__body -->
-					</div><!-- /.teacher__media -->
-				</div><!-- /.teacher__item -->
-				<div class="teacher__item  teacher__item__2">
-					<a class="teacher__media" href="http://www.cc.kochi-u.ac.jp/~ysuzuki/">
-						<div class="teacher__media__img"><%= image_tag "suzuki-teacher.jpg", :alt => '鈴木 保志' %></div><!-- /.teacher__media__img -->
-						<div class="teacher__media__body">
-							<div class="teacher__media__title">鈴木 保志</div><!-- /.teacher__media__title -->
-							<div class="teacher__media__job">教授</div><!--./teacher__media__job-->
-							<div class="teacher__media__content">森林や山の自然に素朴に憧れて森林科学を学ぼうと大学に進学し、山と共に生きる林業技術者のすばらしさに触れ、林業工学（森林利用学）を専門としています。</br>高知には全国一の先進的林業技術と活気ある現場が多数あり、見学や実習でこれからの森林・林業を学ぶには最適の場所です。<br><span class="see-details">研究室HP<i class="fas fa-arrow-right"></i></span></div><!-- /.teacher__media__content -->
-						</div><!-- teacher__/.media__body -->
-					</a><!-- /.teacher__media -->
-				</div><!-- /.teacher__item -->
-				<div class="teacher__item  teacher__item__3">
-					<a class="teacher__media" href="http://www.cc.kochi-u.ac.jp/~ichiura/woodchem/ichiura/ichiurahome.html">
-						<div class="teacher__media__img"><%= image_tag "iciura-teacher.jpg", :alt => '市浦 英明' %></div><!-- /.teacher__media__img -->
-						<div class="teacher__media__body">
-							<div class="teacher__media__title">市浦 英明</div><!-- /.teacher__media__title -->
-							<div class="teacher__media__job">准教授</div><!--./teacher__media__job-->
-							<div class="teacher__media__content">木材は、マテリアルとしての機能およびエネルギーとしての機能を提供しています。その中で、紙パルプ分野の中心材料であるセルロースの研究を行っています。<br>具体的には、紙の機能化、紙おむつのリサイクル、さらにはプラスチック代替材料の研究による社会貢献を目指ています。<br><span class="see-details">研究室HP<i class="fas fa-arrow-right"></i></span></div><!-- /.teacher__media__content -->
-						</div><!-- teacher__/.media__body -->
-					</a><!-- /.teacher__media -->
-				</div><!-- /.teacher__item -->
-				<div class="teacher__item  teacher__item__4">
-					<a class="teacher__media teacher__media__4" href="http://www.cc.kochi-u.ac.jp/~matsumoto-mika/">
-						<div class="teacher__media__img"><%= image_tag "matumoto-teacher.png", :alt => '松本 美香' %></div><!-- /.teacher__media__img -->
-						<div class="teacher__media__body">
-							<div class="teacher__media__title">松本 美香</div><!-- /.teacher__media__title -->
-							<div class="teacher__media__job">講師</div><!--./teacher__media__job-->
-							<div class="teacher__media__content">持続可能な社会への転換が急務な今、木質資源は再生産可能な資源
-							として注目を浴びています。<br>この木質資源を社会が活用していくためには、森林からの安定的な木材供給の仕組みづくり、育林・伐採・加工・流通を支える社会づくりが必要になります。私は、林業・林産業を題材にしつつ、社会構造や産業構造の分析、各種政策の影響評価等を行い、森林と人とのより良い関係づくりに取り組んでいます。</br><span class="see-details">研究室HP<i class="fas fa-arrow-right"></i></span></div><!-- /.teacher__media__content -->
-						</div><!-- teacher__/.media__body -->
-					</a><!-- /.teacher__media -->
-				</div><!-- /.teacher__item -->
-				<div class="teacher__item  teacher__item__5">
-					<a class="teacher__media teacher__media__5" href="https://kfplab.wordpress.com/home/">
-						<div class="teacher__media__img"><%= image_tag "moriguti-teacher.png", :alt => '守口 海' %></div><!-- /.teacher__media__img -->
-						<div class="teacher__media__body">
-							<div class="teacher__media__title">守口 海</div><!-- /.teacher__media__title -->
-							<div class="teacher__media__job">講師</div><!--./teacher__media__job-->
-							<div class="teacher__media__content">森林を持続的に管理・利用していくために、どのようなスケジュールで間伐などの森林の手入れをするかといった問題を主に扱っています。</br>また、森林の管理を行っていくために必要な情報の収集方法や長期的な計画の立て方といった、森林の持続的利用に関連するさまざまな課題を併せて扱っています。<br><span class="see-details">研究室HP<i class="fas fa-arrow-right"></i></span></div><!-- /.teacher__media__content -->
-						</div><!-- teacher__/.media__body -->
-					</a><!-- /.teacher__media -->
-				</div><!-- /.teacher__item -->
-      </div><!-- /.teacher__items -->
-    </div><!-- /.teacher__inner --> 
-  	<div class="button-teacher" id="btn_modal_2">動画で詳しく見る</div><!-- /.button__teacher -->
-		<div id="modal_2">
-			<div id="modal_content_2">
-				<video controls src="./movie/teachers.mp4"></video>
-				<div class="btn_close"><%= image_tag "close.png", :alt => 'Close button' %></div><!-- /.teacher__media__img --></div>
-			</div><!--modal_content_2 -->
-		</div><!--./modal_2 -->
-	</section><!-- /.teacher -->
+<section id="" class="teacher section  wow fadeInUp">
+	<div class="teacher__inner inner">
+		<h2 class="section-title">先生の紹介</h2><!-- /.section-title -->
+		<div class="teacher__items">
+			<div class="teacher__item teacher__item__1">
+				<div class="teacher__media teacher__media__1" >
+					<div class="teacher__media__img"><%= image_tag "Ichie-teacher.jpg", :alt => '市栄 智明' %></div><!-- /.teacher__media -->
+					<div class="teacher__media__body">
+						<div class="teacher__media__title">市栄 智明</div><!-- /.teacher__media__title -->
+						<div class="teacher__media__job">教授</div><!--./teacher__media__job-->
+						<div class="teacher__media__content">森林を構成する多様な樹木は、それぞれ様々な個性を持ち、厳しい自然界の競争に打ち勝って今日存在しています。</br>私の研究室では、日本や東南アジアの森林に生育する樹木の個性を森林生態学や生理生態学の観点からひも解き、それを森林の保全や生態系修復・再生に活かす研究に取り組んでいます。</div><!-- /.teacher__media__content -->
+					</div><!-- teacher__/.media__body -->
+				</div><!-- /.teacher__media -->
+			</div><!-- /.teacher__item -->
+			<div class="teacher__item  teacher__item__2">
+				<a class="teacher__media" href="http://www.cc.kochi-u.ac.jp/~ysuzuki/">
+					<div class="teacher__media__img"><%= image_tag "suzuki-teacher.jpg", :alt => '鈴木 保志' %></div><!-- /.teacher__media__img -->
+					<div class="teacher__media__body">
+						<div class="teacher__media__title">鈴木 保志</div><!-- /.teacher__media__title -->
+						<div class="teacher__media__job">教授</div><!--./teacher__media__job-->
+						<div class="teacher__media__content">森林や山の自然に素朴に憧れて森林科学を学ぼうと大学に進学し、山と共に生きる林業技術者のすばらしさに触れ、林業工学（森林利用学）を専門としています。</br>高知には全国一の先進的林業技術と活気ある現場が多数あり、見学や実習でこれからの森林・林業を学ぶには最適の場所です。<br><span class="see-details">研究室HP<i class="fas fa-arrow-right"></i></span></div><!-- /.teacher__media__content -->
+					</div><!-- teacher__/.media__body -->
+				</a><!-- /.teacher__media -->
+			</div><!-- /.teacher__item -->
+			<div class="teacher__item  teacher__item__3">
+				<a class="teacher__media" href="http://www.cc.kochi-u.ac.jp/~ichiura/woodchem/ichiura/ichiurahome.html">
+					<div class="teacher__media__img"><%= image_tag "iciura-teacher.jpg", :alt => '市浦 英明' %></div><!-- /.teacher__media__img -->
+					<div class="teacher__media__body">
+						<div class="teacher__media__title">市浦 英明</div><!-- /.teacher__media__title -->
+						<div class="teacher__media__job">准教授</div><!--./teacher__media__job-->
+						<div class="teacher__media__content">木材は、マテリアルとしての機能およびエネルギーとしての機能を提供しています。その中で、紙パルプ分野の中心材料であるセルロースの研究を行っています。<br>具体的には、紙の機能化、紙おむつのリサイクル、さらにはプラスチック代替材料の研究による社会貢献を目指ています。<br><span class="see-details">研究室HP<i class="fas fa-arrow-right"></i></span></div><!-- /.teacher__media__content -->
+					</div><!-- teacher__/.media__body -->
+				</a><!-- /.teacher__media -->
+			</div><!-- /.teacher__item -->
+			<div class="teacher__item  teacher__item__4">
+				<a class="teacher__media teacher__media__4" href="http://www.cc.kochi-u.ac.jp/~matsumoto-mika/">
+					<div class="teacher__media__img"><%= image_tag "matumoto-teacher.png", :alt => '松本 美香' %></div><!-- /.teacher__media__img -->
+					<div class="teacher__media__body">
+						<div class="teacher__media__title">松本 美香</div><!-- /.teacher__media__title -->
+						<div class="teacher__media__job">講師</div><!--./teacher__media__job-->
+						<div class="teacher__media__content">持続可能な社会への転換が急務な今、木質資源は再生産可能な資源
+						として注目を浴びています。<br>この木質資源を社会が活用していくためには、森林からの安定的な木材供給の仕組みづくり、育林・伐採・加工・流通を支える社会づくりが必要になります。私は、林業・林産業を題材にしつつ、社会構造や産業構造の分析、各種政策の影響評価等を行い、森林と人とのより良い関係づくりに取り組んでいます。</br><span class="see-details">研究室HP<i class="fas fa-arrow-right"></i></span></div><!-- /.teacher__media__content -->
+					</div><!-- teacher__/.media__body -->
+				</a><!-- /.teacher__media -->
+			</div><!-- /.teacher__item -->
+			<div class="teacher__item  teacher__item__5">
+				<a class="teacher__media teacher__media__5" href="https://kfplab.wordpress.com/home/">
+					<div class="teacher__media__img"><%= image_tag "moriguti-teacher.png", :alt => '守口 海' %></div><!-- /.teacher__media__img -->
+					<div class="teacher__media__body">
+						<div class="teacher__media__title">守口 海</div><!-- /.teacher__media__title -->
+						<div class="teacher__media__job">講師</div><!--./teacher__media__job-->
+						<div class="teacher__media__content">森林を持続的に管理・利用していくために、どのようなスケジュールで間伐などの森林の手入れをするかといった問題を主に扱っています。</br>また、森林の管理を行っていくために必要な情報の収集方法や長期的な計画の立て方といった、森林の持続的利用に関連するさまざまな課題を併せて扱っています。<br><span class="see-details">研究室HP<i class="fas fa-arrow-right"></i></span></div><!-- /.teacher__media__content -->
+					</div><!-- teacher__/.media__body -->
+				</a><!-- /.teacher__media -->
+			</div><!-- /.teacher__item -->
+	</div><!-- /.teacher__items -->
+</div><!-- /.teacher__inner --> 
+<div class="button-teacher" id="btn_modal_2">動画で詳しく見る</div><!-- /.button__teacher -->
+	<div id="modal_2">
+		<div id="modal_content_2">
+			<video controls src="./movie/teachers.mp4"></video>
+			<div class="btn_close"><%= image_tag "close.png", :alt => 'Close button' %></div><!-- /.teacher__media__img --></div>
+		</div><!--modal_content_2 -->
+	</div><!--./modal_2 -->
+</section><!-- /.teacher -->
 
-	<section class="lesson content section wow fadeInUp">
-		<div class="lesson__inner content__inner inner">
-			<h2 class="lesson-title section-title">授業の紹介</h2>
-			<div class="lesson__items content__items">
-				<div class="lesson__item content__item">
-					<div class="lesson__video content__video">
-						<h3 class="video__title">授業の紹介動画</h3>
-						<div class="video__img">
-							<div id="btn_modal_3">
-                                <%= image_tag "lesson.png", :alt => '授業の紹介動画' %>
-							</div><!-- ./btn_modal_3 -->
-						</div><!-- ./video__img-->
-					</div><!-- ./lesson__video -->
-				</div><!-- ./lesson__item -->
-				<div class="lesson__item content__item">
-					<div class="content__item__body">
-						<p>高知大学森林領域では、<span class="text__important">地球環境問題、資源問題、エネルギー問題の解決及び自然共生型社会の構築ができる力を学べます。</span><br><br>なぜなら、高知大学では、生物学だけではなく<span class="text__important">統計学、工学、経済学といった幅広い分野を学習</span>することで、森林の様々な役割（二酸化炭素の吸収・固定、災害防備、空気浄化、林産物の供給etc...）を理解し、さらに、<span class="text__important">卒業研究を通して、応用・発展</span>させることができるからです。
-						<br><br>また、高知大学では、<span class="text__important">問題の発見能力と解決能力を養うために、実習・演習を重視した授業</span>を行っています。<br><br>だからこそ、森林領域では、<span class="text__important">地球環境問題、資源問題、エネルギー問題の解決及び自然共生型社会の構築ができる力</span>が身につくのです</p>
-					</div><!-- ./content__item__body -->
-				</div><!-- ./lesson__item -->
-			</div><!-- ./lesson__items -->
-		</div><!-- ./lesson__inner -->
-		<div id="modal_3">
-			<div id="modal_content_3">
-				<video  controls src="./movie/lesson.mp4"></video>
-				<div class="btn_close"> <%= image_tag "close.png", :alt => 'Close button' %></div>
-			</div><!-- ./modal_content_3 -->
-		</div><!-- ./modal_3-->
-	</section><!-- ./lesson-->
+<section class="lesson content section wow fadeInUp">
+	<div class="lesson__inner content__inner inner">
+		<h2 class="lesson-title section-title">授業の紹介</h2>
+		<div class="lesson__items content__items">
+			<div class="lesson__item content__item">
+				<div class="lesson__video content__video">
+					<h3 class="video__title">授業の紹介動画</h3>
+					<div class="video__img">
+						<div id="btn_modal_3">
+							<%= image_tag "lesson.png", :alt => '授業の紹介動画' %>
+						</div><!-- ./btn_modal_3 -->
+					</div><!-- ./video__img-->
+				</div><!-- ./lesson__video -->
+			</div><!-- ./lesson__item -->
+			<div class="lesson__item content__item">
+				<div class="content__item__body">
+					<p>高知大学森林領域では、<span class="text__important">地球環境問題、資源問題、エネルギー問題の解決及び自然共生型社会の構築ができる力を学べます。</span><br><br>なぜなら、高知大学では、生物学だけではなく<span class="text__important">統計学、工学、経済学といった幅広い分野を学習</span>することで、森林の様々な役割（二酸化炭素の吸収・固定、災害防備、空気浄化、林産物の供給etc...）を理解し、さらに、<span class="text__important">卒業研究を通して、応用・発展</span>させることができるからです。
+					<br><br>また、高知大学では、<span class="text__important">問題の発見能力と解決能力を養うために、実習・演習を重視した授業</span>を行っています。<br><br>だからこそ、森林領域では、<span class="text__important">地球環境問題、資源問題、エネルギー問題の解決及び自然共生型社会の構築ができる力</span>が身につくのです</p>
+				</div><!-- ./content__item__body -->
+			</div><!-- ./lesson__item -->
+		</div><!-- ./lesson__items -->
+	</div><!-- ./lesson__inner -->
+	<div id="modal_3">
+		<div id="modal_content_3">
+			<video  controls src="./movie/lesson.mp4"></video>
+			<div class="btn_close"> <%= image_tag "close.png", :alt => 'Close button' %></div>
+		</div><!-- ./modal_content_3 -->
+	</div><!-- ./modal_3-->
+</section><!-- ./lesson-->
 
-	<section id="a-graduate" class="graduate section wow fadeInUp">
-		<div class="graduate__inner inner">
-			<h2 class="section-title">卒業生の声</h2><!-- /.section-title -->
-			<div class="graduate__items">
-				<div class="graduate__item">
-					<a class="graduate__media" href="isikawaizumi.html">
-						<div class="graduate__media__body">
-							<div class="graduate__media__title">石川　いずみ さん</div><!-- /.media__title -->
-							<div class="graduate__media__table">
-								<table class="table-default">
-									<tr>
-										<th>出身</th>
-										<td>：</td>
-										<td>千葉県</td>
-									</tr>
-									<tr>
-										<th>職業</th>
-										<td>：</td>
-										<td>林野庁/関東森林管理局</td>
-									</tr>
-									<tr>
-										<th>研究室</th>
-										<td>：</td>
-										<td>大谷研究室</td>
-									</tr>
-									<tr>
-										<th>研究分野</th>
-										<td>：</td>
-										<td>森林資源利用学</td>
-									</tr>
-								 </table>
-								 <span class="see-details">詳しく見る<i class="fas fa-arrow-right"></i></span>
-							</div><!-- /.graduate__media__table -->
-						</div><!-- /.graduate__media__body -->
-						<div class="graduate__media__img"><%= image_tag "isikawa-prof.jpg", :alt => '石川いずみさんの写真' %></div><!-- /.media__img -->
-					</a><!-- /.graduate__media -->
-				</div><!-- /.graduate__item -->
-				<div class="graduate__item">
-					<a class="graduate__media" href="tamurasae.html">
-						<div class="graduate__media__body">
-							<div class="graduate__media__title">田村　彩恵 さん</div><!-- /.media__title -->
-							<div class="graduate__media__table">
-								<table class="table-default">
-									<tr>
-										<th>出身</th>
-										<td>：</td>
-										<td>京都府</td>
-									</tr>
-									<tr>
-										<th>職業</th>
-										<td>：</td>
-										<td>京都府　森づくり振興課</td>
-									</tr>
-									<tr>
-										<th>研究室</th>
-										<td>：</td>
-										<td>市栄研究室</td>
-									</tr>
-									<tr>
-										<th>研究分野</th>
-										<td>：</td>
-										<td>森林生態学</td>
-									</tr>
-								 </table>
-								 <span class="see-details">詳しく見る<i class="fas fa-arrow-right"></i></span>
-							</div><!-- /.graduate__media__table -->
-						</div><!-- /.graduate__media__body -->
-						<div class="graduate__media__img"><%= image_tag "tamurasae-prof.jpg", :alt => '田村彩恵さんの写真' %></div><!-- /.media__img -->
-					</a><!-- /.graduate__media -->
-				</div><!-- /.graduate__item -->
-			</div><!-- /.graduate__items -->
-		</div><!-- /.graduate__inner -->
-	</section><!-- /.graduate -->
+<section id="a-graduate" class="graduate section wow fadeInUp">
+	<div class="graduate__inner inner">
+		<h2 class="section-title">卒業生の声</h2><!-- /.section-title -->
+		<div class="graduate__items">
+			<div class="graduate__item">
+				<a class="graduate__media" href="isikawaizumi.html">
+					<div class="graduate__media__body">
+						<div class="graduate__media__title">石川　いずみ さん</div><!-- /.media__title -->
+						<div class="graduate__media__table">
+							<table class="table-default">
+								<tr>
+									<th>出身</th>
+									<td>：</td>
+									<td>千葉県</td>
+								</tr>
+								<tr>
+									<th>職業</th>
+									<td>：</td>
+									<td>林野庁/関東森林管理局</td>
+								</tr>
+								<tr>
+									<th>研究室</th>
+									<td>：</td>
+									<td>大谷研究室</td>
+								</tr>
+								<tr>
+									<th>研究分野</th>
+									<td>：</td>
+									<td>森林資源利用学</td>
+								</tr>
+								</table>
+								<span class="see-details">詳しく見る<i class="fas fa-arrow-right"></i></span>
+						</div><!-- /.graduate__media__table -->
+					</div><!-- /.graduate__media__body -->
+					<div class="graduate__media__img"><%= image_tag "isikawa-prof.jpg", :alt => '石川いずみさんの写真' %></div><!-- /.media__img -->
+				</a><!-- /.graduate__media -->
+			</div><!-- /.graduate__item -->
+			<div class="graduate__item">
+				<a class="graduate__media" href="tamurasae.html">
+					<div class="graduate__media__body">
+						<div class="graduate__media__title">田村　彩恵 さん</div><!-- /.media__title -->
+						<div class="graduate__media__table">
+							<table class="table-default">
+								<tr>
+									<th>出身</th>
+									<td>：</td>
+									<td>京都府</td>
+								</tr>
+								<tr>
+									<th>職業</th>
+									<td>：</td>
+									<td>京都府　森づくり振興課</td>
+								</tr>
+								<tr>
+									<th>研究室</th>
+									<td>：</td>
+									<td>市栄研究室</td>
+								</tr>
+								<tr>
+									<th>研究分野</th>
+									<td>：</td>
+									<td>森林生態学</td>
+								</tr>
+								</table>
+								<span class="see-details">詳しく見る<i class="fas fa-arrow-right"></i></span>
+						</div><!-- /.graduate__media__table -->
+					</div><!-- /.graduate__media__body -->
+					<div class="graduate__media__img"><%= image_tag "tamurasae-prof.jpg", :alt => '田村彩恵さんの写真' %></div><!-- /.media__img -->
+				</a><!-- /.graduate__media -->
+			</div><!-- /.graduate__item -->
+		</div><!-- /.graduate__items -->
+	</div><!-- /.graduate__inner -->
+</section><!-- /.graduate -->
 
-	<section id="" class="skill section wow fadeInUp">
-		<div class="skill__top__inner inner">
-			<h2 class="section-title">資格</h2>
-			<div class="skill__top__container">
-				<div class="skill__top__text">高知大学森林領域では5つの資格を取得できます</div>
-				<div class="skill__top__items">
-					<div class="skill__top__item">
-                        <%= image_tag "skill-1.png", :alt => '測量士のアイコン' %>
-						<p>測量士補</p>
-					</div>
-					<div class="skill__top__item">
-                        <%= image_tag "skill-2.png", :alt => '樹木医のアイコン' %>
-						<p>樹木医補</p>
-					</div>
-					<div class="skill__top__item">
-                         <%= image_tag "skill-3.png", :alt => '森林情報士のアイコン' %>
-						<p>森林情報士二級</p>
-					</div>
-					<div class="skill__top__item">
-                         <%= image_tag "skill-4.png", :alt => '教員免許のアイコン' %>
-						<p>教員免許</p>
-					</div>
-					<div class="skill__top__item">
-                         <%= image_tag "skill-5.png", :alt => '学芸員のアイコン' %>
-						<p>学芸員</p>
-					</div><!-- ./skill__top__item -->
-				</div><!--./skill__top__items -->
-			</div><!--./skill__top__inner -->
-		</div><!--./skill__top__container -->
+<section id="" class="skill section wow fadeInUp">
+	<div class="skill__top__inner inner">
+		<h2 class="section-title">資格</h2>
+		<div class="skill__top__container">
+			<div class="skill__top__text">高知大学森林領域では5つの資格を取得できます</div>
+			<div class="skill__top__items">
+				<div class="skill__top__item">
+					<%= image_tag "skill-1.png", :alt => '測量士のアイコン' %>
+					<p>測量士補</p>
+				</div>
+				<div class="skill__top__item">
+					<%= image_tag "skill-2.png", :alt => '樹木医のアイコン' %>
+					<p>樹木医補</p>
+				</div>
+				<div class="skill__top__item">
+						<%= image_tag "skill-3.png", :alt => '森林情報士のアイコン' %>
+					<p>森林情報士二級</p>
+				</div>
+				<div class="skill__top__item">
+						<%= image_tag "skill-4.png", :alt => '教員免許のアイコン' %>
+					<p>教員免許</p>
+				</div>
+				<div class="skill__top__item">
+						<%= image_tag "skill-5.png", :alt => '学芸員のアイコン' %>
+					<p>学芸員</p>
+				</div><!-- ./skill__top__item -->
+			</div><!--./skill__top__items -->
+		</div><!--./skill__top__inner -->
+	</div><!--./skill__top__container -->
 
-		<div class="skill__bottom__inner inner">
-			<dl class="skill__bottom__items">
-				<div class="skill__bottom__content accordion">
-					<dt class="accordion__head"><%= image_tag "skill-1.png", :alt => '測量士のアイコン' %>測量士補<span class="accordion__icon accordion__icon__first"></span></dt>
-					<dd class="accordion__body accordion__body__first">
-						<div class="accordion__body-in">技術者として「基本測量（すべての測量の基礎となる測量）」、「公共測量（国又は地方公共団体の実施する測量）」に従事するために必要な国家資格です。 測量士は、「測量に関する計画を作製し、又は実施する者」、 測量士補は、「測量士の作製した計画に従い、測量に従事する者」を指します。測量士補の資格取得後、1年以上の実務経験により測量士に昇格が可能です。
-						</div><!-- /.accordion__body-in -->
-						<div class="accordion__body__link">
-							<p>より詳しい情報は下記リンクをご覧ください。</p>
-							<a href="https://www.gsi.go.jp/LAW/SHIKEN-sikentoroku.html">測量士及び測量士補登録に関する案内 | 国土地理院</a>
-							<a href="http://www.jsurvey.jp/shikaku.htm">公益社団法人日本測量協会 測量士・測量士補の資格のページ</a>
-						</div><!-- /.accordion__body__link -->
-					</dd><!-- /.accordion__body -->
-				</div><!-- /.skill__bottom__content -->
-				<div class="skill__bottom__content accordion">
-					<dt class="accordion__head"><%= image_tag "skill-2.png", :alt => '樹木医のアイコン' %>樹木医補<span class="accordion__icon"></span></dt>
-					<dd class="accordion__body">
-						<div class="accordion__body-in">樹木医とは、樹木の診断・治療、後継樹の保護育成、樹木保護などに関する知識の普及や指導を行う専門家のこと。 樹木医補は、樹木医を目指して樹木学や植物病理学、森林生態学などの基礎的な知識や技術を習得した学生を対象に認定を行ってます。高知大学は樹木医補資格養成機関として認定を受けています。全国で35ある認定大学のうち、四国では高知大学と愛媛大学が対象となっています。（令和2年4月現在）。
-						</div><!-- /.accordion__body-in -->
-						<div class="accordion__body__link">
-							<p>より詳しい情報は下記リンクをご覧ください。</p>
-							<a href="http://www.jpgreen.or.jp/jyumokuiho/">樹木医補資格認定制度／（一財）日本緑化センター</a>
-						</div><!-- /.accordion__body__link -->
-					</dd><!-- /.accordion__body -->
-				</div><!-- /.skill__bottom__content -->
-				<div class="skill__bottom__content accordion">
-					<dt class="accordion__head"><%= image_tag "skill-3.png", :alt => '森林情報士のアイコン' %>森林情報士二級<span class="accordion__icon"></span></dt>
-					<dd class="accordion__body">
-						<div class="accordion__body-in">森林情報士とは、空中写真やリモートセンシングからの情報の解析技術、GIS技術等をもちいて森林計画、治山、林道事業、さらには地球温暖化問題の解析などの事業分野に的確に対応できる専門技術者です。 2級は、森林系の大学専門課程修得１年以上、学士、修士、博士など森林・林業に関する資格を有する者を対象としています。高知大学は森林情報士2級養成機関として認定を受けています。全国で7つある認定大学のうち、四国では高知大学のみとなっています（令和2年4月現在）。
-						</div><!-- /.accordion__body-in -->
-						<div class="accordion__body__link">
-							<p>より詳しい情報は下記リンクをご覧ください。</p>
-							<a href=" http://www.jafta.or.jp/contents/jouhoushi/5_list_detail.html">一般社団法人日本森林技術協会 Japan Forest Technology Association 森林情報士 大学単位認定制度</a>
-						</div><!-- /.accordion__body__link -->
-					</dd><!-- /.accordion__body -->
-				</div><!-- /.skill__bottom__content -->
-				<div class="skill__bottom__content accordion">
-					<dt class="accordion__head"><%= image_tag "skill-4.png", :alt => '教員免許のアイコン' %>教員免許<span class="accordion__icon"></span></dt>
-					<dd class="accordion__body">
-						<div class="accordion__body-in">教員になるための資格です。学校種ごとの教員免許状が必要で、中学校・高等学校は教科ごとの免許状になります。
-							取得要件の違いにより、専修免許状、一種免許状、二種免許状と区分されますが、職務上の差異はありません。
-						</div><!-- /.accordion__body-in -->
-					</dd><!-- /.accordion__body -->
-				</div><!-- /.skill__bottom__content -->
-				<div class="skill__bottom__content accordion">
-					<dt class="accordion__head"><%= image_tag "skill-5.png", :alt => '学芸員のアイコン' %>学芸員<span class="accordion__icon"></span></dt>
-					<dd class="accordion__body">
-						<div class="accordion__body-in">学芸員とは、博物館（美術館、歴史民俗資料館、国際交流館、産業資料館、農林業資料館、文書館、文学館、水族館、動・植物園、地質館、各種記念館等）において、資料収集、展示、保存、調査研究、生涯教育、社会教育活動等の専門的活動に携わる職員の総称になります。</div><!-- /.accordion__body-in -->
-					</dd><!-- /.accordion__body -->
-				</div><!-- /.skill__bottom__content -->
-			</dl><!-- /.skill__bottom__items -->
-		</div><!-- /.skill__bottom_items -->
-	</section><!-- /.skill -->
+	<div class="skill__bottom__inner inner">
+		<dl class="skill__bottom__items">
+			<div class="skill__bottom__content accordion">
+				<dt class="accordion__head"><%= image_tag "skill-1.png", :alt => '測量士のアイコン' %>測量士補<span class="accordion__icon accordion__icon__first"></span></dt>
+				<dd class="accordion__body accordion__body__first">
+					<div class="accordion__body-in">技術者として「基本測量（すべての測量の基礎となる測量）」、「公共測量（国又は地方公共団体の実施する測量）」に従事するために必要な国家資格です。 測量士は、「測量に関する計画を作製し、又は実施する者」、 測量士補は、「測量士の作製した計画に従い、測量に従事する者」を指します。測量士補の資格取得後、1年以上の実務経験により測量士に昇格が可能です。
+					</div><!-- /.accordion__body-in -->
+					<div class="accordion__body__link">
+						<p>より詳しい情報は下記リンクをご覧ください。</p>
+						<a href="https://www.gsi.go.jp/LAW/SHIKEN-sikentoroku.html">測量士及び測量士補登録に関する案内 | 国土地理院</a>
+						<a href="http://www.jsurvey.jp/shikaku.htm">公益社団法人日本測量協会 測量士・測量士補の資格のページ</a>
+					</div><!-- /.accordion__body__link -->
+				</dd><!-- /.accordion__body -->
+			</div><!-- /.skill__bottom__content -->
+			<div class="skill__bottom__content accordion">
+				<dt class="accordion__head"><%= image_tag "skill-2.png", :alt => '樹木医のアイコン' %>樹木医補<span class="accordion__icon"></span></dt>
+				<dd class="accordion__body">
+					<div class="accordion__body-in">樹木医とは、樹木の診断・治療、後継樹の保護育成、樹木保護などに関する知識の普及や指導を行う専門家のこと。 樹木医補は、樹木医を目指して樹木学や植物病理学、森林生態学などの基礎的な知識や技術を習得した学生を対象に認定を行ってます。高知大学は樹木医補資格養成機関として認定を受けています。全国で35ある認定大学のうち、四国では高知大学と愛媛大学が対象となっています。（令和2年4月現在）。
+					</div><!-- /.accordion__body-in -->
+					<div class="accordion__body__link">
+						<p>より詳しい情報は下記リンクをご覧ください。</p>
+						<a href="http://www.jpgreen.or.jp/jyumokuiho/">樹木医補資格認定制度／（一財）日本緑化センター</a>
+					</div><!-- /.accordion__body__link -->
+				</dd><!-- /.accordion__body -->
+			</div><!-- /.skill__bottom__content -->
+			<div class="skill__bottom__content accordion">
+				<dt class="accordion__head"><%= image_tag "skill-3.png", :alt => '森林情報士のアイコン' %>森林情報士二級<span class="accordion__icon"></span></dt>
+				<dd class="accordion__body">
+					<div class="accordion__body-in">森林情報士とは、空中写真やリモートセンシングからの情報の解析技術、GIS技術等をもちいて森林計画、治山、林道事業、さらには地球温暖化問題の解析などの事業分野に的確に対応できる専門技術者です。 2級は、森林系の大学専門課程修得１年以上、学士、修士、博士など森林・林業に関する資格を有する者を対象としています。高知大学は森林情報士2級養成機関として認定を受けています。全国で7つある認定大学のうち、四国では高知大学のみとなっています（令和2年4月現在）。
+					</div><!-- /.accordion__body-in -->
+					<div class="accordion__body__link">
+						<p>より詳しい情報は下記リンクをご覧ください。</p>
+						<a href=" http://www.jafta.or.jp/contents/jouhoushi/5_list_detail.html">一般社団法人日本森林技術協会 Japan Forest Technology Association 森林情報士 大学単位認定制度</a>
+					</div><!-- /.accordion__body__link -->
+				</dd><!-- /.accordion__body -->
+			</div><!-- /.skill__bottom__content -->
+			<div class="skill__bottom__content accordion">
+				<dt class="accordion__head"><%= image_tag "skill-4.png", :alt => '教員免許のアイコン' %>教員免許<span class="accordion__icon"></span></dt>
+				<dd class="accordion__body">
+					<div class="accordion__body-in">教員になるための資格です。学校種ごとの教員免許状が必要で、中学校・高等学校は教科ごとの免許状になります。
+						取得要件の違いにより、専修免許状、一種免許状、二種免許状と区分されますが、職務上の差異はありません。
+					</div><!-- /.accordion__body-in -->
+				</dd><!-- /.accordion__body -->
+			</div><!-- /.skill__bottom__content -->
+			<div class="skill__bottom__content accordion">
+				<dt class="accordion__head"><%= image_tag "skill-5.png", :alt => '学芸員のアイコン' %>学芸員<span class="accordion__icon"></span></dt>
+				<dd class="accordion__body">
+					<div class="accordion__body-in">学芸員とは、博物館（美術館、歴史民俗資料館、国際交流館、産業資料館、農林業資料館、文書館、文学館、水族館、動・植物園、地質館、各種記念館等）において、資料収集、展示、保存、調査研究、生涯教育、社会教育活動等の専門的活動に携わる職員の総称になります。</div><!-- /.accordion__body-in -->
+				</dd><!-- /.accordion__body -->
+			</div><!-- /.skill__bottom__content -->
+		</dl><!-- /.skill__bottom__items -->
+	</div><!-- /.skill__bottom_items -->
+</section><!-- /.skill -->
 
-	<section id="" class="contact section wow fadeInUp">
-		<div class="contact__inner inner">
-			<h2 class="section-title">お問い合わせ</h2><!-- /.section-title -->
-			<div class="contact__item">
-				<div id="formWrapper">
-					<div class="contact__item__lead"><p>高知大学・森林領域に関するお問い合わせ、ご質問、ご意見など、お気軽に送りください</p></div>
-					<form action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSeokKpREQhb62FkSyb7yVbK2jFoYqxEPBlwZat6wuYkhe2jdA/formResponse" method="POST" target="dummyIframe" name="myForm">
-						<dl class="contact__controls">
-							<div class="contact__control">
-								<dt>
-									<label class="contact__label contact__label--required" for="your-name">お名前</label>
-								</dt>
-								<dd>
-									<input id="your-name" class="form-input" type="text" name="entry.2005620554" value="" placeholder="高知　太郎" required>
-								</dd>
-							</div><!-- /.contact__control -->
-							<div class="contact__control">
-								<dt>
-									<label class="contact__label contact__label--required" for="your-mail">メールアドレス</label>
-								</dt>
-								<dd>
-									<input id="your-mail" class="form-input" type="email" name="entry.1045781291" value="" placeholder="kochi-university@gmail.com" required >
-								</dd>
-							</div><!-- /.contact__control -->
-							<div class="contact__control">
-								<dt>
-									<label class="contact__label" for="your-kind">お問い合わせ種別</label>
-								</dt>
-								<dd>
-									<select id="your-kind" class="form-select" name="entry.2073222526">
-										<option value="未入力">ーーー</option>
-										<option value="森林領域について">森林領域について</option>
-										<option value="研究室について">研究室について</option>
-										<option value="授業について">授業について</option>
-										<option value="入試情報について">入試情報について</option>
-										<option value="その他">その他</option>
-									</select>
-								</dd>
-							</div><!-- /.contact__control -->
-							<div class="contact__control">
-								<dt>
-									<label class="contact__label contact__label--required" for="your-message" required>お問い合わせ内容</label>
-								</dt>
-								<dd>
-									<textarea id="your-message" class="form-textarea" name="entry.1166974658" placeholder="お問い合わせを入力してください" required></textarea>
-								</dd>
-							</div><!-- /.contact__control -->
-						</dl><!-- /.contact__controls -->
-						<div class="contact__submit">
-							<input type="submit" value="送信" class="button-arrow-right">
-						</div><!-- /.contact__submit -->
-					</form>
-				</div><!-- /#formWrapper -->
+<section id="" class="contact section wow fadeInUp">
+	<div class="contact__inner inner">
+		<h2 class="section-title">お問い合わせ</h2><!-- /.section-title -->
+		<div class="contact__item">
+			<div id="formWrapper">
+				<div class="contact__item__lead"><p>高知大学・森林領域に関するお問い合わせ、ご質問、ご意見など、お気軽に送りください</p></div>
+				<form action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSeokKpREQhb62FkSyb7yVbK2jFoYqxEPBlwZat6wuYkhe2jdA/formResponse" method="POST" target="dummyIframe" name="myForm">
+					<dl class="contact__controls">
+						<div class="contact__control">
+							<dt>
+								<label class="contact__label contact__label--required" for="your-name">お名前</label>
+							</dt>
+							<dd>
+								<input id="your-name" class="form-input" type="text" name="entry.2005620554" value="" placeholder="高知　太郎" required>
+							</dd>
+						</div><!-- /.contact__control -->
+						<div class="contact__control">
+							<dt>
+								<label class="contact__label contact__label--required" for="your-mail">メールアドレス</label>
+							</dt>
+							<dd>
+								<input id="your-mail" class="form-input" type="email" name="entry.1045781291" value="" placeholder="kochi-university@gmail.com" required >
+							</dd>
+						</div><!-- /.contact__control -->
+						<div class="contact__control">
+							<dt>
+								<label class="contact__label" for="your-kind">お問い合わせ種別</label>
+							</dt>
+							<dd>
+								<select id="your-kind" class="form-select" name="entry.2073222526">
+									<option value="未入力">ーーー</option>
+									<option value="森林領域について">森林領域について</option>
+									<option value="研究室について">研究室について</option>
+									<option value="授業について">授業について</option>
+									<option value="入試情報について">入試情報について</option>
+									<option value="その他">その他</option>
+								</select>
+							</dd>
+						</div><!-- /.contact__control -->
+						<div class="contact__control">
+							<dt>
+								<label class="contact__label contact__label--required" for="your-message" required>お問い合わせ内容</label>
+							</dt>
+							<dd>
+								<textarea id="your-message" class="form-textarea" name="entry.1166974658" placeholder="お問い合わせを入力してください" required></textarea>
+							</dd>
+						</div><!-- /.contact__control -->
+					</dl><!-- /.contact__controls -->
+					<div class="contact__submit">
+						<input type="submit" value="送信" class="button-arrow-right">
+					</div><!-- /.contact__submit -->
+				</form>
+			</div><!-- /#formWrapper -->
 
-				<iframe name="dummyIframe" style="display:none;" onload="showThxMessage()"></iframe>
-				<div id="thxMessage" class="animated fadeIn" style="display:none;">
-					<div class="afterformtit">お問い合わせありがとうございました。</div><br>
-					<div class="formtxt mail-address">ご記入いただいたメールアドレス <span style="color:#5B4E42; font-weight:bold;"></span> へ後ほど連絡をさせていただきます。</div>
-				</div><!-- /#thxMessage -->
-			</div><!-- /.contact__item -->
-		</div><!-- /.contact__inner -->
-	</section><!-- /.contact -->
+			<iframe name="dummyIframe" style="display:none;" onload="showThxMessage()"></iframe>
+			<div id="thxMessage" class="animated fadeIn" style="display:none;">
+				<div class="afterformtit">お問い合わせありがとうございました。</div><br>
+				<div class="formtxt mail-address">ご記入いただいたメールアドレス <span style="color:#5B4E42; font-weight:bold;"></span> へ後ほど連絡をさせていただきます。</div>
+			</div><!-- /#thxMessage -->
+		</div><!-- /.contact__item -->
+	</div><!-- /.contact__inner -->
+</section><!-- /.contact -->
 
-	<footer>
-		<div class="footer__inner inner">
-			<div class="footer__container">
-				<div class="footer__left">
-					<div class="footer__logo"><a href="http://www.kochi-u.ac.jp/"><%= image_tag "ftr_logo.png", :alt => '高知大学フッターアイコン' %></a>
-					</div><!-- /.footer__logo -->
-					<div class="footer__info">
-						<p>農林海洋科学部　農林資源環境科学科　森林科学領域</p>
-						<p>住所：〒783-8502　南国市物部乙200</p>
-						<p>電話：（088）864-5114</p>
-					</div><!-- /.footer__info -->
-				</div><!-- /.footer__left -->
-				<div class="footer__right">
-					<div class="footer__sns">
-						<ul class="shareList">
-							<li class="shareList__item"><a class="shareList__link icon-twitter" href="http://twitter.com/share?url=http://www.cc.kochi-u.ac.jp/~ichiura/index.html" title="Twitter"><i class="fab fa-twitter"></i></a></li>
-							<li class="shareList__item"><a class="shareList__link icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=http://www.cc.kochi-u.ac.jp/~ichiura/index.html"
-							target="_blank"
-							rel="nofollow noopener noreferrer"><i class="fab fa-facebook-f"></i></a></li>
-							<li class="shareList__item"><a class="shareList__link icon-line" href="https://social-plugins.line.me/lineit/share?url=http://www.cc.kochi-u.ac.jp/~ichiura/index.html"
-								target="_blank"
-								rel="nofollow noopener noreferrer" title="LINE"><i class="fab fa-line"></i></a></li>
-						</ul><!-- /.shareList -->
-					</div><!-- /.footer_sns -->
-				</div><!-- /.footer__right-->
-			</div><!-- /.footer__container -->
-			<div class="footer__copy">Copyright 2020 Kochi University</div><!-- /.footer__copy -->
-		</div><!-- /.footer__inner -->
-	</footer><!-- /.footer-->
+ <%= render 'layouts/footer' %>
+ <%= render 'layouts/move-page-top' %>
 
-	<div id="page-top" class="page-top">
-		<p><a id="move-page-top" class="move-page-top">▲</a></p>
-	</div><!-- /.page-top -->
 
-</body>
-</html>
+
+
