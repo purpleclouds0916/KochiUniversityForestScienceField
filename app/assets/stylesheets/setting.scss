@@ -82,3 +82,191 @@ img {
 	height: auto;
 	border: none;
 }
+
+// -----
+// 補完クラス
+// -----
+
+// PCだけ非表示
+.hidden-pc {
+	@include mq('pc') {
+		display: none;
+	}
+}
+
+// タブレットだけ非表示
+.hidden-tab {
+	@include mq('tab-only') {
+		display: none;
+	}
+}
+
+// スマホだけ非表示
+.hidden-sp {
+	@include mq('sp') {
+		display: none;
+	}
+}
+
+// セクション
+.section {
+	padding-top: 100px;
+	padding-bottom: 120px;
+
+	@include mq('sp') {
+		padding-top: 40px;
+		padding-bottom: 80px;
+	}
+}
+
+// インナー
+.inner {
+	width: $layout-width-inner;
+	max-width: 100%;
+	margin: 0 auto;
+	height: inherit;
+
+	@include mq('tab') {
+		padding-left: $padding-tab;
+		padding-right: $padding-tab;
+	}
+
+	@include mq('sp') {
+		padding-left: $padding-sp;
+		padding-right: $padding-sp;
+	}
+}
+
+// 右矢印ボタン
+.button-arrow-right {
+	-webkit-appearance: none;
+	background: $color-main image-url('icon-arrow-right.png') no-repeat center right 12px / 17px 16px;
+	box-shadow: 0 3px 6px rgba(#000, 0.16);
+	text-align: center;
+	border: none;
+	color: #fff;
+	cursor: pointer;
+	display: inline-block;
+	text-decoration: none;
+	padding: 14px 60px;
+	font-size: 16px;
+	border-radius: 8px;
+	font-weight: 700;
+	transition: all 0.3s ease 0s;
+	width: 304px;
+	max-width: 100%;
+	line-height: 1.6;
+
+	@include mq('sp') {
+		padding: 14px 32px;
+		width: 100%;
+	}
+}
+
+//ページトップ
+.page-top {
+	margin: 0 ;
+  padding: 0 ;
+  display: none;
+  p {
+    margin: 0 ;
+    padding: 0 ;
+
+    position: fixed ;
+    right: 16px ;
+    bottom: 16px ;
+  }
+}
+
+.move-page-top {
+	display: block ;
+	background: $color-main ;
+	width: 50px ;
+	height: 50px ;
+	color: #fff ;
+	line-height: 50px ;
+	text-decoration: none ;
+	text-align: center ;
+	border-radius: 3px;
+	box-shadow: 0 3px 6px rgba(#000, 0.26);
+	cursor: pointer;
+	-webkit-transition:all 0.3s ;
+	-moz-transition:all 0.3s ;
+	transition:all 0.3s ;
+
+  &:hover {
+    opacity: 0.85 ;
+  }
+}
+
+//セクションタイトル
+.section-title {
+	font-size: 48px;
+	font-weight: 700;
+	padding: 0 0 28px;
+	margin-bottom: 56px;
+	position: relative;
+	text-align: center;
+	line-height: 1;
+
+	&::after {
+		content: "";
+		background: $color-main;
+		width: 80px;
+		height: 4px;
+		position: absolute;
+		bottom: 0;
+		left: 50%;
+		transform: translateX(-50%);
+
+		@include mq('sp') {
+			width: 68px;
+		}
+	}
+
+	@include mq('tab') {
+		font-size: 50px;
+		padding-bottom: 28px;
+	}
+
+	@include mq('sp') {
+		font-size: 40px;
+		padding-bottom: 16px;
+		margin-bottom: 30px;
+	}
+}
+
+//詳しく見る&研究室HP
+.see-details {
+	padding: 5px 10px;
+	margin-top: 5px;
+	margin-bottom: 10px;
+	display: inline-block;
+	border: 2px solid $color-main;
+	border-radius: 99px;
+	font-weight: 700;
+	transition: all ease;
+
+	.fas {
+		margin-left: 5px;
+	}
+}
+
+// 文字装飾
+.text__important {
+	background:linear-gradient(transparent 60%, #ff6 60%);
+ font-weight: 700;
+}
+
+
+
+
+//デバッグ情報
+
+.debug_dump {
+	text-align:center;
+	background-color: #333;
+	color: #fff;
+	padding: 20px;
+	margin: 0 ;
+}

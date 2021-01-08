@@ -5,10 +5,4 @@ class StaticPagesControllerTest < ActionDispatch::IntegrationTest
     get root_path
     assert_response :success
   end
-
-  test "should get og" do
-    get og_path
-    assert_response :success
-  end
-
 end

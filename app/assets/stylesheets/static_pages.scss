@@ -1,232 +1,9 @@
+@import "reset";
+@import "plugin/swiper";
+@import "plugin/animate";
 @import "setting";
 @import "header";
 @import "footer";
-
-// -----
-// 補完クラス
-// -----
-
-// PCだけ非表示
-.hidden-pc {
-	@include mq('pc') {
-		display: none;
-	}
-}
-
-// タブレットだけ非表示
-.hidden-tab {
-	@include mq('tab-only') {
-		display: none;
-	}
-}
-
-// スマホだけ非表示
-.hidden-sp {
-	@include mq('sp') {
-		display: none;
-	}
-}
-
-// セクション
-.section {
-	padding-top: 100px;
-	padding-bottom: 120px;
-
-	@include mq('sp') {
-		padding-top: 40px;
-		padding-bottom: 80px;
-	}
-}
-
-// インナー
-.inner {
-	width: $layout-width-inner;
-	max-width: 100%;
-	margin: 0 auto;
-	height: inherit;
-
-	@include mq('tab') {
-		padding-left: $padding-tab;
-		padding-right: $padding-tab;
-	}
-
-	@include mq('sp') {
-		padding-left: $padding-sp;
-		padding-right: $padding-sp;
-	}
-}
-
-// 右矢印ボタン
-.button-arrow-right {
-	-webkit-appearance: none;
-	background: $color-main image-url('icon-arrow-right.png') no-repeat center right 12px / 17px 16px;
-	box-shadow: 0 3px 6px rgba(#000, 0.16);
-	text-align: center;
-	border: none;
-	color: #fff;
-	cursor: pointer;
-	display: inline-block;
-	text-decoration: none;
-	padding: 14px 60px;
-	font-size: 16px;
-	border-radius: 8px;
-	font-weight: 700;
-	transition: all 0.3s ease 0s;
-	width: 304px;
-	max-width: 100%;
-	line-height: 1.6;
-
-	@include mq('sp') {
-		padding: 14px 32px;
-		width: 100%;
-	}
-}
-
-//動画モーダル
-#modal_1,#modal_2,#modal_3{
-  display: none;
-  position: fixed;
-  z-index: 1;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  overflow: auto;
-	background-color: rgba(0,0,0,0.7);
-	z-index: map-get($layer, 'header');
-}
-
-#modal_content_1,#modal_content_2,#modal_content_3{
-  width:900px;
-  background:#fff;
-  margin:0;
-	padding:10px 10px 0;
-  position:relative;
-  top: 50%;
-  left: 50%;
-	transform:translate(-50%,-50%);
-	z-index: map-get($layer, 'modal');
-
-	@include mq('tab') {
-		width: 700px;
-	}
-
-	@include mq('sp') {
-		width: 90%;
-	}
-}
-
-video {
-	width: 100%;
-}
-
-.btn_close {
-	width: 5%;
-	position: absolute;
-	top: -7%;
-	right: 0%;
-	z-index: map-get($layer, 'header');
-	cursor: pointer;
-
-	&::before{
-		position: relative;
-	}
-}
-
-//ページトップ
-.page-top {
-	margin: 0 ;
-  padding: 0 ;
-  display: none;
-  p {
-    margin: 0 ;
-    padding: 0 ;
-
-    position: fixed ;
-    right: 16px ;
-    bottom: 16px ;
-  }
-}
-
-.move-page-top {
-	display: block ;
-	background: $color-main ;
-	width: 50px ;
-	height: 50px ;
-	color: #fff ;
-	line-height: 50px ;
-	text-decoration: none ;
-	text-align: center ;
-	border-radius: 3px;
-	box-shadow: 0 3px 6px rgba(#000, 0.26);
-	cursor: pointer;
-	-webkit-transition:all 0.3s ;
-	-moz-transition:all 0.3s ;
-	transition:all 0.3s ;
-
-  &:hover {
-    opacity: 0.85 ;
-  }
-}
-
-//セクションタイトル
-.section-title {
-	font-size: 48px;
-	font-weight: 700;
-	padding: 0 0 28px;
-	margin-bottom: 56px;
-	position: relative;
-	text-align: center;
-	line-height: 1;
-
-	&::after {
-		content: "";
-		background: $color-main;
-		width: 80px;
-		height: 4px;
-		position: absolute;
-		bottom: 0;
-		left: 50%;
-		transform: translateX(-50%);
-
-		@include mq('sp') {
-			width: 68px;
-		}
-	}
-
-	@include mq('tab') {
-		font-size: 50px;
-		padding-bottom: 28px;
-	}
-
-	@include mq('sp') {
-		font-size: 40px;
-		padding-bottom: 16px;
-		margin-bottom: 30px;
-	}
-}
-
-//詳しく見る&研究室HP
-.see-details {
-	padding: 5px 10px;
-	margin-top: 5px;
-	margin-bottom: 10px;
-	display: inline-block;
-	border: 2px solid $color-main;
-	border-radius: 99px;
-	font-weight: 700;
-	transition: all ease;
-
-	.fas {
-		margin-left: 5px;
-	}
-}
-
-// 文字装飾
-.text__important {
-	background:linear-gradient(transparent 60%, #ff6 60%);
- font-weight: 700;
-}
 
 // -----
 // メインビジュアル
@@ -604,6 +381,57 @@ video {
 	}
 }
 
+//動画モーダル
+#modal_1,#modal_2,#modal_3{
+	display: none;
+	position: fixed;
+	z-index: 1;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	  background-color: rgba(0,0,0,0.7);
+	  z-index: map-get($layer, 'header');
+  }
+  
+  #modal_content_1,#modal_content_2,#modal_content_3{
+	width:900px;
+	background:#fff;
+	margin:0;
+	  padding:10px 10px 0;
+	position:relative;
+	top: 50%;
+	left: 50%;
+	  transform:translate(-50%,-50%);
+	  z-index: map-get($layer, 'modal');
+  
+	  @include mq('tab') {
+		  width: 700px;
+	  }
+  
+	  @include mq('sp') {
+		  width: 90%;
+	  }
+  }
+  
+  video {
+	  width: 100%;
+  }
+  
+  .btn_close {
+	  width: 5%;
+	  position: absolute;
+	  top: -7%;
+	  right: 0%;
+	  z-index: map-get($layer, 'header');
+	  cursor: pointer;
+  
+	  &::before{
+		  position: relative;
+	  }
+  }
+
 // -----
 // 先生の紹介
 // -----
@@ -734,21 +562,17 @@ video {
 }
 
 // -----
-// 授業の紹介 (森林領域で記載済み)
-// -----
-
-// -----
 // 卒業生の声
 // -----
 
-.graduate {
+.alumni {
 	background-color: #c1984d11;
 }
 
-.graduate__inner {
+.alumni__inner {
 }
 
-.graduate__items {
+.alumni__items {
 	display: flex;
 	flex-wrap: wrap;
 	margin-top: 56px;
@@ -758,7 +582,7 @@ video {
 	}
 }
 
-.graduate__item {
+.alumni__item {
 	width: calc(50% - 24px / 2);
 	margin-right: 24px;
 	margin-top: 24px;
@@ -773,7 +597,7 @@ video {
 	}
 }
 
-.graduate__media {
+.alumni__media {
 	overflow: hidden;
 	background: #fff;
 	border-radius: 4px;
@@ -797,7 +621,7 @@ video {
 	}
 }
 
-.og__media__img {
+.alumni__media__img {
 	text-align: center;
 	width: 50%;
 
@@ -809,7 +633,7 @@ video {
 	}
 }
 
-.og__media__body {
+.alumni__media__body {
 	margin-top: 12px;
 	width: 50%;
 	padding: 10px;
@@ -825,7 +649,7 @@ video {
 	}
 }
 
-.og__media__title {
+.alumni__media__title {
 	font-weight: 700;
 	font-size: 20px;
 	text-align: center;
@@ -835,7 +659,7 @@ video {
 	}
 }
 
-.og__media__table {
+.alumni__media__table {
 	font-weight: 700;
 	margin-top: 4px;
 	line-height: (24 / 16);
@@ -1242,191 +1066,4 @@ video {
 		height: 180px;
 	}
 }
-
-// 卒業生の声
-// -----
-// OBプロフィール
-// -----
-
-.prof {
-	background-color: #c1984d11;
-	padding: 100px 0px;
-
-	@include mq('sp'){
-		padding: 50px 0px;
-	}
-}
-
-.prof__inner {
-}
-
-.prof__items {
-	display: flex;
-	flex-wrap: wrap;
-	margin-top: 56px;
-
-	@include mq('sp') {
-		margin-top: 30px;
-	}
-}
-
-.prof__media {
-	overflow: hidden;
-	background: #fff;
-	border-radius: 4px;
-	display: flex;
-	color: #6f7579;
-}
-
-.og__media__img {
-	text-align: center;
-	width: 50%;
-
-	img {
-		vertical-align: bottom;
-		width: 100%;
-		height: 100%;
-    object-fit: cover;
-	}
-}
-
-.og__media__body {
-	margin-top: 12px;
-	width: 50%;
-	padding: 10px;
-	max-width: 400px;
-	margin: 30px auto;
-
-	@include mq('sp') {
-		margin: 6px auto;
-		padding: 5px;
-	}
-}
-
-.og__media__title {
-	font-weight: 700;
-	font-size: 30px;
-	text-align: center;
-
-	@include mq('sp') {
-		font-size: $font-size-base - 2px;
-	}
-}
-
-.og__media__table {
-	font-weight: 700;
-	margin-top: 4px;
-	line-height: (24 / 16);
-	overflow: hidden;
-	padding: 10px 20px;
-	font-size: 20px;
-	// vertical-align: center;
-
-	@include mq('sp'){
-		padding: 0;
-		font-size: $font-size-base - 4px;
-	}
-}
-
-// -----
-// main
-// -----
-
-.main {
-	padding: 40px 0;
-}
-
-.main__content {
-
-	.main__title {
-		padding: 0.4em 0.5em;
-		color: #494949;
-		background: #c1984d11;
-		border-left: solid 5px $color-main;
-		border-bottom: solid 1px #d7d7d7;
-		margin-bottom: 20px;
-	}
-
-	p {
-		margin-bottom: 20px;
-	}
-
-	img {
-		display: block;
-		margin: 0 auto;
-		width: 50%;
-
-		@include mq('sp'){
-			width: 80%;
-		}
-	}
-}
-
-// -----
-// ボトムナビ
-// -----
-
-.bottom {
-	padding: 0;
-}
-
-.bottom__inner {
-}
-
-.bottom__nav {
-	padding: 10px;
-	ul {
-		list-style: none;
-		padding: 0;
-		margin: 0;
-		display: flex;
-		flex-wrap: wrap;
-		justify-content: center;
-		align-items: center;
-
-		li {
-			margin-right: 40px;
-			padding: 10px 10px;
-			margin-top: 5px;
-			margin-bottom: 10px;
-			display: inline-block;
-			border: 2px solid $color-main;
-			border-radius: 99px;
-			background: #fff;
-
-			@include mq('sp') {
-				margin-right: 10px;
-			}
-		
-			.fas {
-				margin-left: 5px;
-			}
-
-			&:last-child {
-				margin-right: 0;
-			}
-
-			a {
-				transition: all 0.1s ease 0s;
-				text-decoration: none;
-				color: $color-main;
-				font-weight: 700;
-				display: block;
-
-				@include mq('sp') {
-					font-size: $font-size-base - 2px;
-				}
-			}
-
-			&:hover {
-				background: $color-main;
-
-				a {
-					color: #fff;
-				}	
-			}
-		}
-	}
-}
-
 
