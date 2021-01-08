@@ -1,0 +1,92 @@
+<section id="" class="login section">
+  <div class="poat__inner inner">
+    <% flash.each do |message_type, message| %>
+      <%= content_tag(:div, message, class: "alert alert-#{message_type}") %>
+    <% end %>
+    <div class="head">
+      <h1 class="section-title">管理者一覧</h1><!-- /.section-title -->
+      <div class="button posts_button">
+        
+        <a href="">管理者を作成する</a>
+       
+      </div>
+    </div>
+    <table class="post__table">
+      <tr class="post__thead__pc">
+        <th>管理者名</th>
+        <th>作成者</th>
+        <th>作成日</th>
+        <th></th>
+        <th>削除</th>
+      </tr>
+      <tr class="post__thead__tab hidden-pc">
+        <th>管理者名</td>
+      </tr>
+      <tr>
+        <td class="" data-label=""><a href=""><i class="fas fa-caret-square-right"><span>谷口ななみ</span></i></a></td>
+        <td class="" data-label="作成者">村田紫雲</td>
+        <td class="" data-label="作成日">2020/12/25</td>
+        <td></td>
+        <td class="" data-label=""><a href=""><i class="fas fa-trash-alt"></i></a></i></td>
+      </tr>
+      <tr>
+        <td class="" data-label=""><a href=""><i class="fas fa-caret-square-right"><span>掛水こさと</span></i></a></td>
+        <td data-label="作成者">宇賀千夏</td>
+        <td data-label="作成日">2020/12/27</td>
+        <td></td>
+        <td class="" data-label=""><a href=""><i class="fas fa-trash-alt"></i></a></i></td>
+      </tr>
+      <tr>
+        <td class="" data-label=""><a href=""><i class="fas fa-caret-square-right"><span>守口海</span></i></a></td>
+        <td data-label="作成者">松本美香</td>
+        <td data-label="作成日">2020/12/27</td>
+        <td></td>
+        <td class="" data-label=""><a href=""><i class="fas fa-trash-alt"></i></a></i></td>
+      </tr>
+      <tr class="last">
+        <td class="" data-label=""><a href=""><i class="fas fa-caret-square-right"><span>村田紫雲</span></i></a></td>
+        <td data-label="作成者">増田ありさ</td>
+        <td data-label="作成日">2020/12/29</td>
+        <td></td>
+        <td class="" data-label=""><a href=""><i class="fas fa-trash-alt"></i></a></i></td>
+      </tr>
+
+      
+    </table>
+    <!-- pagenation -->
+    <div class="pagenation">
+      <span class="page-numbers current">1</span>
+      <a class="page-numbers" href="#">2</a>
+      <a class="page-numbers" href="#">3</a>
+      <a class="next page-numbers" href="#"><i class="fas fa-angle-right"></i></a>
+    </div><!-- /pagenation -->
+    <div class="paginate">
+      <%
+=begin%>
+ <!-- <%= paginate @posts %> --> 
+<%
+=end%>
+    </div>
+
+ 
+
+        
+          <%
+=begin%>
+ <!-- <% @posts.each do |post| %> -->
+            <!-- <tr>
+                <th><%= post.id %></th>
+                <td><%= post.title %></td>
+                <td><%= post.name %></td>
+                <td><%= post.created_at.to_s(:datetime_base) %></td>
+                <td><%= post.updated_at.to_s(:datetime_base) %></td>
+                <td><%= link_to "詳細" , post, class: 'btn btn-outline-info' %></td>
+                <td><%= link_to "" , post, class: 'btn btn-outline-info', method: :delete, data: {confirm: "投稿記事を削除しますか？", cancel: "キャンセル", commit: "削除する", title: "削除の確認"} %></td>
+            </tr>
+          <% end %> --> 
+<%
+=end%>
+  
+  </div><!-- /.contact__inner -->
+</section><!-- /.contact -->
+

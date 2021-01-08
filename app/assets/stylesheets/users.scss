@@ -1,3 +1,458 @@
 // Place all the styles related to the Users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+// @import "reset";
+// @import "setting";
+// @import "header";
+// @import "footer";
+@import "static_pages";
+
+
+body {
+    background-color: #c1984d11;
+  }
+
+// -----
+// ログイン画面
+// -----  
+
+.login {
+  
+}
+
+.login-title {
+  padding: 0 0 28px;
+    text-align: center;
+  line-height: 1;
+
+  img {
+    width: 600px;
+
+    @include mq('tab') {
+      width: 500px;
+    }
+
+    @include mq('sp') {
+      margin-top: -30px;
+      width: 300px;
+    }
+  }
+}
+
+.contact__item {
+  margin: 0px auto 0;
+    padding: 60px;
+    width: 600px;
+    max-width: 100%;
+}
+
+.contact__control {
+  @include mq('sp') {
+    margin-bottom: 10px;
+  }
+
+  dt {
+    width: 100px;
+  }
+} 
+
+.contact__control__password {
+  margin-bottom: 20px;
+}
+
+
+.checkbox-input{
+  display: none;
+}
+.checkbox-parts{
+  padding-left: 20px;
+  position:relative;
+  margin-right: 20px;
+  
+  @include mq('sp') {
+    font-size: $font-size-base - 4px;
+  }
+}
+.checkbox-parts::before{
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 15px;
+  height: 15px;
+  border: 1px solid #999;
+  border-radius: 4px;
+}
+.checkbox-input:checked + .checkbox-parts{
+  color: #738851;
+}
+.checkbox-input:checked + .checkbox-parts::after{
+  content: "";
+  display: block;
+  position: absolute;
+  top: -5px;
+  left: 5px;
+  width: 7px;
+  height: 14px;
+  transform: rotate(40deg);
+  border-bottom: 3px solid #738851;
+  border-right: 3px solid #738851;
+}
+
+.forget__password {
+  margin-top: 25.5px;
+
+  @include mq('sp') {
+    font-size: $font-size-base - 4px;
+  }
+
+  a {
+    text-decoration: none;
+    color: $color-text-base;
+  }
+
+  :hover {
+    border-bottom: 1px solid;
+  }
+}
+
+
+
+
+// -----
+// 投稿&管理者リスト
+// -----
+
+
+
+
+.button {
+  text-align: right;
+  padding: 0 16px;
+  margin-bottom: 24px;
+
+  a {
+    text-decoration: none;
+    transition: all 0.3s ease 0s;
+    color: $color-background-base;
+    background: $color-main;
+    font-weight: 700;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+
+    &:hover {
+
+    }
+  }
+}
+
+.post__thead__pc {
+  text-align: left;
+  @include mq('tab') {
+    display: none;
+  }
+}
+
+.post__table {
+  border-collapse:collapse; 
+  margin: 0 auto;
+  width: 100%;
+  border: 1px solid #333333;
+  // border: 5px double $color-main;
+
+  @include mq('tab') {
+    width: 100%;
+    border-collapse:separate; 
+    border-spacing:20px;
+  }
+
+  tr {
+    @include mq('tab') {
+      width: 100%;
+    }
+  }
+  
+  th {
+    margin: 0;
+    padding: 6px 20px;
+    font-size: 18px;
+    font-weight: 700; 
+    border: 1px solid #333333;
+    background: #333333;
+    color: #fff;
+  }
+
+  td{
+    margin: 0;
+    font-size: 18px;
+    font-weight: 700;
+    border: 1px solid #333333;
+    vertical-align: middle;
+
+    &:first-child {
+      .fas {
+        margin-right: 10px;
+        color: #7e622a;
+        font-size: 18px;
+      }
+    
+      @include mq('tab') {
+        background-color:#333333;
+      }
+    } 
+
+    &:last-child {
+      .fas {
+        color: #333333;
+      }
+    }
+
+    &:first-child, :last-child {
+      transition: all 0.2s ease 0s;
+
+      a {
+        text-decoration: none;
+        
+      }
+      
+      .fas {
+     
+       
+        display: block;
+        padding: 12px 20px;
+    
+        @include mq('tab') {
+          color: #fff;
+        }
+
+        span {
+          color: #333333;
+          margin-left: 10px;
+          font-weight: 700;
+
+          @include mq('tab') {
+            color: #fff;
+          }
+        }
+      }
+    
+      &:hover {
+        background-color: $color-main;
+    
+        .fas, span {
+          color: #fff;
+        }
+      }
+    }
+
+    &:last-child {
+      text-align: center;
+      width: 90px;
+
+      a {
+        display: block;
+      }
+    }
+
+    &:nth-child(2), &:nth-child(3), &:nth-child(4) {
+      padding: 0 20px;
+    }
+
+    &:nth-child(2) {
+      width: 200px;
+    }
+
+    &:nth-child(3), &:nth-child(4) {
+      width: 150px;
+    }
+
+    &:before {
+      @include mq('tab') {
+        content: attr(data-label);
+        float: left;
+        font-weight: bold;
+        margin-right: 10px; 
+      }
+    }
+      
+    @include mq('tab') {
+      display: block;
+      text-align: left;
+      width: 100%; 
+      // border-right: 2px solid #333333;
+      // border-left: 2px solid rgb(22, 19, 19);
+  
+      &:first-child {
+        margin-top: -3px;
+      }
+    
+      &:last-child {
+        margin-bottom: -2px;
+        border-bottom: 2px solid #333333;
+        text-align: left;
+        
+
+        a {
+          padding: 12px 20px;
+        }
+
+        .fas {
+          color: #333333;
+          // display: block;
+          font-size: 30px;
+          padding: 0;
+          // vertical-align: middle;
+        }
+      }
+
+      &:nth-child(2), &:nth-child(3), &:nth-child(4) {
+        padding: 12px 20px;
+      }
+
+      &:nth-child(2), &:nth-child(3), &:nth-child(4), &:nth-child(5){
+        width: 100%;
+      }
+    }
+  }
+}
+
+// .accordion__head {
+//   color: $color-text-base;
+//   background: #fff;
+
+//   border: none;
+
+//     &:hover {
+//       background-color: $color-main;
+//     }
+  
+//   .fas {
+//     margin-right: 10px;
+//     color: $color-main;
+
+//     @include mq('tab') {
+//       color: #fff;
+//     }
+//   }
+
+//   @include mq('tab') {
+//     position: relative;
+//     background-color:$color-main	;
+//     color: #fff;
+//   }
+
+//   a {
+    
+//   }
+// }
+
+
+
+.pagenation {
+	margin-top: 24px;
+	text-align: center;
+}
+
+.pagenation a {
+	transition: all 0.3s ease 0s;
+}
+
+.pagenation a:hover {
+  background: $color-main;
+  color: #fff;
+}
+
+.pagenation a.next,
+.pagenation a.prev {
+	font-size: 30px;
+}
+
+.pagenation a.next:hover,
+.pagenation a.prev:hover {
+  background: $color-main;
+  color: #fff;
+}
+
+.page-numbers {
+	// background: #fff;
+	border: 1px solid #e2e2e2;
+	color: #333333;
+	display: inline-block;
+	font-family: "Lato", sans-serif;
+	font-size: 20px;
+	height: 40px;
+	line-height: 38px;
+	margin-right: 14px;
+	min-width: 40px;
+	text-align: center;
+	text-decoration: none;
+}
+
+.page-numbers:last-child {
+	margin-right: 0;
+}
+
+.page-numbers.current {
+	background: $color-main;
+	border: 1px solid $color-main;
+	color: #fff;
+	font-weight: 700;
+}
+
+.page-numbers.dots,
+.page-numbers.next,
+.page-numbers.prev {
+	border: none;
+	line-height: 40px;
+	min-width: 40px;
+  width: auto;
+  border: 1px solid #e2e2e2;
+}
+
+
+.section {
+  background: #c1984d11;
+}
+
+
+th,td {
+  &:nth-child(4) {
+      display: none;
+  }
+}
+
+.alert {
+  margin:0 0 1em 0; padding:10px 20px;
+  line-height:1.5; 
+}
+
+.alert-success {
+  background-color:#e2ffaa;
+  border:1px solid #76CC0B;
+  color:#3A9805;
+  display: inline-block;
+  border-radius: 6px;
+}
+
+.alert-danger {
+  background-color:#FFEFEF;
+  color:#C25338;
+  border:1px solid #D4440D;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+  

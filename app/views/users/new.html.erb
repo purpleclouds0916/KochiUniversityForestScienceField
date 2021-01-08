@@ -1,2 +1,59 @@
-<h1>Users#new</h1>
-<p>Find me in app/views/users/new.html.erb</p>
+<% provide(:title, 'Sign up') %>
+<section id="" class="login section">
+  <div class="loggin__inner inner">
+    <h2 class="section-title">管理者ログイン</h2><!-- /.section-title -->
+    <div class="contact__item login__item">
+      <div id="formWrapper">
+        <%= form_with(model: @user, local: true) do |f| %>
+            <%= render 'shared/error_messages' %>
+            <dl class="contact__controls">
+            <div class="contact__control">
+              <dt>
+                <%= f.label :name, "ユーザー名" ,class:"contact__label" %>
+              </dt>
+              <dd>
+                <%= f.text_field :name, class:"form-input" %>
+              </dd>
+            </div><!-- /.contact__control -->
+            <div class="contact__control">
+              <dt>
+                <%= f.label :email, "メールアドレス" ,class:"contact__label" %>
+              </dt>
+              <dd>
+                <%= f.email_field :email, class:"form-input" %>
+              </dd>
+            </div><!-- /.contact__control -->
+            <div class="contact__control contact__control__password">
+              <dt>
+                <%= f.label :password, "パスワード" , class:"contact__label" %>
+              </dt>
+              <dd>
+                <%= f.password_field :password, class:"form-input" %>
+              </dd>
+            </div><!-- /.contact__control -->
+            <div class="contact__control contact__control__password">
+              <dt>
+                <%= f.label :password_confirmation, "パスワード(再確認)", class:"contact__label" %>
+              </dt>
+              <dd>
+                <%= f.password_field :password_confirmation, class:"form-input" %>
+              </dd>
+            </div><!-- /.contact__control -->
+            <div class="checkbox">
+              <label>
+                <input type="checkbox" name="checkbox[]" class="checkbox-input">
+                <span class="checkbox-parts">ログイン状態を保持する</span>
+              </label><br>
+            </div>
+          </dl><!-- /.contact__controls -->
+          <div class="contact__submit">
+          　 <%= f.submit "ログイン", class: "button-arrow-right" %>
+          </div><!-- /.contact__submit -->
+        <% end %>
+        <p class="forget__password"><a href="#">・パスワードをお忘れですか?
+        </a></p>
+      </div>
+    </div><!-- /.contact__item -->
+  </div><!-- /.contact__inner -->
+</section><!-- /.contact -->
+
