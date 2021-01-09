@@ -4,11 +4,9 @@
       <%= content_tag(:div, message, class: "alert alert-#{message_type}") %>
     <% end %>
     <div class="head">
-      <h1 class="section-title">管理者一覧</h1><!-- /.section-title -->
+      <h1 class="section-title">管理者設定</h1><!-- /.section-title -->
       <div class="button posts_button">
-        
-        <a href="">管理者を作成する</a>
-       
+       <%= link_to "Sign up now!", signup_path %>
       </div>
     </div>
     <table class="post__table">

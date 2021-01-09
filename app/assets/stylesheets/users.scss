@@ -9,7 +9,7 @@
 @import "static_pages";
 
 body {
-    background-color: #c1984d11;
+    background-color: #FFFAF0;
   }
 
 // -----
@@ -51,9 +51,9 @@ body {
     margin-bottom: 10px;
   }
 
-  dt {
-    width: 100px;
-  }
+ dt {
+    width: 130px;
+  } 
 } 
 
 .contact__control__password {
@@ -408,9 +408,9 @@ body {
 }
 
 
-.section {
-  background: #c1984d11;
-}
+// .section {
+//   background: #c1984d11;
+// }
 
 
 th,td {
