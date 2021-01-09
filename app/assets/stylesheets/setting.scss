@@ -56,8 +56,19 @@ $breakpoints: (
 }
 
 // -----
-// 共通設定
+// 初期化
 // -----
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
 
 body {
 	font-family: $font-family-base;
@@ -82,7 +93,6 @@ img {
 	height: auto;
 	border: none;
 }
-
 // -----
 // 補完クラス
 // -----

@@ -1,4 +1,4 @@
 class AlumniMessagesController < ApplicationController
-  def message
+  def alumni
   end
 end
