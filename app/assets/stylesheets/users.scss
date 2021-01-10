@@ -142,7 +142,15 @@ body {
     padding: 10px;
     cursor: pointer;
     border-radius: 5px;
+
+    &:hover {
+      background: #fff;
+      color: $color-main;
+      border: 1px solid $color-main;
+    }
   }
+
+
 }
 
 .post__thead__pc {

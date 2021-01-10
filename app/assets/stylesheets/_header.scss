@@ -4,6 +4,26 @@
 // ヘッダー
 // -----
 
+.logout_button {
+	border: none;
+	outline: none;
+	appearance: none;
+	text-decoration: none;
+    transition: all 0.3s ease 0s;
+    color: #fff;
+    background: #738851;
+    font-weight: 700;
+    padding: 5px 10px;
+    cursor: pointer;
+	border-radius: 5px;
+	
+	&:hover {
+		background: #fff;
+		color: $color-main;
+		border: 1px solid $color-main;
+	}
+}
+
 .header {
 	background: #fff;
 	position: fixed;
