@@ -14,7 +14,7 @@
 				<li><%= link_to "投稿する", "#" %></li>
 				<li><%= link_to "投稿一覧", "#" %></li>
 				<li><%= link_to "管理者設定", users_path %></li>
-				<li><%= link_to "ログアウト", users_path %></li>
+				<li><%= button_to "ログアウト", logout_path, method: :delete  %></li>
 				<% end %>
 			</ul>
 		</nav><!-- /.header__nav -->

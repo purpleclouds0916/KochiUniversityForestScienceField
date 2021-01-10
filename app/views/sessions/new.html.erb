@@ -28,10 +28,10 @@
               </dd>
             </div><!-- /.contact__control -->
             <div class="checkbox">
-              <label>
-                <input type="checkbox" name="checkbox[]" class="checkbox-input">
+              <%= f.label :remember_me, class: "checkbox inline" do %>
+              <%= f.check_box :remember_me,class: "checkbox-input" %>
                 <span class="checkbox-parts">ログイン状態を保持する</span>
-              </label><br>
+              <% end %>
             </div>
           </dl><!-- /.contact__controls -->
           <div class="contact__submit">

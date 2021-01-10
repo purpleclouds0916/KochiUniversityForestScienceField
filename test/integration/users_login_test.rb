@@ -22,6 +22,11 @@ class UsersLoginTest < ActionDispatch::IntegrationTest
     follow_redirect!
     assert_select "div.mainvisual"
     assert_select "section.meaning"
+    delete logout_path
+    follow_redirect!
+    assert_not is_logged_in?
+    assert_select "div.mainvisual"
+    assert_select "section.meaning"
   end
 
   test "login with valid email/invalid password" do
@@ -44,5 +49,19 @@ class UsersLoginTest < ActionDispatch::IntegrationTest
     assert_not flash.empty?
     get root_path
     assert flash.empty?
+  end
+
+  test "login with remembering" do
+    log_in_as(@user, remember_me: '1')
+    assert_not_empty cookies[:remember_token]
+  end
+
+  test "login without remembering" do
+    # cookieを保存してログイン
+    log_in_as(@user, remember_me: '1')
+    delete logout_path
+    # cookieを削除してログイン
+    log_in_as(@user, remember_me: '0')
+    assert_empty cookies[:remember_token]
   end
 end
