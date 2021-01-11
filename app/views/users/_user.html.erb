@@ -1,0 +1,16 @@
+<tr>
+<td class="table-titles" data-label="">        
+        <%= gravatar_for user, size: 50 %>
+    <div>
+        <%= link_to user.name, edit_user_path(user) %>
+    <nav class="table-nav">
+        <ul>
+        <li><%= link_to "編集", edit_user_path(user) %></li>
+        <li><%= link_to "削除", user_path(user) %></li>
+        </ul>
+    </nav>
+    </div>
+</td>
+<td data-label="作成者">宇賀千夏</td>
+<td data-label="作成日">2020/12/27</td>
+</tr>

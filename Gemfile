@@ -21,6 +21,10 @@ gem 'jbuilder', '~> 2.7'
 # gem 'redis', '~> 4.0'
 # Use Active Model has_secure_password
 gem 'bcrypt', '~> 3.1.7'
+# Create users
+gem 'faker',                   '2.1.2'
+# pagenatation
+gem 'kaminari'
 # japanese install
 gem 'rails-i18n'
 
