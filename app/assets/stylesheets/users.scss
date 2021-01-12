@@ -253,22 +253,22 @@ body {
   }
 }
 
-// .pagination {
-//   text-align: right;
-//   margin-top: 24px;
-// }
+.pagination__center {
+  text-align: center;
+  margin-top: 24px;
+}
 
 .pagination{
   li {
     a {          
       border: 1px solid #e2e2e2;
       color: $color-text-base;  
-      border-radius: 999px; 
-      margin-right: 5px;
+     
+    
       transition: all 0.3s ease 0s;
 
       &:first-child {
-        border-radius: 15px; 
+       
       }
       &:hover {
         color: #fff;
@@ -289,12 +289,15 @@ body {
       }
     }
   }
+
+  .disabled {
+    @include mq('tab') {
+      a {
+        display: none;
+      }
+    }
+  }
 }
-
-// .section {
-//   background: #c1984d11;
-// }
-
 
 th,td {
   &:nth-child(4) {

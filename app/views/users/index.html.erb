@@ -8,9 +8,9 @@
       <div class="button posts_button">
         <%= link_to "Sign up now!", signup_path %>
       </div>
-      <div class="pagination">
-        <%= paginate @users,window: 2 %>
-      </div><!-- ./pagination -->
+      <div class="pagination__center">
+        <%= paginate @users,window: 2%>
+      </div><!-- ./paginations -->
     </div>
     <table class="post__table">
       <tr class="post__thead__pc">
@@ -23,9 +23,9 @@
       </tr>
       <%= render @users %>
     </table>
-    <div class="pagination">
-       <%= paginate @users,window: 2 %>
-    </div><!-- ./pagination -->
+    <div class="pagination__center">
+       <%= paginate @users,window: 2%>
+    </div><!-- ./paginations -->
     
 
  

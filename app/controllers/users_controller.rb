@@ -1,9 +1,10 @@
 class UsersController < ApplicationController
   before_action :logged_in_user
   before_action :correct_user,   only: [:edit, :update]
+  before_action :admin_user,     only: :destroy
 
   def index
-     @users = User.all.page(params[:page])
+     @users = User.page(params[:page]).per(10)
   end
 
   def show
@@ -38,6 +39,12 @@ class UsersController < ApplicationController
       render 'edit'
     end
   end
+
+  def destroy
+    User.find(params[:id]).destroy
+    flash[:success] = "ユーザーを削除しました"
+    redirect_to users_url
+  end
   
   private
 
@@ -56,5 +63,9 @@ class UsersController < ApplicationController
     def correct_user
       @user = User.find(params[:id])
       redirect_to(root_url) unless current_user?(@user)
+    end
+
+    def admin_user
+      redirect_to(root_url) unless current_user.admin?
     end
   end
