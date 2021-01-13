@@ -1,0 +1,38 @@
+<% provide(:title, 'パスワードの再設定') %>
+<section id="" class="login section">
+    <div class="loggin__inner inner">
+        <h1 class="header__logo"><%= image_tag "login.png", :alt => '高知大学森林科学領域ホームページ' %></h1><!-- /.header__logo -->
+        <h2 class="section-title">パスワード再設定</h2><!-- /.section-title -->
+        <div class="contact__item login__item">
+            <div id="formWrapper">
+            <%= form_with(model: @user, url: password_reset_path(params[:id]), local: true) do |f| %>
+                <% flash.each do |message_type, message| %>
+                <%= content_tag(:div, message, class: "alert alert-#{message_type}") %>
+                <% end %>
+            <dl class="contact__controls">
+            <%= hidden_field_tag :email, :value => "@user.email"  %>
+            <div class="contact__control contact__control__password">
+                    <dt>
+                    <%= f.label :password, "パスワード" , class:"contact__label" %>
+                    </dt>
+                    <dd>
+                    <%= f.password_field :password, class:"form-input" %>
+                    </dd>
+                </div><!-- /.contact__control -->
+                <div class="contact__control contact__control__password">
+                    <dt>
+                    <%= f.label :password_confirmation, "パスワード(再確認)", class:"contact__label" %>
+                    </dt>
+                    <dd>
+                    <%= f.password_field :password_confirmation, class:"form-input" %>
+                    </dd>
+                </div><!-- /.contact__control -->
+            </dl><!-- /.contact__controls -->
+            <div class="contact__submit">
+                <%= f.submit "送信", class: "button-arrow-right" %>
+            </div><!-- /.contact__submit -->
+            <% end %>
+        </div><!-- /.contact__item -->
+    </div><!-- /.contact__inner -->
+</section><!-- /.contact -->
+

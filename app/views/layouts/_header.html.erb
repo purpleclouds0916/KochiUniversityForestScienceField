@@ -1,4 +1,4 @@
-<% unless controller.action_name == "new" && controller.controller_name == "sessions"%>
+<% unless controller.action_name == "new" || controller.action_name == "create" && controller.controller_name == "sessions" || controller.controller_name == "password_resets"%>
 <header class="header">
 	<div class="inner header__inner">
 		<h1 class="header__logo"><%= image_tag "logo.png", :alt => '高知大学森林科学領域ホームページ' %></h1><!-- /.header__logo -->
