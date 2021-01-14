@@ -1,0 +1,10 @@
+<h2>パスワードのリセット</h2>
+<p><%= @user.name %>さん <%= @greeting %>。</p>
+<p><%= @user.name %>さんは、高知大学森林科学領域の管理者に追加されました</p>
+
+<p>下のリンクをクリックしてパスワードを設定してください。</p>
+
+<%= link_to "パスワードをリセットする", edit_password_reset_url(@user.reset_token,
+                                                      email: @user.email) %>
+
+<p>このメールは自動メールです。</p>

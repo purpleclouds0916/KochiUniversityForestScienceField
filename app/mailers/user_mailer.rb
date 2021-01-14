@@ -11,4 +11,10 @@ class UserMailer < ApplicationMailer
     @user = user
     mail to: user.email, subject: "パスワードのリセット | 高知大学森林科学領域"
   end
+
+  def create_user(user)
+    @greeting = "こんにちは"
+    @user = user
+    mail to: user.email, subject: "管理者の作成 | 高知大学森林科学領域"
+  end
 end
