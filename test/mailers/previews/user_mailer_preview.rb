@@ -8,4 +8,11 @@ class UserMailerPreview < ActionMailer::Preview
     user.create_reset_digest
     UserMailer.password_reset(user)
   end
+
+  def create_user
+    user = User.second
+    user.reset_token = User.new_token
+    user.create_reset_digest
+    UserMailer.create_user(user)
+  end
 end

@@ -18,7 +18,9 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      flash[:success] = "新しい管理者を作成しました。"
+      @user.create_reset_digest
+      @user.send_password_reset_email_create
+      flash[:success] = "新しい管理者を作成しました。新しい管理者にメールが送信されました。"
       redirect_to users_path
     else
       render 'new'
