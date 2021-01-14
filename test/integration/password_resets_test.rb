@@ -71,6 +71,6 @@ class PasswordResetsTest < ActionDispatch::IntegrationTest
                             password_confirmation: "foobar" } }
     assert_response :redirect
     follow_redirect!
-    assert_match "パスワードの有効期限がきれました", response.body
+    assert_match "パスワード設定の有効期限がきれました", response.body
   end
 end
