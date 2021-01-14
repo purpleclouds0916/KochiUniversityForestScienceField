@@ -11,6 +11,7 @@ class UserMailerPreview < ActionMailer::Preview
 
   def create_user
     user = User.second
+    # @text = "あなたは高知大学の管理者に追加されました"
     user.reset_token = User.new_token
     user.create_reset_digest
     UserMailer.create_user(user)
