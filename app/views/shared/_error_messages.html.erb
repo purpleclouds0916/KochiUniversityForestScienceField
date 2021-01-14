@@ -3,9 +3,9 @@
     <div class="alert alert-danger">
       <%= t('.errors count', errors_count: @user.errors.count) %>
     </div>
-    <ul>
+    <ul class="list-errors">
     <% @user.errors.full_messages.each do |msg| %>
-      <li><%= msg %></li>
+      <li class="list-error"><%= msg %></li>
     <% end %>
     </ul>
   </div>

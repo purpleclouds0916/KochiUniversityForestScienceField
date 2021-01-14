@@ -312,9 +312,17 @@ th,td {
   border:1px solid #D4440D;
 }
 
+#error_explanation {
+  margin-bottom: 24px;
 
+  @include mq('tab') {
+    margin-bottom: 12px;
+  }
+}
 
-
+.list-errors {
+  list-style-type: disc
+}
 
 
 

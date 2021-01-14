@@ -5,12 +5,13 @@
         <h2 class="section-title">パスワード再設定</h2><!-- /.section-title -->
         <div class="contact__item login__item">
             <div id="formWrapper">
-            <%= form_with(model: @user, url: password_reset_path(params[:id]), local: true) do |f| %>
-                <% flash.each do |message_type, message| %>
-                <%= content_tag(:div, message, class: "alert alert-#{message_type}") %>
-                <% end %>
+            <%= form_with(model: @user, url: password_reset_path(params[:id]),
+                method: :patch, local: true) do |f| %>
+            <%= render 'shared/error_messages' %>
             <dl class="contact__controls">
-            <%= hidden_field_tag :email, :value => "@user.email"  %>
+            
+<%= hidden_field_tag :email, @user.email %>
+
             <div class="contact__control contact__control__password">
                     <dt>
                     <%= f.label :password, "パスワード" , class:"contact__label" %>
