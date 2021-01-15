@@ -16,4 +16,10 @@ class UserMailerPreview < ActionMailer::Preview
     user.create_reset_digest
     UserMailer.create_user(user)
   end
+
+  def edit_user
+    user = User.second
+    user.create_reset_digest
+    UserMailer.edit_user(user)
+  end
 end

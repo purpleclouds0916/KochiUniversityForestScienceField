@@ -34,7 +34,16 @@ class UsersController < ApplicationController
   def update
     @user = User.find(params[:id])
     if @user.update(user_params)
-      flash[:success] = "プロフィールを更新しました"
+      if @user.saved_change_to_name? || @user.saved_change_to_password_digest?
+        @user.send_user_edit
+        flash[:success] = "プロフィールを更新しました"
+      elsif @user.saved_change_to_email && current_user?(@user)
+        UserMailer.account_activation(@user).deliver_now
+        flash[:info] = "Please check your email to activate your account."
+      elsif @user.saved_change_to_email && current_user.admin?
+        @user.send_user_edit
+        flash[:success] = "プロフィールを更新しました"
+      end      
       redirect_to @user
     else
       render 'edit'
