@@ -32,7 +32,7 @@ class UsersEditTest < ActionDispatch::IntegrationTest
                                               password:              "",
                                               password_confirmation: "" } }
     assert_not flash.empty?
-    assert_redirected_to @non_admin
+    assert_redirected_to users_url
     @non_admin.reload
     assert_equal name,  @non_admin.name
     assert_equal email, @non_admin.email
@@ -49,7 +49,7 @@ class UsersEditTest < ActionDispatch::IntegrationTest
                                               password:              "",
                                               password_confirmation: "" } }
     assert_not flash.empty?
-    assert_redirected_to @admin
+    assert_redirected_to users_url
     @admin.reload
     assert_equal name,  @admin.name
     assert_equal email, @admin.email
@@ -66,7 +66,7 @@ class UsersEditTest < ActionDispatch::IntegrationTest
                                               password:              "",
                                               password_confirmation: "" } }
     assert_not flash.empty?
-    assert_redirected_to @user
+    assert_redirected_to users_url
     @user.reload
     assert_equal name,  @user.name
     assert_equal email, @user.email

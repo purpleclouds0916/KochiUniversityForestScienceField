@@ -19,6 +19,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       @user.create_reset_digest
+      # ユーザー作成時専用のパスワードリセットメールの送信
       @user.send_password_reset_email_create
       flash[:success] = "新しい管理者を作成しました。新しい管理者にメールが送信されました。"
       redirect_to users_path
@@ -34,17 +35,20 @@ class UsersController < ApplicationController
   def update
     @user = User.find(params[:id])
     if @user.update(user_params)
+      #名前またはパスワードが変更された時
       if @user.saved_change_to_name? || @user.saved_change_to_password_digest?
         @user.send_user_edit
-        flash[:success] = "プロフィールを更新しました"
+        flash[:success] = "プロフィールを更新しました!"
+      #自分自身でメールアドレスが変更された時
       elsif @user.saved_change_to_email && current_user?(@user)
-        UserMailer.account_activation(@user).deliver_now
+        # UserMailer.account_activation(@user).deliver_now
         flash[:info] = "Please check your email to activate your account."
+      #管理者により他のユーザーのメールアドレスが変更された時  
       elsif @user.saved_change_to_email && current_user.admin?
         @user.send_user_edit
         flash[:success] = "プロフィールを更新しました"
       end      
-      redirect_to @user
+      redirect_to users_url
     else
       render 'edit'
     end

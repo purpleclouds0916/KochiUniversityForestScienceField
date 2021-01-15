@@ -40,14 +40,17 @@ class User < ApplicationRecord
         update_columns(reset_digest:  User.digest(reset_token), reset_sent_at: Time.zone.now)
     end
 
+    # パスワードリセットメール
     def send_password_reset_email
         UserMailer.password_reset(self).deliver_now
     end
 
+    # ユーザー作成時、パスワードリセット専用メール
     def send_password_reset_email_create
         UserMailer.create_user(self).deliver_now
     end
 
+    #ユーザー情報更新時のメール
     def send_user_edit
         UserMailer.edit_user(self).deliver_now
     end
