@@ -4,11 +4,12 @@
 		<h1 class="header__logo"><%= image_tag "logo.png", :alt => '高知大学森林科学領域ホームページ' %></h1><!-- /.header__logo -->
 		<nav class="header__nav">
 			<ul>
-				<% if controller.controller_name == "static_pages" || controller.controller_name == "alumni_messages" %>
+				<% if controller.controller_name == "static_pages" || controller.controller_name == "alumni_messages" || controller.controller_name == "inquiry" %>
 				<li><%= link_to "高知大学トップ", "https://nyusi.kochi-u.jp/" %></li>
 				<li><%= link_to "学部トップ", "http://www.kochi-u.ac.jp/agrimar/" %></li>
 				<li><%= link_to "卒業生の声", "#" %></li>
 				<li><%= link_to "入試情報", "https://nyusi.kochi-u.jp/" %></li>
+				<li><%= link_to "お問い合わせ", inquiry_path %></li>
 				<% else %>
 				<li><%= link_to "プレビュー", "https://nyusi.kochi-u.jp/" %></li>
 				<li><%= link_to "投稿する", "#" %></li>
@@ -30,11 +31,19 @@
 </button><!-- /drawer-icon -->
 <div class="drawer-content-cover for-drawer">
 	<ul>
-		<li><a href="http://www.kochi-u.ac.jp/">高知大学トップ
-		</a></li>
-		<li><a href="http://www.kochi-u.ac.jp/agrimar/">農林海洋科学部トップ</a></li>
-		<li><a href="http://www.kochi-u.ac.jp/agrimar/japan/gakubu/nourin.html">農林資源環境科学科トップ</a></li>
-		<li><a href="https://nyusi.kochi-u.jp/">入試情報</a></li>
+		<% if controller.controller_name == "static_pages" || controller.controller_name == "alumni_messages" %>
+		<li><%= link_to "高知大学トップ", "https://nyusi.kochi-u.jp/" %></li>
+		<li><%= link_to "学部トップ", "http://www.kochi-u.ac.jp/agrimar/" %></li>
+		<li><%= link_to "卒業生の声", "#" %></li>
+		<li><%= link_to "入試情報", "https://nyusi.kochi-u.jp/" %></li>
+		<li><%= link_to "入試情報", inquiry_path %></li>
+		<% else %>
+		<li><%= link_to "プレビュー", "https://nyusi.kochi-u.jp/" %></li>
+		<li><%= link_to "投稿する", "#" %></li>
+		<li><%= link_to "投稿一覧", "#" %></li>
+		<li><%= link_to "管理者設定", users_path %></li>
+		<li><%= button_to "ログアウト", logout_path, class:"logout_button",method: :delete %></li>
+		<% end %>
 	</ul>
 </div><!-- /drawer-content -->
 <%end%>

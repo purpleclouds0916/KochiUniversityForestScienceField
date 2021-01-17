@@ -1,0 +1,64 @@
+
+<section id="" class="contact section wow fadeInUp">
+	<div class="contact__inner inner">
+		<h2 class="section-title">お問い合わせ</h2><!-- /.section-title -->
+		<div class="contact__item">
+        <%= form_for @inquiry, :url => inquiry_thanks_path do |f| %>
+            <div id="formWrapper">
+            <% if @inquiry.errors.any? %>
+                <div class="alert alert-danger" role="alert">
+                <strong>入力内容にエラーがあります</strong>
+                <ul>
+                <% @inquiry.errors.full_messages.each do |msg| %>
+                <li class="list-error"><%= msg %></li>
+                <% end %>
+                </ul>
+                </div>
+                <% end %>
+				<div class="contact__item__lead"><p>高知大学・森林領域に関するお問い合わせ、ご質問、ご意見など、お気軽に送りください</p></div>
+					<dl class="contact__controls">
+						<div class="contact__control">
+							<dt>
+						        <%= f.label :name, "名前" ,class:"contact__label contact__label--required" %>
+							</dt>
+							<dd>
+								<%= f.text_field :name, class:"form-input"%>
+							</dd>
+						</div><!-- /.contact__control -->
+						<div class="contact__control">
+							<dt>
+							    <%= f.label :email, "メールアドレス" ,class:"contact__label contact__label--required" %>
+							</dt>
+							<dd>
+								<%= f.email_field :email, class:"form-input" %>
+							</dd>
+						</div><!-- /.contact__control -->
+						<div class="contact__control">
+							<dt>
+								<label class="contact__label" for="your-kind">お問い合わせ種別</label>
+							</dt>
+							<dd>
+                            <%= f.select :kinds, ['森林領域について', '研究室について', '授業について', '入試情報について', 'その他'],
+                                                               {include_blank: '未入力'}, class: 'form-select' %>
+							</dd>
+						</div><!-- /.contact__control -->
+						<div class="contact__control">
+							<dt>
+								<label class="contact__label contact__label--required" for="your-message" required>お問い合わせ内容</label>
+							</dt>
+							<dd>
+                            <%= f.text_area :message, class: 'form-textarea' %>
+							</dd>
+						</div><!-- /.contact__control -->
+					</dl><!-- /.contact__controls -->
+					<div class="contact__submit">
+                    <%= f.submit "送信", class: "button-arrow-right" %>
+					</div><!-- /.contact__submit -->
+				</form>
+			</div><!-- /#formWrapper -->
+            <% end %>
+		</div><!-- /.contact__item -->
+	</div><!-- /.contact__inner -->
+</section><!-- /.contact -->
+  
+ 

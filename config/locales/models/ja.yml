@@ -9,6 +9,9 @@ ja:
         email: メールアドレス
         password: パスワード
         password_confirmation: パスワード（確認用）  
+      inquiry:
+        email: メールアドレス
+        name: 名前
   views:
     pagination:
       first: <i class="fas fa-angle-double-left"></i>
