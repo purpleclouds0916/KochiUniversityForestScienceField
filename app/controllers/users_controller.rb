@@ -35,18 +35,19 @@ class UsersController < ApplicationController
   def update
     @user = User.find(params[:id])
     if @user.update(user_params)
-      #名前またはパスワードが変更された時
-      if @user.saved_change_to_name? || @user.saved_change_to_password_digest?
-        @user.send_user_edit
-        flash[:success] = "プロフィールを更新しました!"
+       #名前またはパスワードが変更された時
+      if @user.saved_change_to_new_email
+      flash[:success] = "プロフィールを更新しました"
+      end  
       #自分自身でメールアドレスが変更された時
-      elsif @user.saved_change_to_email && current_user?(@user)
+      if @user.saved_change_to_new_email && current_user?(@user)
         # UserMailer.account_activation(@user).deliver_now
-        flash[:info] = "Please check your email to activate your account."
+        @user.create_reset_digest
+        @user.send_email_activation_email
+        flash[:success] = "確認メールを送信しました。承認されるまで、新しいメールアドレスは有効かされません。"
       #管理者により他のユーザーのメールアドレスが変更された時  
       elsif @user.saved_change_to_email && current_user.admin?
         @user.send_user_edit
-        flash[:success] = "プロフィールを更新しました"
       end      
       redirect_to users_url
     else
@@ -64,7 +65,7 @@ class UsersController < ApplicationController
 
     def user_params
       params.require(:user).permit(:name, :email, :password,
-                                   :password_confirmation)
+                                   :password_confirmation,:new_email)
     end
 
     def logged_in_user

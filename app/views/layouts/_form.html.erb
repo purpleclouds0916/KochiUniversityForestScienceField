@@ -14,7 +14,14 @@
         <%= f.label :email, "メールアドレス" ,class:"contact__label" %>
         </dt>
         <dd>
+        <% if controller.action_name == "edit" && controller.controller_name == "users" %>
+        <%= f.email_field :new_email, class:"form-input", placeholder: @user.email %>
+            <% if !@user.new_email.nil? %>
+            <%= "#{@user.new_email}は有効かされていません。"%>
+            <% end %>
+        <% else %>
         <%= f.email_field :email, class:"form-input" %>
+        <% end %>
         </dd>
     </div><!-- /.contact__control -->
     <div class="contact__control contact__control__password">
