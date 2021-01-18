@@ -2,7 +2,11 @@
 <td class="table-titles" data-label="">        
         <%= gravatar_for user, size: 50 %>
     <div>
+        <% if current_user.admin? && !current_user?(user) %>
         <%= link_to user.name, edit_user_path(user) %>
+        <% else %>
+        <%= user.name %>
+        <% end %>
     <nav class="table-nav">
         <ul>
             <% if current_user.admin? || current_user?(user)%>
