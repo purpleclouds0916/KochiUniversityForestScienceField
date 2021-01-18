@@ -62,7 +62,7 @@ end
 
 group :production do
   #本番（production）環境にpg gemをインストールしてRailsがPostgreSQLと通信できるようにする
-  gem 'pg', '1.1.4'
+  gem 'pg'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
