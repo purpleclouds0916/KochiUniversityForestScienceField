@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   before_action :logged_in_user
   before_action :correct_user,   only: [:edit, :update]
-  before_action :admin_user,     only: :destroy
+  before_action :admin_user,     only: [:destroy, :new, :create]
 
   def index
      @users = User.page(params[:page]).per(10)
@@ -36,8 +36,8 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     if @user.update(user_params)
        #名前またはパスワードが変更された時
-      if @user.saved_change_to_new_email
-      flash[:success] = "プロフィールを更新しました"
+      if @user.saved_change_to_name || @user.saved_change_to_password_digest
+      flash[:success] = "一番上の分岐　プロフィールを更新しました"
       end  
       #自分自身でメールアドレスが変更された時
       if @user.saved_change_to_new_email && current_user?(@user)
@@ -46,7 +46,7 @@ class UsersController < ApplicationController
         @user.send_email_activation_email
         flash[:success] = "確認メールを送信しました。承認されるまで、新しいメールアドレスは有効かされません。"
       #管理者により他のユーザーのメールアドレスが変更された時  
-      elsif @user.saved_change_to_email && current_user.admin?
+      elsif @user.saved_change_to_new_email && current_user.admin?
         @user.send_user_edit
       end      
       redirect_to users_url
