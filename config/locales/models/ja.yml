@@ -12,6 +12,7 @@ ja:
       inquiry:
         email: メールアドレス
         name: 名前
+        message: お問い合わせ内容
   views:
     pagination:
       first: <i class="fas fa-angle-double-left"></i>
