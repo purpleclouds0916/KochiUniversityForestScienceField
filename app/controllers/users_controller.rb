@@ -34,6 +34,7 @@ class UsersController < ApplicationController
 
   def update
     @user = User.find(params[:id])
+    @user.update!(user_params)
     if @user.update(user_params)
        #名前またはパスワードが変更された時
       if @user.saved_change_to_name || @user.saved_change_to_password_digest
@@ -44,10 +45,11 @@ class UsersController < ApplicationController
         # UserMailer.account_activation(@user).deliver_now
         @user.create_reset_digest
         @user.send_email_activation_email
-        flash[:success] = "確認メールを送信しました。承認されるまで、新しいメールアドレスは有効かされません。"
+        flash[:success] = "2番目の分岐です。確認メールを送信しました。承認されるまで、新しいメールアドレスは有効かされません。"
       #管理者により他のユーザーのメールアドレスが変更された時  
       elsif @user.saved_change_to_new_email && current_user.admin?
         @user.send_user_edit
+        flash[:success] = "最後の分岐です"
       end      
       redirect_to users_url
     else
