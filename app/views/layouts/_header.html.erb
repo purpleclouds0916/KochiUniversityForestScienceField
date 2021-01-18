@@ -5,21 +5,7 @@
 	<div class="inner header__inner">
 		<h1 class="header__logo"><%= image_tag "logo.png", :alt => '高知大学森林科学領域ホームページ' %></h1><!-- /.header__logo -->
 		<nav class="header__nav">
-			<ul>
-				<% if controller.controller_name == "static_pages" || controller.controller_name == "alumni_messages" || controller.controller_name == "inquiry" %>
-				<li><%= link_to "高知大学トップ", "https://nyusi.kochi-u.jp/" %></li>
-				<li><%= link_to "学部トップ", "http://www.kochi-u.ac.jp/agrimar/" %></li>
-				<li><%= link_to "卒業生の声", "#" %></li>
-				<li><%= link_to "入試情報", "https://nyusi.kochi-u.jp/" %></li>
-				<li><%= link_to "お問い合わせ", inquiry_path %></li>
-				<% else %>
-				<li><%= link_to "プレビュー", "https://nyusi.kochi-u.jp/" %></li>
-				<li><%= link_to "投稿する", "#" %></li>
-				<li><%= link_to "投稿一覧", "#" %></li>
-				<li><%= link_to "管理者設定", users_path %></li>
-				<li><%= button_to "ログアウト", logout_path, class:"logout_button",method: :delete %></li>
-				<% end %>
-			</ul>
+			<%= render 'layouts/nav' %>
 		</nav><!-- /.header__nav -->
 	</div><!-- /.header__inner -->
 </header><!-- /.header -->
@@ -32,20 +18,6 @@
 	<span class="drawer-text">メニュー</span>
 </button><!-- /drawer-icon -->
 <div class="drawer-content-cover for-drawer">
-	<ul>
-		<% if controller.controller_name == "static_pages" || controller.controller_name == "alumni_messages" %>
-		<li><%= link_to "高知大学トップ", "https://nyusi.kochi-u.jp/" %></li>
-		<li><%= link_to "学部トップ", "http://www.kochi-u.ac.jp/agrimar/" %></li>
-		<li><%= link_to "卒業生の声", "#" %></li>
-		<li><%= link_to "入試情報", "https://nyusi.kochi-u.jp/" %></li>
-		<li><%= link_to "入試情報", inquiry_path %></li>
-		<% else %>
-		<li><%= link_to "プレビュー", "https://nyusi.kochi-u.jp/" %></li>
-		<li><%= link_to "投稿する", "#" %></li>
-		<li><%= link_to "投稿一覧", "#" %></li>
-		<li><%= link_to "管理者設定", users_path %></li>
-		<li><%= button_to "ログアウト", logout_path, class:"logout_button",method: :delete %></li>
-		<% end %>
-	</ul>
+	<%= render 'layouts/nav' %>
 </div><!-- /drawer-content -->
 <%end%>
