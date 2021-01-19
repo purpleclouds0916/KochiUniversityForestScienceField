@@ -115,7 +115,7 @@ Rails.application.configure do
   config.force_ssl = true
 
   #
-  config.action_mailer.default_url_options = {  :host => 'https://ltqphygm.herokuapp.com/' }
+  config.action_mailer.default_url_options = {  :host => 'https://git.heroku.com/ltqphygm.git' }
 
   config.action_mailer.delivery_method = :smtp
 
