@@ -31,7 +31,6 @@ ActiveRecord::Schema.define(version: 2021_01_17_054818) do
     t.boolean "admin", default: false
     t.string "reset_digest"
     t.datetime "reset_sent_at"
-    t.string "new_email"
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 

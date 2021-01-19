@@ -8,6 +8,6 @@ class Inquiry < ApplicationRecord
     validates :message, presence: true         
     
     def receive_contact
-        InquiryMailer.received_email(@inquiry).deliver
+        InquiryMailer.received_email(self).deliver_now
     end    
 end
