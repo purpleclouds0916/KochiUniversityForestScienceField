@@ -61,7 +61,18 @@ Rails.application.configure do
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
 
   config.action_mailer.raise_delivery_errors = false
+  
+  config.action_mailer.default_url_options = {  host: 'localhost', port: 3000 }
 
-  host = 'localhost:3000'                     # ローカル環境
-  config.action_mailer.default_url_options = { host: host, protocol: 'http' }
+  config.action_mailer.delivery_method = :smtp
+
+  #Action Mailerのためにgmailの登録
+  config.action_mailer.smtp_settings = {
+    address:"smtp.gmail.com",
+    domain: 'gmail.com',
+    port:587,
+    user_name:            ENV['SEND_MAIL'],
+    password:             ENV['SEND_MAIL_PASSWORD'],
+    authentication: :login
+  }
 end
