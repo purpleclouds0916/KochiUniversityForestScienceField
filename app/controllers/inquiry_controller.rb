@@ -11,7 +11,7 @@ class InquiryController < ApplicationController
     if @inquiry.valid?
       # OK。確認画面を表示
       render :action => 'thanks'
-      InquiryMailer.received_email(@inquiry).deliver
+      @inquiry.receive_contact
     else
       # NG。入力画面を再表示
       render :action => 'index'
