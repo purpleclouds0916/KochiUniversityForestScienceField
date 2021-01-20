@@ -113,11 +113,12 @@ Rails.application.configure do
   # Force all access to the app over SSL, use Strict-Transport-Security,
   # and use secure cookies.
   config.force_ssl = true
-  config.action_mailer.raise_delivery_errors = true
+  
+  # config.action_mailer.raise_delivery_errors = true
   #
-  config.action_mailer.default_url_options = {  :host => 'https://git.heroku.com/ltqphygm.git' }
+  # config.action_mailer.default_url_options = {  :host => 'https://git.heroku.com/ltqphygm.git' }
 
-  config.action_mailer.delivery_method = :smtp
+  # config.action_mailer.delivery_method = :smtp
 
     #Action Mailerのためにgmailの登録
     # config.action_mailer.smtp_settings = {
@@ -129,12 +130,16 @@ Rails.application.configure do
     #   authentication: :login
     # }
     #
-    config.action_mailer.smtp_settings = {
-      address:"smtp.gmail.com",
-      domain: 'gmail.com',
-      port:587,
-      user_name: ENV['SEND_MAIL'],
-      password: ENV['SEND_MAIL_PASSWORD'],
-      authentication: :login
+    config.action_mailer.raise_delivery_errors = true
+    config.action_mailer.delivery_method = :smtp
+    host = 'https://ltqphygm.herokuapp.com/'
+    config.action_mailer.default_url_options = { host: host }
+    ActionMailer::Base.smtp_settings = {
+      :port           => ENV['MAILGUN_SMTP_PORT'],
+      :address        => ENV['MAILGUN_SMTP_SERVER'],
+      :user_name      => ENV['MAILGUN_SMTP_LOGIN'],
+      :password       => ENV['MAILGUN_SMTP_PASSWORD'],
+      :domain         => host,
+      :authentication => :plain,
     }
 end
