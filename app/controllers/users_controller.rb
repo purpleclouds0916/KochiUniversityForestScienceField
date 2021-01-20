@@ -38,10 +38,10 @@ class UsersController < ApplicationController
       @user.send_user_edit
       flash[:success] = "プロフィールを更新しました!"
       #自分自身でメールアドレスを変更した時
-      if @user.saved_change_to_email && current_user?(@user)
-      # UserMailer.account_activation(@user).deliver_now
-      flash[:info] = "メールを確認して、メールアドレスを有効化してください。"
-      end      
+      # if @user.saved_change_to_email && current_user?(@user)
+      #  UserMailer.account_activation(@user).deliver_now
+      # flash[:info] = "メールを確認して、メールアドレスを有効化してください。"
+      # end
       redirect_to users_url
     else
       render 'edit'
