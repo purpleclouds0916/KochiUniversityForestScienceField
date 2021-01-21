@@ -106,15 +106,9 @@ body {
   }
 }
 
-
-
-
 // -----
 // 投稿&管理者リスト
 // -----
-
-
-
 
 .button {
   text-align: right;
@@ -284,6 +278,12 @@ body {
         display: none;
       }
     }
+  }
+}
+
+th,td {
+  &:nth-child(4) {
+      display: none;
   }
 }
 

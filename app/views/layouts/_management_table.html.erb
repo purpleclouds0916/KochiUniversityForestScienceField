@@ -1,0 +1,33 @@
+<section id="" class="login section">
+  <div class="post__inner inner">
+  
+    <% flash.each do |message_type, message| %>
+      <%= content_tag(:div, message, class: "alert alert-#{message_type}") %>
+    <% end %>
+    
+    <div class="head">
+      <h1 class="section-title"><%= "#{@user.name}の" unless @user.nil?%>投稿一覧</h1><!-- /.section-title -->
+      <div class="button posts_button">
+        <%= link_to "Sign up now!", signup_path %>
+      </div>
+      <div class="pagination__center">
+         <%= paginate object,window: 2%>
+      </div><!-- ./paginations -->
+    </div>
+    <table class="post__table">
+      <tr class="post__thead__pc">
+        <th>投稿者名</th>
+        <th>作成者</th>
+        <th>作成日</th>
+        <th>更新日</th>
+      </tr>
+      <tr class="post__thead__tab hidden-pc">
+        <th>投稿者名</td>
+      </tr>
+     <%= render object %>
+    </table>
+    <div class="pagination__center" >
+       <%= paginate object,window: 2%>
+    </div><!-- ./paginations -->
+  </div><!-- /.contact__inner -->
+</section><!-- /.contact -->

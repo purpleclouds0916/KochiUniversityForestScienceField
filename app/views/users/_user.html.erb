@@ -3,7 +3,7 @@
         <%= gravatar_for user, size: 50 %>
     <div>
         <% unless !current_user.admin? && !current_user?(user) %>
-        <%= link_to user.name, edit_user_path(user) %>
+        <%= link_to user.name, user_path(user) %>
         <% else %>
         <%= user.name %>
         <% end %>

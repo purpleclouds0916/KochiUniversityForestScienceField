@@ -4,6 +4,20 @@
 
 @import "users";
 
+// -----
+// 投稿&管理者リスト
+// -----
+
+th,td {
+	&:nth-child(4) {
+		display: block;
+	}
+  }
+
+// -----
+// 記事投稿
+// -----
+
 .post__inner{
 }
 
