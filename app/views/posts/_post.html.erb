@@ -15,6 +15,6 @@
     </div>
 </td>
 <td data-label="作成者"><%= link_to post.user.name, post.user %></td>
-<td data-label="作成日"><%= time_ago_in_words(post.created_at) %></td>
+<td data-label="作成日"><%= post.created_at.strftime('%Y/%m/%d') %></td>
 <td data-label="更新日"></td>
 </tr>
