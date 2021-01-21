@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
-  get '/posts', to: 'posts#index'
-  get 'posts/new', to: 'posts#new'
-  post 'posts/create', to: 'posts#create'
+  # get '/posts', to: 'posts#index'
+  # get 'posts/new', to: 'posts#new'
+  # post 'posts/create', to: 'posts#create'
   root 'static_pages#home'
   get  '/alumni',    to: 'alumni_messages#alumni'
   get  '/signup',  to: 'users#new'
@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   post  'inquiry/thanks'  => 'inquiry#thanks'    
   resources :users
   resources :password_resets, only: [:new, :create, :edit, :update]
+  resources :posts
   # post '/password_resets', to: 'password_resets#create'
 
  

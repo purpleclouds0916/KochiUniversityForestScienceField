@@ -1,3 +1,302 @@
-// Place all the styles related to the Posts controller here.
+// Place all the styles related to the posts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+@import "users";
+
+.post__inner{
+}
+
+.post__item {
+	margin: 80px auto 0;
+	padding: 60px;
+	background: #fff;
+	width: 800px;
+	max-width: 100%;
+
+	@include mq('sp') {
+		padding: 20px;
+		margin-top: 26px;
+	}
+}
+
+.post__item__lead {
+	margin-bottom: 60px;
+
+	@include mq('sp') {
+		margin-bottom: 24px;
+	}
+}
+
+.post__controls {
+	margin: 0;
+}
+
+.post__tag {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    height: 150px;
+
+        //radio button
+        @keyframes radio-select {
+            0% {
+              transform: scale(0,0);
+            }
+            65% {
+              transform: scale(1.1,1.1);
+            }
+            100% {
+              transform: scale(1,1);
+            }
+          }
+          
+          $almost-white: #F3F3F3;
+          $almost-black: $color-main;
+          $border: #CCCCCC;
+          $left: 20px;
+          $size: 20px;
+          
+          @mixin centerer {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+          }
+          
+        
+          
+          .container {
+            @include centerer;
+          }
+          
+          label {
+            margin: 5px;
+            display: block;
+            position: relative;
+            padding-left: $left;
+            cursor: pointer;
+          }
+          
+          input {
+            height: 1px;
+            width: 1px;
+            opacity: 0;
+          }
+          
+          .outside {
+            display: inline-block;
+            position: absolute;
+            left: 0;
+            top: 50%;
+            margin-top: -($size / 2);
+            width: $size;
+            height: $size;
+            border: 2px solid $border;
+            border-radius: 50%;
+            box-sizing: border-box;
+            background: $almost-white;
+          }
+          
+          .inside {
+            @include centerer;
+            display: inline-block;
+            border-radius: 50%;
+            width: ($size - 10px);
+            height: ($size - 10px);
+            background: $almost-black;
+            left: 3px;
+            top: 3px;
+            transform: scale(0,0);
+            .no-transforms & {
+                left: auto;
+                top: auto;
+                width: 0;
+                height: 0;
+              }
+          }
+          
+          input {
+            &:checked {
+              + .outside .inside {
+                animation: radio-select 0.1s linear;
+                transform: scale(1,1);
+                .no-transforms & {
+                  width: ($size - 10px);
+                  height: ($size - 10px);
+                }
+              }
+            }
+          }
+}
+
+.post__control {
+	margin-bottom: 60px;
+    display: flex;
+    justify-content: center;
+
+	@include mq('sp') {
+		display: block;
+		margin-bottom: 24px;
+	}
+
+	&:last-child {
+		margin-bottom: 0;
+	}
+
+	dt {
+		width: 160px;
+		padding: 6px 0 0;
+        margin: 0;
+        font-weight: 700;
+
+		@include mq('sp') {
+			width: 100%;
+			padding-top: 0;
+		}
+	}
+
+	dd {
+		flex-grow: 1;
+		padding: 0;
+        margin: 0;
+
+		@include mq('sp') {
+			width: 100%;
+			margin-top: 8px;
+		}
+	}
+}
+
+
+
+.post__label {
+	font-size: 16px;
+	font-weight: 700;
+
+	@include mq('sp') {
+		font-size: 16px;
+		display: inline-block;
+	}
+}
+
+.post__label--required {
+	position: relative;
+
+	@include mq('sp') {
+		padding-right: 54px;
+	}
+
+	&::after {
+		content: "必須";
+		position: absolute;
+		background: $color-active;
+		border-radius: 4px;
+		text-align: center;
+		color: #fff;
+		font-size: 14px;
+		line-height: 1;
+		font-weight: 700;
+		padding: 4px 8px;
+		width: 44px;
+		display: block;
+		top: calc(100% + 8px);
+		left: 0;
+
+		@include mq('sp') {
+			top: 50%;
+			left: auto;
+			right: 0;
+			transform: translateY(-50%);
+		}
+	}
+}
+
+.post__required {
+	background: $color-active;
+	border-radius: 12px;
+	text-align: center;
+	color: #fff;
+	font-size: 14px;
+	font-weight: 700;
+	padding: 1px 8px;
+	width: 46px;
+	display: block;
+	margin-top: 6px;
+}
+
+.post__submit {
+	margin-top: 30px;
+	text-align: center;
+}
+
+.form-input {
+	width: 100%;
+	border: 1px solid #707070;
+	padding: 4px 16px;
+	-moz-appearance: none;
+	-webkit-appearance: none;
+	appearance: none;
+	background-color: transparent;
+	background-image: none;
+	border-radius: 0;
+	color: inherit;
+	font-family: inherit;
+	font-size: 14px;
+	box-shadow: none;
+	height: 38px;
+
+	@include mq('sp') {
+		padding-top: 4px;
+		padding-bottom: 4px;
+	}
+}
+
+.form-select {
+	-moz-appearance: none;
+	-webkit-appearance: none;
+	appearance: none;
+	background: transparent url(../img/select-arrow.png) no-repeat center right 12px / 17px 14px;
+	border-radius: 0;
+	color: inherit;
+	cursor: pointer;
+	font-family: inherit;
+	font-size: 14px;
+	padding: 3px 16px;
+	width: 100%;
+	border: 1px solid #707070;
+	height: 38px;
+
+	@include mq('sp') {
+		padding-top: 3px;
+		padding-bottom: 3px;
+		background-position: center right 10px;
+	}
+
+	&::-ms-expand {
+		display: none;
+	}
+}
+
+.form-textarea {
+	width: 100%;
+	height: 240px;
+	border: 1px solid #707070;
+	resize: none;
+	padding: 10px 16px;
+	line-height: (26 / 16);
+	-moz-appearance: none;
+	-webkit-appearance: none;
+	appearance: none;
+	background-color: transparent;
+	background-image: none;
+	border-radius: 0;
+	color: inherit;
+	font-family: inherit;
+	font-size: 14px;
+	vertical-align: bottom;
+
+	@include mq('sp') {
+		height: 180px;
+	}
+}
