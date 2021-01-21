@@ -11,11 +11,13 @@
 					<p>電話：（088）864-5114</p>
 				</div><!-- /.footer__info -->
 			</div><!-- /.footer__left -->
+			 <% if controller.controller_name == "static_pages" %>
 			<div class="footer__right">
 				<div class="footer__sns">
 					<%= render 'layouts/sns-share' %>
 				</div><!-- /.footer_sns -->
 			</div><!-- /.footer__right-->
+			<% end %>
 		</div><!-- /.footer__container -->
 		<div class="footer__copy">Copyright 2020 Kochi University</div><!-- /.footer__copy -->
 	</div><!-- /.footer__inner -->
