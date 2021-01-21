@@ -287,12 +287,6 @@ body {
   }
 }
 
-th,td {
-  &:nth-child(4) {
-      display: none;
-  }
-}
-
 .alert {
   margin:0 0 1em 0; padding:10px 20px;
   line-height:1.5; 

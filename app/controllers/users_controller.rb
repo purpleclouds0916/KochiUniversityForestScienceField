@@ -9,8 +9,9 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    @posts = @user.posts.page(params[:page]).per(10)
   end
-
+    
   def new
     @user = User.new
   end
