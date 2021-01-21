@@ -14,7 +14,6 @@ class UsersLoginTest < ActionDispatch::IntegrationTest
     follow_redirect!
     assert_template 'users/index'
     assert_select "div.contact__control", count: 0
-    assert_select "h1", "管理者設定"
     assert_select "a[href=?]", signup_path
     delete logout_path
     assert_not is_logged_in?
