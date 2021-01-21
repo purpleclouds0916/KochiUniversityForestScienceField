@@ -6,7 +6,7 @@
     <nav class="table-nav">
         <ul>
             <% if current_user.admin? || current_user?(post.user)%>
-            <li><%= link_to "編集", edit_user_path(post.user) %></li>
+            <li><%= link_to "編集", edit_post_path(post) %></li>
             <li><%= link_to "削除", post_path(post), method: :delete,
                                        data: { confirm: "本当に削除しますか？" } %></li>
             <% end %>
