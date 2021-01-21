@@ -1,5 +1,5 @@
 <%= form_with(model: @user, local: true) do |f| %>
-    <%= render 'shared/error_messages' %>
+  <%= render 'shared/error_messages', object: f.object %>
     <dl class="contact__controls">
     <div class="contact__control">
         <dt>
