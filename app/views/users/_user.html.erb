@@ -2,11 +2,7 @@
 <td class="table-titles" data-label="">        
         <%= gravatar_for user, size: 50 %>
     <div>
-        <% unless !current_user.admin? && !current_user?(user) %>
         <%= link_to user.name, user_path(user) %>
-        <% else %>
-        <%= user.name %>
-        <% end %>
     <nav class="table-nav">
         <ul>
             <% if current_user.admin? || current_user?(user)%>
@@ -20,6 +16,7 @@
     </nav>
     </div>
 </td>
-<td data-label="作成者">宇賀千夏</td>
-<td data-label="作成日">2020/12/27</td>
+<td data-label="メール"><%= user.email %></td>
+<td data-label="作成日"><%= user.created_at.strftime('%Y/%m/%d') %></td>
+<td data-label="投稿数"><%= user.posts.count %></td>
 </tr>
