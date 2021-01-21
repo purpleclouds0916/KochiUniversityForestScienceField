@@ -4,16 +4,21 @@
       <%= content_tag(:div, message, class: "alert alert-#{message_type}") %>
     <% end %>
     <div class="head">
-      <% if controller.controller_name == "users" && controller.action_name == "index"%>
+      <% if controller.controller_name == "users" && controller.action_name == "index" %>
       <h1 class="section-title">管理者一覧</h1><!-- /.section-title -->
       <% else %>
       <h1 class="section-title"><%= "#{@user.name}の" unless @user.nil?%>投稿一覧</h1><!-- /.section-title -->
       <% end %>
-      <% if current_user.admin?%>
       <div class="button posts_button">
-        <%= link_to "管理者を作成する", signup_path %>
+        <% if controller.controller_name == "users" && controller.action_name == "index" && current_user.admin? %>
+          <%= link_to "管理者を作成する", signup_path if current_user.admin?%>
+        <% end %>
+      <% if controller.controller_name == "users" && controller.action_name == "show" %>
+        <% if current_user.admin? || current_user? %>
+        <%= link_to "ユーザー情報を修正する", edit_user_path(@user) if current_user.admin?%>
+        <% end %>
+      <% end %>  
       </div>
-      <% end %>
       <div class="pagination__center">
          <%= paginate object,window: 2%>
       </div><!-- ./paginations -->
