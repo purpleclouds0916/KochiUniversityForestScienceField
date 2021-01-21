@@ -14,7 +14,7 @@
 					<p>電話：（088）864-5114</p>
 				</div><!-- /.footer__info -->
 			</div><!-- /.footer__left -->
-			 <% if controller.controller_name == "static_pages" %>
+			 <% if controller.controller_name == "static_pages" ||  controller.controller_name == "inquiry" %>
 			<div class="footer__right">
 				<div class="footer__sns">
 					<%= render 'layouts/sns-share' %>
