@@ -16,5 +16,5 @@
 </td>
 <td data-label="作成者"><%= link_to post.user.name, post.user %></td>
 <td data-label="作成日"><%= post.created_at.strftime('%Y/%m/%d') %></td>
-<td data-label="更新日"></td>
+<td data-label="更新日"><%= post.updated_at.strftime('%Y/%m/%d') %></td>
 </tr>
