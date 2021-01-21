@@ -1,4 +1,7 @@
-<% unless controller.action_name == "new" && controller.controller_name == "sessions"%>
+<% unless controller.controller_name == "password_resets" && controller.action_name == "new" \
+	   || controller.controller_name == "password_resets" && controller.action_name == "create" \
+	   || controller.controller_name == "sessions" && controller.action_name == "new" \
+	   || controller.controller_name == "sessions" && controller.action_name == "create" %>
 <footer>
 	<div class="footer__inner inner">
 		<div class="footer__container">
