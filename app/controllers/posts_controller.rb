@@ -13,6 +13,7 @@ class PostsController < ApplicationController
 
   def create
     @post = current_user.posts.build(post_params)
+    @post.images.attach(params[:post][:images])
     if @post.save
       flash[:success] = "post created!"
       redirect_to current_user
@@ -34,11 +35,11 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:content, :title)
+    params.require(:post).permit(:content, :title, :images)
   end
 
   def correct_user
-    @micropost = current_user.microposts.find_by(id: params[:id])
-    redirect_to root_url if @micropost.nil?
+    @post = current_user.posts.find_by(id: params[:id])
+    redirect_to root_url if @post.nil?
   end
 end

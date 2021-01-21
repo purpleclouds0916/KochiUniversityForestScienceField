@@ -41,12 +41,13 @@
               <dt><%= f.label :content, "コンテンツ" %></dt>
               <dd><%= f.text_area :content, class: "form-textarea" %></dd>
             </div>
+             <div class="post__control switchItems switch_img">
+              <dt>画像</dt>
+              <dd><%= f.file_field :images, multiple: true %></dd>
+            </div>
             <%
 =begin%>
- <div class="post__control switchItems switch_img">
-              <dt>画像</dt>
-              <dd><input class="form-input" required></dd>
-            </div>
+
             <div class="post__control switchItems switch_movie">
               <dt>動画</dt>
               <dd><input class="form-input" required></dd>
