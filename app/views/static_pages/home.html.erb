@@ -91,18 +91,12 @@
 				<div class="course__video content__video">
 					<h3 class="video__title">森林科学領域の紹介動画</h3>
 					<div class="video__img" id="btn_modal_1" href="">
-							<%= image_tag "forest-field.png", :alt => '森林科学領域の紹介動画' %>
+						<%= link_to "http://www.kochi-u.ac.jp/agrimar-skg/movie/What-is-a-forest-area.mp4" do %><%= image_tag "forest-field.png", :alt => '森林科学領域の紹介動画' %><% end %>
 					</div><!-- /.video__img -->
 				</div><!-- /.course__video -->
 			</div><!-- /.course__item -->
 		</div><!-- /.course__items -->
 	</div><!-- /.course__inner -->
-	<div id="modal_1">
-		<div id="modal_content_1">
-			<video controls src="./movie/What-is-a-forest-area.mp4"></video>
-			<div class="btn_close"><%= image_tag "close.png", :alt => 'Close button' %></div>
-		</div><!-- /.modal_content_1 -->
-	</div><!-- /.modal_1 -->
 </section><!-- /.course -->
 
 <section id="" class="teacher section  wow fadeInUp">
@@ -162,13 +156,7 @@
 			</div><!-- /.teacher__item -->
 	</div><!-- /.teacher__items -->
 </div><!-- /.teacher__inner --> 
-<div class="button-teacher" id="btn_modal_2">動画で詳しく見る</div><!-- /.button__teacher -->
-	<div id="modal_2">
-		<div id="modal_content_2">
-			<video controls src="./movie/teachers.mp4"></video>
-			<div class="btn_close"><%= image_tag "close.png", :alt => 'Close button' %></div><!-- /.teacher__media__img --></div>
-		</div><!--modal_content_2 -->
-	</div><!--./modal_2 -->
+<%= link_to "動画で詳しく見る", "http://www.kochi-u.ac.jp/agrimar-skg/movie/teachers.mp4", class:"button-teacher " %>
 </section><!-- /.teacher -->
 
 <section class="lesson content section wow fadeInUp">
@@ -180,7 +168,7 @@
 					<h3 class="video__title">授業の紹介動画</h3>
 					<div class="video__img">
 						<div id="btn_modal_3">
-							<%= image_tag "lesson.png", :alt => '授業の紹介動画' %>
+						<%= link_to "http://www.kochi-u.ac.jp/agrimar-skg/movie/lesson.mp4" do %><%= image_tag "lesson.png", :alt => '授業の紹介動画' %><% end %>
 						</div><!-- ./btn_modal_3 -->
 					</div><!-- ./video__img-->
 				</div><!-- ./lesson__video -->
@@ -193,12 +181,6 @@
 			</div><!-- ./lesson__item -->
 		</div><!-- ./lesson__items -->
 	</div><!-- ./lesson__inner -->
-	<div id="modal_3">
-		<div id="modal_content_3">
-			<video  controls src="./movie/lesson.mp4"></video>
-			<div class="btn_close"> <%= image_tag "close.png", :alt => 'Close button' %></div>
-		</div><!-- ./modal_content_3 -->
-	</div><!-- ./modal_3-->
 </section><!-- ./lesson-->
 
 <section id="alumni" class="alumni section wow fadeInUp">
