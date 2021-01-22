@@ -5,26 +5,23 @@
     </div>  
     <div class="post__item">
       <div id="formWrapper">
-      
         <%= form_with(model: @post, local: true) do |f| %>
         <%= render 'shared/error_messages', object: f.object %>
-          <dl class="post__controls">
-            <%
-=begin%>
- <div class="post__control">
+          <dl class="post__controls">            
+            <div class="post__control">
               <dt>投稿場所</dt>
               <dd class="post__tag">
-                <label><input name="type" type="radio" value="スライダー" required><span class="outside"><span class="inside"></span></span>スライダー</label>
-                <label><input name="type" type="radio" value="森林を学ぶ価値"><span class="outside"><span class="inside"></span></span>森林を学ぶ価値</label>
-                <label><input name="type" type="radio" value="森林科学領域"><span class="outside"><span class="inside"></span></span>森林科学領域</label>
-                <label><input name="type" type="radio" value="先生の紹介"><span class="outside"><span class="inside"></span></span>先生の紹介</label>
-                <label><input name="type" type="radio" value="授業の紹介"><span class="outside"><span class="inside"></span></span>授業の紹介</label>
-                <label><input name="type" type="radio" value="卒業生の声"><span class="outside"><span class="inside"></span></span>卒業生の声</label>
-                <label><input name="type" type="radio" value="資格"><span class="outside"><span class="inside"></span></span>資格</label>
+                <%= f.collection_check_boxes(:tag_ids, Tag.all, :id, :name) do |tag| %>
+                <div class="form-check">
+                  <%= tag.label class: 'form-check-label' do %>
+                    <%= tag.check_box class: 'form-check-input' %>
+                    <span class="outside"><span class="inside"></span></span>
+                    <%= tag.text %>
+                  <% end %>
+                </div>
+              <% end %>
               </dd>  
             </div> 
-<%
-=end%>
             <div class="post__control switchItems switch_title">
               <dt><%= f.label :title, "タイトル" %></dt>
               <dd><%= f.text_field :title, class: "form-input" %></dd>

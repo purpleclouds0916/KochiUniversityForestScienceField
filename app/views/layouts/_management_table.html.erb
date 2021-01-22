@@ -12,10 +12,9 @@
       <div class="button posts_button">
         <% if controller.controller_name == "users" && controller.action_name == "index" && current_user.admin? %>
           <%= link_to "管理者を作成する", signup_path if current_user.admin?%>
-        <% end %>
-      <% if controller.controller_name == "users" && controller.action_name == "show" %>
-        <% if current_user.admin? || current_user %>
-        <%= link_to "ユーザー情報を修正する", edit_user_path(@user) if current_user.admin?%>
+        <% elsif controller.controller_name == "users" && controller.action_name == "show" %>
+          <% if current_user.admin? || current_user %>
+          <%= link_to "ユーザー情報を修正する", edit_user_path(@user) if current_user.admin?%>
         <% end %>
       <% end %>  
       </div>
@@ -23,6 +22,7 @@
          <%= paginate object,window: 2%>
       </div><!-- ./paginations -->
     </div>
+    <%= render 'layouts/posts_search_form' %>
     <table class="post__table">
     <% if controller.controller_name == "users" && controller.action_name == "index"%>
       <tr class="post__thead__pc">
