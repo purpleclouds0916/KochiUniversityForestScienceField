@@ -33,18 +33,19 @@
         <%= f.password_field :password_confirmation, class:"form-input" %>
         </dd>
     </div><!-- /.contact__control -->
+    <% if controller.controller_name == "users" && controller.action_name == "edit" %>
+　　 <div class="contact__control gravatar_edit">
+        <dt>
+          <a href="https://gravatar.com/emails" target="_blank" rel="noopener">画像を変える</a>
+        </dt>
+        <dd>
+         <%= gravatar_for @user %>
+        </dd>
+        </div> 
+    </div><!-- /.contact__control -->
+    <% end %>
     </dl><!-- /.contact__controls -->
     <div class="contact__submit">
     　 <%= f.submit "送信", class: "button-arrow-right" %>
     </div><!-- /.contact__submit -->
 <% end %>
-
-<%
-=begin%>
-<div class="gravatar_edit">
-<%= gravatar_for @user %>
-<a href="https://gravatar.com/emails" target="_blank" rel="noopener">change</a>
-</div> 
-<%
-=end%>
-
