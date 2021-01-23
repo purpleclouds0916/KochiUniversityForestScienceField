@@ -7,22 +7,22 @@
                     <tr>
                         <th>出身</th>
                         <td>：</td>
-                        <td>千葉県</td>
+                        <td><%= object.birthplace %></td>
                     </tr>
                     <tr>
                         <th>職業</th>
                         <td>：</td>
-                        <td>林野庁　関東森林管理局　日光森林管理署</td>
+                        <td><%= object.job %></td>
                     </tr>
                     <tr>
                         <th>研究室</th>
                         <td>：</td>
-                        <td>大谷研究室</td>
+                        <td><%= object.research_office %></td>
                     </tr>
                     <tr>
                         <th>研究分野</th>
                         <td>：</td>
-                        <td>森林資源利用学</td>
+                        <td><%= object.research_field %></td>
                     </tr>
                     </table> 	
                     <% case controller.action_name %>

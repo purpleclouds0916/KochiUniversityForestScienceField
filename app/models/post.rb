@@ -2,12 +2,16 @@
 #
 # Table name: posts
 #
-#  id         :integer          not null, primary key
-#  content    :text
-#  title      :string
-#  created_at :datetime         not null
-#  updated_at :datetime         not null
-#  user_id    :integer          not null
+#  id              :integer          not null, primary key
+#  birthplace      :string
+#  content         :text
+#  job             :string
+#  research_field  :string
+#  research_office :string
+#  title           :string
+#  created_at      :datetime         not null
+#  updated_at      :datetime         not null
+#  user_id         :integer          not null
 #
 # Indexes
 #

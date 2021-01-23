@@ -35,6 +35,22 @@
               <dt>画像</dt>
               <dd><%= f.file_field :images, multiple: true %></dd>
             </div>
+            <div class="post__control switchItems switch_og">
+              <dt><%= f.label :birthplace, "出身地" %></dt>
+              <dd><%= f.text_field :birthplace, class: "form-input" %></dd>
+            </div>
+            <div class="post__control switchItems switch_og">
+              <dt><%= f.label :job, "職業" %></dt>
+              <dd><%= f.text_field :job, class: "form-input" %></dd>
+            </div>
+            <div class="post__control switchItems switch_og">
+              <dt><%= f.label :research_office, "研究室" %></dt>
+              <dd><%= f.text_field :research_office, class: "form-input" %></dd>
+            </div>
+          　 <div class="post__control switchItems switch_og">
+              <dt><%= f.label :research_field, "研究分野" %></dt>
+              <dd><%= f.text_field :research_field, class: "form-input" %></dd>
+            </div>
             <%
 =begin%>
 
@@ -46,22 +62,7 @@
               <dt>リンク先</dt>
               <dd><input class="form-input" required></dd>
             </div>
-            <div class="post__control switchItems switch_og">
-              <dt>出身</dt>
-              <dd><input class="form-input" required></dd>
-            </div>
-            <div class="post__control switchItems switch_og">
-              <dt>職業</dt>
-              <dd><input class="form-input" required></dd>
-            </div>
-            <div class="post__control switchItems switch_og">
-              <dt>研究室</dt>
-              <dd><input class="form-input" required></dd>
-            </div>
-            <div class="post__control switchItems switch_og">
-              <dt>研究分野</dt>
-              <dd><input class="form-input" required></dd>
-            </div> 
+
 <%
 =end%>
           </dl><!-- /.post__controls -->
