@@ -1,32 +1,42 @@
-<div class="alumni__media__body">
-        <div class="alumni__media__title">石川いずみ さん</div><!-- /.media__title -->
-        <div class="alumni__media__table">
-        <table class="table-default">
-            <tr>
-                <th>出身</th>
-                <td>：</td>
-                <td>千葉県</td>
-            </tr>
-            <tr>
-                <th>職業</th>
-                <td>：</td>
-                <td>林野庁　関東森林管理局　日光森林管理署</td>
-            </tr>
-            <tr>
-                <th>研究室</th>
-                <td>：</td>
-                <td>大谷研究室</td>
-            </tr>
-            <tr>
-                <th>研究分野</th>
-                <td>：</td>
-                <td>森林資源利用学</td>
-            </tr>
-            </table> 	
-            <% case controller.action_name %>
-            <% when "home" %>
-            <span class="see-details">詳しく見る<i class="fas fa-arrow-right"></i></span>
-            <% end %>
-        </div><!-- /.alumni__media__table -->
-    </div><!-- /.alumni__media__body -->
-    <div class="alumni__media__img"><%= image_tag "isikawa-prof.jpg", :alt => '石川いずみさんの写真' %></div><!-- /.media__img -->
+<div class="alumni__item">
+	<a class="alumni__media" href="isikawaizumi.html">
+    	<div class="alumni__media__body">
+            <div class="alumni__media__title"><%= object.title %>さん</div><!-- /.media__title -->
+                <div class="alumni__media__table">
+                    <table class="table-default">
+                    <tr>
+                        <th>出身</th>
+                        <td>：</td>
+                        <td>千葉県</td>
+                    </tr>
+                    <tr>
+                        <th>職業</th>
+                        <td>：</td>
+                        <td>林野庁　関東森林管理局　日光森林管理署</td>
+                    </tr>
+                    <tr>
+                        <th>研究室</th>
+                        <td>：</td>
+                        <td>大谷研究室</td>
+                    </tr>
+                    <tr>
+                        <th>研究分野</th>
+                        <td>：</td>
+                        <td>森林資源利用学</td>
+                    </tr>
+                    </table> 	
+                    <% case controller.action_name %>
+                    <% when "home" %>
+                    <span class="see-details">詳しく見る<i class="fas fa-arrow-right"></i></span>
+                    <% end %>
+                </div><!-- /.alumni__media__table -->
+            </div><!-- /.alumni__media__body -->
+        <div class="alumni__media__img"> 
+        <% if object.images.attached? %>
+        <% object.images.each do |image| %>
+            <%= image_tag image %> <br>
+        <% end %>
+        <% end %>
+        </div><!-- /.media__img -->
+	</a><!-- /.alumni__media -->
+</div><!-- /.alumni__item -->

@@ -52,7 +52,7 @@ end
   private
 
   def post_params
-    params.require(:post).permit(:content, :title, :images, tag_ids: [])
+    params.require(:post).permit(:content, :title, images: [], tag_ids: [])
   end
 
   def correct_user
