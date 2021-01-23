@@ -589,6 +589,7 @@
 	width: calc(50% - 24px / 2);
 	margin-right: 24px;
 	margin-top: 24px;
+	overflow: hidden;
 
 	&:nth-child(2n) {
 		margin-right: 0;
@@ -596,7 +597,12 @@
 
 	@include mq('tab') {
 		width: 100%;
+		max-height: 350px;
 		margin-right: 0;
+	}
+
+	@include mq('sp') {
+		max-height: 200px;
 	}
 
 	a {

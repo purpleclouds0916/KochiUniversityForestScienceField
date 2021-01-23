@@ -31,12 +31,8 @@
                     <% end %>
                 </div><!-- /.alumni__media__table -->
             </div><!-- /.alumni__media__body -->
-        <div class="alumni__media__img"> 
-        <% if object.images.attached? %>
-        <% object.images.each do |image| %>
-            <%= image_tag image %> <br>
-        <% end %>
-        <% end %>
+        <div class="alumni__media__img">   
+     <%= image_tag object.images.first.variant(gravity: :center, resize:'800x600').processed %>
         </div><!-- /.media__img -->
 	</a><!-- /.alumni__media -->
 </div><!-- /.alumni__item -->
