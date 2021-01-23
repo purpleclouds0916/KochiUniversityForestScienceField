@@ -33,7 +33,7 @@
             </div>
              <div class="post__control switchItems switch_img">
               <dt>画像</dt>
-              <dd><%= f.file_field :images, multiple: true %></dd>
+              <dd><%= f.file_field :images , accept: "image/jpeg,image/gif,image/png", multiple: true %></dd>
             </div>
             <div class="post__control switchItems switch_og">
               <dt><%= f.label :birthplace, "出身地" %></dt>
