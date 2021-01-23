@@ -1,11 +1,4 @@
-<section id="" class="post section">
-  <div class="poat__inner inner">
-    <div class="head">
-      <h1 class="section-title">投稿する</h1><!-- /.section-title -->
-    </div>  
-    <div class="post__item">
-      <div id="formWrapper">
-        <%= form_with(model: @post, local: true) do |f| %>
+<%= form_with(model: @post, local: true) do |f| %>
         <%= render 'shared/error_messages', object: f.object %>
           <dl class="post__controls">            
             <div class="post__control">
@@ -69,6 +62,13 @@
               <dt>研究分野</dt>
               <dd><input class="form-input" required></dd>
             </div> 
+<%
+=end%>
+          </dl><!-- /.post__controls -->
+          <div class="post__submit">
+            <input type="submit" value="送信" class="button-arrow-right">
+          </div><!-- /.post__submit -->
+        <% end %>> 
 <%
 =end%>
           </dl><!-- /.post__controls -->
