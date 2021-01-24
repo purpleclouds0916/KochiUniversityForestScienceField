@@ -55,6 +55,30 @@
               <dt><%= f.label :research_field, "研究分野" %></dt>
               <dd><%= f.text_field :research_field, class: "form-input" %></dd>
             </div>
+            <div class="post__control switchItems switch_content">
+              <dt><%= f.label :reason, "森林科学科への進学理由" %></dt>
+              <dd><%= f.text_area :reason, class: "form-textarea" %></dd>
+            </div>
+            <div class="post__control switchItems switch_content">
+              <dt><%= f.label :learning, "今の仕事につながる森林領域での学び" %></dt>
+              <dd><%= f.text_area :learning, class: "form-textarea" %></dd>
+            </div>
+                        <div class="post__control switchItems switch_content">
+              <dt><%= f.label :job_description, "今の職場での仕事内容" %></dt>
+              <dd><%= f.text_area :job_description, class: "form-textarea" %></dd>
+            </div>
+            <div class="post__control switchItems switch_content">
+              <dt><%= f.label :memories, "高知大学での経験や思い出" %></dt>
+              <dd><%= f.text_area :memories, class: "form-textarea" %></dd>
+            </div>
+            <div class="post__control switchItems switch_og">
+              <dt><%= f.label :original_title, "好きなタイトルを入力してください" %></dt>
+              <dd><%= f.text_field :original_title, class: "form-input" %></dd>
+            </div>
+            <div class="post__control switchItems switch_content">
+              <dt><%= f.label :original_content, "上のタイトルについて好きに書いてください" %></dt>
+              <dd><%= f.text_area :original_content, class: "form-textarea" %></dd>
+            </div>
             <%
 =begin%>
 

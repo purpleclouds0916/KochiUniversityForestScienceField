@@ -6,7 +6,11 @@
         </div><!-- ./paginations -->
         <div class="alumni__items">
 			<% @posts.each do |post| %>
- 		    <%= render 'layouts/alumni-table', object: post %>		 
+             <div class="alumni__item posts__alumni__item">
+				<a class="alumni__media posts__alumni__media" href="/posts/<%= post.id %>/">
+					<%= render 'layouts/alumni-table', object: post %>	
+				</a><!-- /.alumni__media -->
+        	</div><!-- /.alumni__item -->
 			<% end %>
 		</div><!-- /.alumni__items -->
         <div class="pagination__center">

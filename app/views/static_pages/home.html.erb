@@ -187,9 +187,13 @@
 	<div class="alumni__inner inner">
 		<h2 class="section-title">卒業生の声</h2><!-- /.section-title -->
 		<div class="alumni__items">
-			<% @posts.each do |post| %>
- 		    <%= render 'layouts/alumni-table', object: post %>		 
-			<% end %>
+		<% @posts.each do |post| %>
+            <div class="alumni__item posts__alumni__item">
+				<a class="alumni__media posts__alumni__media" href="/posts/<%= post.id %>/">
+					<%= render 'layouts/alumni-table', object: post %>	
+				</a><!-- /.alumni__media -->
+        	</div><!-- /.alumni__item -->
+		<% end %>
 		</div><!-- /.alumni__items -->
 	</div><!-- /.alumni__inner -->
 	<%= link_to "他の卒業生も見る", alumni_path, class:"button-home" %>

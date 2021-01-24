@@ -16,6 +16,7 @@ class PostsController < ApplicationController
         #卒業生の声の記事なら表示する
       if post_tag.include?(6)
         @post = post_id 
+        @posts = Tag.find(6).posts.limit(4)
         #それ以外の記事は404扱い     
       else
         redirect_to root_url 
@@ -72,7 +73,7 @@ end
   private
 
   def post_params
-    params.require(:post).permit(:content, :title, :name, :birthplace, :job, :research_field, :research_office ,images: [], tag_ids: [])
+    params.require(:post).permit(:content, :title, :name, :birthplace, :job, :research_field, :research_office, :reason, :learning, :job_description, :memories, :original_title, :original_content, images: [], tag_ids: [])
   end
 
   def correct_user
