@@ -15,13 +15,18 @@
               <% end %>
               </dd>  
             </div> 
+      
             <div class="post__control switchItems switch_title">
               <dt><%= f.label :title, "タイトル" %></dt>
               <dd><%= f.text_field :title, class: "form-input" %></dd>
             </div>
             <div class="post__control switchItems switch_title">
               <dt><%= f.label :name, "名前" %></dt>
-              <dd><%= f.text_field :name, class: "form-input" %></dd>
+              <dd><%= f.text_area :name, class: "form-input" %></dd>
+            </div>
+            <div class="post__control switchItems switch_title">
+              <dt><%= f.label :content %></dt>
+              <dd><%= f.rich_text_area :content, class: "form-textarea"%></dd>
             </div>
             <%
 =begin%>
@@ -31,10 +36,7 @@
             </div> 
 <%
 =end%>
-            <div class="post__control switchItems switch_content">
-              <dt><%= f.label :content, "コンテンツ" %></dt>
-              <dd><%= f.text_area :content, class: "form-textarea" %></dd>
-            </div>
+      
              <div class="post__control switchItems switch_img">
               <dt>画像</dt>
               <dd><%= f.file_field :images , accept: "image/jpeg,image/gif,image/png", multiple: true %></dd>

@@ -8,9 +8,11 @@ gem 'rails', '~> 6.0.3'
 # Active Storageバリデーション用
 gem 'active_storage_validations', '0.8.2'
 
-# 画像のリファクタリング用用
+# 画像のリファクタリング用
 gem 'image_processing',           '1.9.3'
 gem 'mini_magick', '~> 4.8'
+# リッチエディタ
+gem 'actiontext'
 # Use sqlite3 as the database for Active Record
 # gem 'sqlite3', '~> 1.4'
 # Use Puma as the app server

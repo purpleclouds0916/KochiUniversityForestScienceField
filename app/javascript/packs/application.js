@@ -39,3 +39,5 @@ window.onload = () => {
     })
   
   }
+require("trix")
+require("@rails/actiontext")

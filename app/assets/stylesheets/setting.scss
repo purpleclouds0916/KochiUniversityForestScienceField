@@ -263,9 +263,9 @@ img {
 }
 
 // 文字装飾
-.text__important {
+.text__important strong{
 	background:linear-gradient(transparent 60%, #ff6 60%);
- font-weight: 700;
+ 	font-weight: 700;
 }
 
 // ページネーション 

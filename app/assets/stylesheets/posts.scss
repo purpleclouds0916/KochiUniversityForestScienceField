@@ -151,7 +151,7 @@
 	dt {
 		width: 160px;
 		padding: 6px 0 0;
-        margin: 0;
+        margin-right: 16px;
         font-weight: 700;
 
 		@include mq('sp') {
@@ -434,4 +434,31 @@
 			}
 		}
 	}
+}
+
+.trix-button-group {
+	&:nth-child(n + 2) {
+		display: none;
+	}
+
+	button {
+		font-size: 0;
+		margin-bottom: 6px;
+
+		&:before {
+			font-size: 16px;
+			content: "文字を強調させる";
+		}
+
+		&:nth-child(n + 2) {
+			display: none;
+		}
+
+
+	}
+}
+
+strong {
+	background:linear-gradient(transparent 60%, #ff6 60%);
+ 	font-weight: 700;
 }
