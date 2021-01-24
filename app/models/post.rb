@@ -6,6 +6,7 @@
 #  birthplace      :string
 #  content         :text
 #  job             :string
+#  name            :string
 #  research_field  :string
 #  research_office :string
 #  title           :string

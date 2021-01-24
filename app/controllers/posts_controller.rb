@@ -1,9 +1,29 @@
-class PostsController < ApplicationController
+class PostsController < ApplicationController  
   before_action :logged_in_user
+  #　↓本来のaction　*すでに公開しているので、全てにおいてログイン制限。　
+  # before_action :logged_in_user, only: [:index, :new, :create, :edit, :update, :destroy]
 
   def index
     @posts = params[:tag_id].present? ? Tag.find(params[:tag_id]).posts : Post
     @posts = @posts.page(params[:page]).per(10)
+  end
+
+  #機能はするが修正が必要,2回もDBにアクセスしている&あとでリダイレクト先を変更
+  def show
+    if Post.find_by(id:params[:id]).present?
+      post_id = Post.find_by(id:params[:id])
+      post_tag = post_id.tags.all.ids
+        #卒業生の声の記事なら表示する
+      if post_tag.include?(6)
+        @post = post_id 
+        #それ以外の記事は404扱い     
+      else
+        redirect_to root_url 
+      end
+    #存在しないページは404扱い
+    else
+      redirect_to root_url 
+    end  
   end
 
   def new

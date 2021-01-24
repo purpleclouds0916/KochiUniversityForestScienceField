@@ -304,3 +304,201 @@
 		height: 180px;
 	}
 }
+
+// -----
+// 卒業生の記事詳細
+// -----
+// -----
+// 卒業生プロフィール
+// -----
+
+.alumni {
+	background-color: #c1984d11;
+	padding: 100px 0px;
+
+	@include mq('sp'){
+		padding: 50px 0px;
+	}
+}
+
+.alumni__inner {
+}
+
+.alumni__items {
+	display: flex;
+	flex-wrap: wrap;
+	margin-top: 56px;
+
+	@include mq('sp') {
+		margin-top: 30px;
+	}
+}
+
+.alumni__media {
+	overflow: hidden;
+	background: #fff;
+	border-radius: 4px;
+	display: flex;
+	color: #6f7579;
+}
+
+.alumni__media__img {
+	text-align: center;
+	width: 50%;
+
+	img {
+		vertical-align: bottom;
+		width: 100%;
+		height: 100%;
+    object-fit: cover;
+	}
+}
+
+.alumni__media__body {
+	margin-top: 12px;
+	width: 50%;
+	padding: 10px;
+	max-width: 500px;
+	margin: 30px auto;
+
+	@include mq('sp') {
+		margin: 6px auto;
+		padding: 5px;
+	}
+}
+
+.alumni__media__title {
+	font-weight: 700;
+	font-size: 30px;
+	text-align: center;
+
+	@include mq('sp') {
+		font-size: $font-size-base - 2px;
+	}
+}
+
+.alumni__media__table {
+	font-weight: 700;
+	margin-top: 4px;
+	line-height: (24 / 16);
+	overflow: hidden;
+	padding: 10px 20px;
+	font-size: 20px;
+    
+    tr {
+        th,td {
+            font-weight: 700;
+
+            &:first-child {
+                width: 100px;
+            }
+        }
+    }
+
+
+	@include mq('sp'){
+		padding: 0;
+		font-size: $font-size-base - 4px;
+	}
+}
+
+// -----
+// 投稿内容
+// -----
+
+.main {
+	padding: 40px 0;
+}
+
+.main__content {
+
+	.main__title {
+		padding: 0.4em 0.5em;
+		color: #494949;
+		background: #c1984d11;
+		border-left: solid 5px $color-main;
+		border-bottom: solid 1px #d7d7d7;
+		margin-bottom: 20px;
+	}
+
+	p {
+		margin-bottom: 20px;
+	}
+
+	img {
+		display: block;
+		margin: 0 auto;
+		width: 50%;
+
+		@include mq('sp'){
+			width: 80%;
+		}
+	}
+}
+
+// -----
+// ボトムナビ
+// -----
+
+.bottom {
+	padding: 0;
+}
+
+.bottom__inner {
+}
+
+.bottom__nav {
+	padding: 10px;
+	ul {
+		list-style: none;
+		padding: 0;
+		margin: 0;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		align-items: center;
+
+		li {
+			margin-right: 40px;
+			padding: 10px 10px;
+			margin-top: 5px;
+			margin-bottom: 10px;
+			display: inline-block;
+			border: 2px solid $color-main;
+			border-radius: 99px;
+			background: #fff;
+
+			@include mq('sp') {
+				margin-right: 10px;
+			}
+		
+			.fas {
+				margin-left: 5px;
+			}
+
+			&:last-child {
+				margin-right: 0;
+			}
+
+			a {
+				transition: all 0.1s ease 0s;
+				text-decoration: none;
+				color: $color-main;
+				font-weight: 700;
+				display: block;
+
+				@include mq('sp') {
+					font-size: $font-size-base - 2px;
+				}
+			}
+
+			&:hover {
+				background: $color-main;
+
+				a {
+					color: #fff;
+				}	
+			}
+		}
+	}
+}
