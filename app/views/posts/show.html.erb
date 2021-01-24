@@ -18,23 +18,23 @@
 <div class="main__inner inner">
     <div class="main__content">
     <h2 class="main__title">森林科学科への進学理由</h2>
-    <p><%= @post.reason %></p>
+    <p><%= simple_format(@post.reason) %></p>
     </div><!-- /.main__content -->
     <div class="main__content">
     <h2 class="main__title">今の仕事につながる森林領域での学び</h2>
-    <p><%= @post.learning %></p>
+    <p><%= simple_format(@post.learning) %></p>
     </div><!-- /.main__content -->
     <div class="main__content">
     <h2 class="main__title">今の職場での仕事内容</h2>
-    <p><%= @post.job_description %></p>
+    <p><%= simple_format(@post.job_description) %></p>
     </div><!-- /.main__content -->
     <div class="main__content">
     <h2 class="main__title">高知大学での経験や思い出</h2>
-    <p><%= @post.memories %></p>
+    <p><%= simple_format(@post.memories) %></p>
     </div><!-- /.main__content -->
     <div class="main__content">
     <h2 class="main__title"><%= @post.original_title %></h2>
-    <p><%= @post.original_content %></p>
+    <p><%= simple_format(@post.original_content) %></p>
     </div><!-- /.main__content -->
     <div class="main__content">
     <% unless @post.images.second.nil? %>  
