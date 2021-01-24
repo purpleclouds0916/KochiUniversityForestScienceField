@@ -313,92 +313,23 @@
 // -----
 
 .alumni {
-	background-color: #c1984d11;
-	padding: 100px 0px;
-
-	@include mq('sp'){
-		padding: 50px 0px;
-	}
+	background:#FFFAF0;
 }
 
-.alumni__inner {
-}
-
-.alumni__items {
-	display: flex;
-	flex-wrap: wrap;
-	margin-top: 56px;
+.alumni__item {
+	width: 70%;
+	margin: 0 auto;
 
 	@include mq('sp') {
-		margin-top: 30px;
+		width: 90%;
 	}
 }
 
 .alumni__media {
-	overflow: hidden;
-	background: #fff;
-	border-radius: 4px;
-	display: flex;
-	color: #6f7579;
-}
-
-.alumni__media__img {
-	text-align: center;
-	width: 50%;
-
-	img {
-		vertical-align: bottom;
-		width: 100%;
-		height: 100%;
-    object-fit: cover;
-	}
-}
-
-.alumni__media__body {
-	margin-top: 12px;
-	width: 50%;
-	padding: 10px;
-	max-width: 500px;
-	margin: 30px auto;
-
-	@include mq('sp') {
-		margin: 6px auto;
-		padding: 5px;
-	}
-}
-
-.alumni__media__title {
-	font-weight: 700;
-	font-size: 30px;
-	text-align: center;
-
-	@include mq('sp') {
-		font-size: $font-size-base - 2px;
-	}
-}
-
-.alumni__media__table {
-	font-weight: 700;
-	margin-top: 4px;
-	line-height: (24 / 16);
-	overflow: hidden;
-	padding: 10px 20px;
-	font-size: 20px;
-    
-    tr {
-        th,td {
-            font-weight: 700;
-
-            &:first-child {
-                width: 100px;
-            }
-        }
-    }
-
-
-	@include mq('sp'){
-		padding: 0;
-		font-size: $font-size-base - 4px;
+	&:hover {
+		background: #fff;
+		color: #6f7579;
+		cursor: auto;
 	}
 }
 
@@ -408,6 +339,7 @@
 
 .main {
 	padding: 40px 0;
+	background: #fff;
 }
 
 .main__content {
@@ -442,6 +374,7 @@
 
 .bottom {
 	padding: 0;
+	background: #fff;
 }
 
 .bottom__inner {
