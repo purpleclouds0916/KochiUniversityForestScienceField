@@ -239,52 +239,6 @@ body {
   }
 }
 
-.pagination__center {
-  text-align: center;
-  margin-top: 24px;
-}
-
-.pagination{
-  li {
-    a {          
-      border: 1px solid #e2e2e2;
-      color: $color-text-base;  
-     
-    
-      transition: all 0.3s ease 0s;
-
-      &:first-child {
-       
-      }
-      &:hover {
-        color: #fff;
-        background: $color-main;
-        border: 1px solid $color-main;   
-      }
-    }
-  }
-
-  .active {
-    a {
-      background: $color-main;
-      border: 1px solid $color-main; 
-
-      &:hover {
-        background: $color-main;
-        border: 1px solid $color-main; 
-      }
-    }
-  }
-
-  .disabled {
-    @include mq('tab') {
-      a {
-        display: none;
-      }
-    }
-  }
-}
-
 .alert {
   margin:0 0 1em 0; padding:10px 20px;
   line-height:1.5; 

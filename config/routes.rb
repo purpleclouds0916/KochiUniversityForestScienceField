@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   # get 'posts/new', to: 'posts#new'
   # post 'posts/create', to: 'posts#create'
   root 'static_pages#home'
-  get  '/alumni',    to: 'alumni_messages#alumni'
+  get  '/alumni',    to: 'static_pages#alumni'
   get  '/signup',  to: 'users#new'
   get    '/login',   to: 'sessions#new'
   post   '/login',   to: 'sessions#create'

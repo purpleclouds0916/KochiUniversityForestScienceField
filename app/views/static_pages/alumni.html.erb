@@ -1,0 +1,16 @@
+<section id="alumni" class="alumni section wow fadeInUp">
+	<div class="alumni__inner inner">
+		<h2 class="section-title">卒業生の声</h2><!-- /.section-title -->
+		<div class="pagination__center">
+        　　 <%= paginate @posts, window: 2%>
+        </div><!-- ./paginations -->
+        <div class="alumni__items">
+			<% @posts.each do |post| %>
+ 		    <%= render 'layouts/alumni-table', object: post %>		 
+			<% end %>
+		</div><!-- /.alumni__items -->
+        <div class="pagination__center">
+        　　 <%= paginate @posts, window: 2%>
+        </div><!-- ./paginations -->
+	</div><!-- /.alumni__inner -->
+</section><!-- /.alumni -->

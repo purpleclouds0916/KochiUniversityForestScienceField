@@ -72,7 +72,7 @@ end
   private
 
   def post_params
-    params.require(:post).permit(:content, :title, :birthplace, :job, :research_field, :research_office ,images: [], tag_ids: [])
+    params.require(:post).permit(:content, :title, :name, :birthplace, :job, :research_field, :research_office ,images: [], tag_ids: [])
   end
 
   def correct_user
