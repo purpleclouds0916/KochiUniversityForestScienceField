@@ -782,9 +782,22 @@
 	&:last-child {
 		margin-bottom: 0;
 	}
-}
 
-.accordion {
+	&:first-child {
+		.accordion__body__first {
+			display: block;
+		}
+
+		dt {
+			.accordion__icon {
+				background: transparent image-url('icon-minus.png') no-repeat center center / contain;
+			
+				&.is-open {
+					background-image: image-url('icon-plus.png')
+				}
+			}
+		}
+	}
 }
 
 .accordion__head {
@@ -824,9 +837,7 @@
 	}
 }
 
-.accordion__body__first {
-	display: block;
-}
+
 
 .accordion__body-in {	
 }
@@ -867,14 +878,6 @@
 
 	&.is-open {
 		background-image: image-url('icon-minus.png');
-	}
-}
-
-.accordion__icon__first {
-	background: transparent image-url('icon-minus.png') no-repeat center center / contain;
-
-	&.is-open {
-		background-image: image-url('icon-plus.png')
 	}
 }
 

@@ -206,94 +206,44 @@
 </section><!-- /.alumni -->
 <% end %>
 
+<% if @skills.present? %>
 <section id="" class="skill section wow fadeInUp">
 	<div class="skill__top__inner inner">
 		<h2 class="section-title">資格</h2>
 		<div class="skill__top__container">
-			<div class="skill__top__text">高知大学森林領域では5つの資格を取得できます</div>
+			<div class="skill__top__text">高知大学森林領域では<%= @skills.count %>つの資格を取得できます</div>
 			<div class="skill__top__items">
+			<% @skills.each do |skill| %>
 				<div class="skill__top__item">
-					<%= image_tag "skill-1.png", :alt => '測量士のアイコン' %>
+					 <%= image_tag skill.images.first.variant(gravity: :center, resize:'800x600').processed %>
 					<p>測量士補</p>
 				</div>
-				<div class="skill__top__item">
-					<%= image_tag "skill-2.png", :alt => '樹木医のアイコン' %>
-					<p>樹木医補</p>
-				</div>
-				<div class="skill__top__item">
-						<%= image_tag "skill-3.png", :alt => '森林情報士のアイコン' %>
-					<p>森林情報士二級</p>
-				</div>
-				<div class="skill__top__item">
-						<%= image_tag "skill-4.png", :alt => '教員免許のアイコン' %>
-					<p>教員免許</p>
-				</div>
-				<div class="skill__top__item">
-						<%= image_tag "skill-5.png", :alt => '学芸員のアイコン' %>
-					<p>学芸員</p>
-				</div><!-- ./skill__top__item -->
+			<% end %>	
 			</div><!--./skill__top__items -->
 		</div><!--./skill__top__inner -->
 	</div><!--./skill__top__container -->
 
 	<div class="skill__bottom__inner inner">
 		<dl class="skill__bottom__items">
+			<% @skills.each do |skill| %>
 			<div class="skill__bottom__content accordion">
-				<dt class="accordion__head"><%= image_tag "skill-1.png", :alt => '測量士のアイコン' %>測量士補<span class="accordion__icon accordion__icon__first"></span></dt>
+				<dt class="accordion__head"><%= image_tag skill.images.first.variant(gravity: :center, resize:'800x600').processed %><%= skill.name %><span class="accordion__icon accordion__icon__first"></span></dt>
 				<dd class="accordion__body accordion__body__first">
-					<div class="accordion__body-in">技術者として「基本測量（すべての測量の基礎となる測量）」、「公共測量（国又は地方公共団体の実施する測量）」に従事するために必要な国家資格です。 測量士は、「測量に関する計画を作製し、又は実施する者」、 測量士補は、「測量士の作製した計画に従い、測量に従事する者」を指します。測量士補の資格取得後、1年以上の実務経験により測量士に昇格が可能です。
+					<div class="accordion__body-in">
+						<%= skill.content %>
 					</div><!-- /.accordion__body-in -->
 					<div class="accordion__body__link">
 						<p>より詳しい情報は下記リンクをご覧ください。</p>
-						<a href="https://www.gsi.go.jp/LAW/SHIKEN-sikentoroku.html">測量士及び測量士補登録に関する案内 | 国土地理院</a>
-						<a href="http://www.jsurvey.jp/shikaku.htm">公益社団法人日本測量協会 測量士・測量士補の資格のページ</a>
+						<% if skill.external_url.presence %>
+						<% skill.external_url.each do |url| %>
+						<a href="<%= url.external_url %>">公益社団法人日本測量協会 測量士・測量士補の資格のページ</a>
+						<% end %>
+							<% end %>
 					</div><!-- /.accordion__body__link -->
 				</dd><!-- /.accordion__body -->
 			</div><!-- /.skill__bottom__content -->
-			<div class="skill__bottom__content accordion">
-				<dt class="accordion__head"><%= image_tag "skill-2.png", :alt => '樹木医のアイコン' %>樹木医補<span class="accordion__icon"></span></dt>
-				<dd class="accordion__body">
-					<div class="accordion__body-in">樹木医とは、樹木の診断・治療、後継樹の保護育成、樹木保護などに関する知識の普及や指導を行う専門家のこと。 樹木医補は、樹木医を目指して樹木学や植物病理学、森林生態学などの基礎的な知識や技術を習得した学生を対象に認定を行ってます。高知大学は樹木医補資格養成機関として認定を受けています。全国で35ある認定大学のうち、四国では高知大学と愛媛大学が対象となっています。（令和2年4月現在）。
-					</div><!-- /.accordion__body-in -->
-					<div class="accordion__body__link">
-						<p>より詳しい情報は下記リンクをご覧ください。</p>
-						<a href="http://www.jpgreen.or.jp/jyumokuiho/">樹木医補資格認定制度／（一財）日本緑化センター</a>
-					</div><!-- /.accordion__body__link -->
-				</dd><!-- /.accordion__body -->
-			</div><!-- /.skill__bottom__content -->
-			<div class="skill__bottom__content accordion">
-				<dt class="accordion__head"><%= image_tag "skill-3.png", :alt => '森林情報士のアイコン' %>森林情報士二級<span class="accordion__icon"></span></dt>
-				<dd class="accordion__body">
-					<div class="accordion__body-in">森林情報士とは、空中写真やリモートセンシングからの情報の解析技術、GIS技術等をもちいて森林計画、治山、林道事業、さらには地球温暖化問題の解析などの事業分野に的確に対応できる専門技術者です。 2級は、森林系の大学専門課程修得１年以上、学士、修士、博士など森林・林業に関する資格を有する者を対象としています。高知大学は森林情報士2級養成機関として認定を受けています。全国で7つある認定大学のうち、四国では高知大学のみとなっています（令和2年4月現在）。
-					</div><!-- /.accordion__body-in -->
-					<div class="accordion__body__link">
-						<p>より詳しい情報は下記リンクをご覧ください。</p>
-						<a href=" http://www.jafta.or.jp/contents/jouhoushi/5_list_detail.html">一般社団法人日本森林技術協会 Japan Forest Technology Association 森林情報士 大学単位認定制度</a>
-					</div><!-- /.accordion__body__link -->
-				</dd><!-- /.accordion__body -->
-			</div><!-- /.skill__bottom__content -->
-			<div class="skill__bottom__content accordion">
-				<dt class="accordion__head"><%= image_tag "skill-4.png", :alt => '教員免許のアイコン' %>教員免許<span class="accordion__icon"></span></dt>
-				<dd class="accordion__body">
-					<div class="accordion__body-in">教員になるための資格です。学校種ごとの教員免許状が必要で、中学校・高等学校は教科ごとの免許状になります。
-						取得要件の違いにより、専修免許状、一種免許状、二種免許状と区分されますが、職務上の差異はありません。
-					</div><!-- /.accordion__body-in -->
-				</dd><!-- /.accordion__body -->
-			</div><!-- /.skill__bottom__content -->
-			<div class="skill__bottom__content accordion">
-				<dt class="accordion__head"><%= image_tag "skill-5.png", :alt => '学芸員のアイコン' %>学芸員<span class="accordion__icon"></span></dt>
-				<dd class="accordion__body">
-					<div class="accordion__body-in">学芸員とは、博物館（美術館、歴史民俗資料館、国際交流館、産業資料館、農林業資料館、文書館、文学館、水族館、動・植物園、地質館、各種記念館等）において、資料収集、展示、保存、調査研究、生涯教育、社会教育活動等の専門的活動に携わる職員の総称になります。</div><!-- /.accordion__body-in -->
-				</dd><!-- /.accordion__body -->
-			</div><!-- /.skill__bottom__content -->
+			<% end %>
 		</dl><!-- /.skill__bottom__items -->
 	</div><!-- /.skill__bottom_items -->
 </section><!-- /.skill -->
-
-
-
-
-
-
-
-
+<% end %>
