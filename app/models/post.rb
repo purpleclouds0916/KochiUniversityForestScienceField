@@ -5,6 +5,7 @@
 #  id               :integer          not null, primary key
 #  birthplace       :string
 #  content          :text
+#  external_url     :text
 #  job              :string
 #  job_description  :text
 #  learning         :text
@@ -15,7 +16,9 @@
 #  reason           :text
 #  research_field   :string
 #  research_office  :string
+#  teacher_url      :text
 #  title            :string
+#  video_url        :text
 #  created_at       :datetime         not null
 #  updated_at       :datetime         not null
 #  user_id          :integer          not null

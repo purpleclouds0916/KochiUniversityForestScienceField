@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_24_080002) do
+ActiveRecord::Schema.define(version: 2021_01_25_030602) do
 
   create_table "action_text_rich_texts", force: :cascade do |t|
     t.string "name", null: false
@@ -78,6 +78,9 @@ ActiveRecord::Schema.define(version: 2021_01_24_080002) do
     t.text "memories"
     t.string "original_title"
     t.text "original_content"
+    t.text "video_url"
+    t.text "external_url"
+    t.text "teacher_url"
     t.index ["user_id", "created_at"], name: "index_posts_on_user_id_and_created_at"
     t.index ["user_id"], name: "index_posts_on_user_id"
   end

@@ -356,16 +356,18 @@
 		overflow: hidden;
 		width: 530px;
 		height: 298.13px;
-		margin: auto;
+		margin: 0 auto;
 
 		@include mq('tab') {
 			width: 400px;
 			height: 225px;
+			margin: 0 auto 30px;
 		} 
 
 		@include mq('sp') {
 			width: 290px;
-			height: 168.75;
+			height: 168.75px;
+			margin: 0 auto 50px;
 		} 
 
 		img {
@@ -1079,4 +1081,3 @@
 		height: 180px;
 	}
 }
-

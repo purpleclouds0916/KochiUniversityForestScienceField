@@ -81,6 +81,19 @@
               <dt><%= f.label :original_content, "上のタイトルについて好きに書いてください" %></dt>
               <dd><%= f.text_area :original_content, class: "form-textarea" %></dd>
             </div>
+            <div class="post__control switchItems switch_link">
+              <dt><%= f.label :video_url, "動画のURL" %></dt>
+              <dd><%= f.text_field :video_url, class: "form-input" %></dd>
+            </div>
+            <div class="post__control switchItems switch_link">
+              <dt><%= f.label :external_url , "参考文献URL" %></dt>
+              <dd><%= f.text_field :external_url , class: "form-input" %></dd>
+            </div>
+            <div class="post__control switchItems switch_link">
+              <dt><%= f.label :teacher_url , "参考文献URL" %></dt>
+              <dd><%= f.text_field :teacher_url , class: "form-input" %></dd>
+            </div>
+            
             <%
 =begin%>
 

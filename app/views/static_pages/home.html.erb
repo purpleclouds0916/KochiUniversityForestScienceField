@@ -78,26 +78,30 @@
 	</div><!-- /.meaning__inner -->
 </section><!-- /.meaning -->
 
+<% if @about.present? %>
 <section class="course content section wow fadeInUp">
 	<div class="course__inner content__inner inner">
 		<h2 class="section-title">森林科学領域</h2>
 		<div class="course__items content__items">
 			<div class="course__item content__item">
 				<div class="content__item__body">
-					<p>高知県は雨が非常に多く、木が成長するためにはとても良い環境です。<br><br><span class="text__important">それもあって、高知県の森林率は全国1位の83.4%！</span><br><br>大学から出てすぐが、実習のフィールドです。<span class="text__important">豊かな自然に囲まれた場所で、生態系や持続的な社会についてじっくり学ぶことができます。</span><br><br>また、高知県は昔から林業が非常に栄えており、今なお、その歴史を受け継いでいます。<br><br>そのため、<span class="text__important">行政機関や企業と連携し、地域の人たちと関わりながら林業を学ぶことができます。</span></p>
+					<%= @about[0].content %>
 				</div><!-- /.content__item__body -->
 			</div><!-- /.course__item -->
 			<div class="course__item content__item">
 				<div class="course__video content__video">
 					<h3 class="video__title">森林科学領域の紹介動画</h3>
 					<div class="video__img" id="btn_modal_1" href="">
-						<%= link_to "http://www.kochi-u.ac.jp/agrimar-skg/movie/What-is-a-forest-area.mp4" do %><%= image_tag "forest-field.png", :alt => '森林科学領域の紹介動画' %><% end %>
+						<a class="alumni__media posts__alumni__media" href="<%= @about[0].video_url %>">
+							<%= image_tag  @about[0].images.first.variant(resize:'1200x800').processed %>
+						</a><!-- /.alumni__media -->	
 					</div><!-- /.video__img -->
 				</div><!-- /.course__video -->
 			</div><!-- /.course__item -->
 		</div><!-- /.course__items -->
 	</div><!-- /.course__inner -->
 </section><!-- /.course -->
+<% end %>
 
 <section id="" class="teacher section  wow fadeInUp">
 	<div class="teacher__inner inner">
@@ -159,6 +163,7 @@
 <%= link_to "動画で詳しく見る", "http://www.kochi-u.ac.jp/agrimar-skg/movie/teachers.mp4", class:"button-home" %>
 </section><!-- /.teacher -->
 
+<% if @lessons.present? %>
 <section class="lesson content section wow fadeInUp">
 	<div class="lesson__inner content__inner inner">
 		<h2 class="lesson-title section-title">授業の紹介</h2>
@@ -167,21 +172,21 @@
 				<div class="lesson__video content__video">
 					<h3 class="video__title">授業の紹介動画</h3>
 					<div class="video__img">
-						<div id="btn_modal_3">
-						<%= link_to "http://www.kochi-u.ac.jp/agrimar-skg/movie/lesson.mp4" do %><%= image_tag "lesson.png", :alt => '授業の紹介動画' %><% end %>
-						</div><!-- ./btn_modal_3 -->
+						<a class="alumni__media posts__alumni__media" href="<%= @lessons[0].video_url %>">
+							<%= image_tag  @lessons[0].images.first.variant(resize:'800').processed %>
+						</a><!-- /.alumni__media -->		
 					</div><!-- ./video__img-->
 				</div><!-- ./lesson__video -->
 			</div><!-- ./lesson__item -->
 			<div class="lesson__item content__item">
 				<div class="content__item__body">
-					<p>高知大学森林領域では、<span class="text__important">地球環境問題、資源問題、エネルギー問題の解決及び自然共生型社会の構築ができる力を学べます。</span><br><br>なぜなら、高知大学では、生物学だけではなく<span class="text__important">統計学、工学、経済学といった幅広い分野を学習</span>することで、森林の様々な役割（二酸化炭素の吸収・固定、災害防備、空気浄化、林産物の供給etc...）を理解し、さらに、<span class="text__important">卒業研究を通して、応用・発展</span>させることができるからです。
-					<br><br>また、高知大学では、<span class="text__important">問題の発見能力と解決能力を養うために、実習・演習を重視した授業</span>を行っています。<br><br>だからこそ、森林領域では、<span class="text__important">地球環境問題、資源問題、エネルギー問題の解決及び自然共生型社会の構築ができる力</span>が身につくのです</p>
+					<%= @lessons[0].content %>
 				</div><!-- ./content__item__body -->
 			</div><!-- ./lesson__item -->
 		</div><!-- ./lesson__items -->
 	</div><!-- ./lesson__inner -->
 </section><!-- ./lesson-->
+<% end %>
 
 <section id="alumni" class="alumni section wow fadeInUp">
 	<div class="alumni__inner inner">
