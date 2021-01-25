@@ -234,11 +234,9 @@
 					</div><!-- /.accordion__body-in -->
 					<div class="accordion__body__link">
 						<p>より詳しい情報は下記リンクをご覧ください。</p>
-						<% if skill.external_url.presence %>
-						<% skill.external_url.each do |url| %>
-						<a href="<%= url.external_url %>">公益社団法人日本測量協会 測量士・測量士補の資格のページ</a>
+						<% if skill.external_url.present? %>
+						<a href="<%= skill.external_url %>"><%= skill.url_references %></a>
 						<% end %>
-							<% end %>
 					</div><!-- /.accordion__body__link -->
 				</dd><!-- /.accordion__body -->
 			</div><!-- /.skill__bottom__content -->

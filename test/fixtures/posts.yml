@@ -18,6 +18,7 @@
 #  research_office  :string
 #  teacher_url      :text
 #  title            :string
+#  url_references   :string
 #  video_url        :text
 #  created_at       :datetime         not null
 #  updated_at       :datetime         not null
