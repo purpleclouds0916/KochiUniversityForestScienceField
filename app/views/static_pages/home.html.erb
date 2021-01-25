@@ -32,51 +32,35 @@
 	</div><!-- /.swiper-container -->
 </div><!-- /.mainvisual -->
 
+<% if @meaning.present? %>
 <section id="" class="meaning section">
 	<div class="meaning__inner inner">
 		<h2 class="section-title">森林を学ぶ価値</h2><!-- /.section-title -->
 		<div class="meaning__items">
+		<% @meaning.each do |meaning| %>
 			<div class="meaning__item ">
 				<div class="meaning__img">
-					<%= image_tag "meaning-1.png", :alt => '1' %>
+					<%= image_tag  meaning.images.first.variant(resize:'1200x800').processed %>
 				</div><!-- /.meaning__img -->
 				<div class="meaning__body">
-					<div class="meaning__title">木材は再生可能資源</div><!-- /.meaning__title -->
-					<div class="meaning__content">近年、木のストローの導入やレジ袋の有料化など、プラスチック製品を廃止する動きが強まっています。さらに、プラスチックの原料となる石油は将来的には枯渇してしまう化石資源です。<br><br><span class="text__important">持続的な経済発展をしていくためにも、木材のような再生可能資源の積極的な利用の推進、及び研究</span>が必要不可欠です。</div><!-- /.meaning__content -->
+					<div class="meaning__title"><%= meaning.title %></div><!-- /.meaning__title -->
+					<div class="meaning__content"><%= meaning.content %></div><!-- /.meaning__content -->
 				</div><!-- /.meaning__body -->
 			</div><!-- /.meaning__item -->
-			<div class="meaning__item ">
-				<div class="meaning__img">	
-					<%= image_tag "meaning-2.png", :alt => '2' %>
-				</div><!-- /.meaning__img -->
-				<div class="meaning__body">
-					<div class="meaning__title">森林は生物の宝庫</div><!-- /.meaning__title -->
-					<div class="meaning__content">世界の陸地面積の約３割を占める森林に、<span class="text__important">陸上の生物種の約８割がその生息・生育を依存</span>しています。<br><br>しかし、1990～2015年までの過去25年間において森林面積は、1.29億haも減少しました。<span class="text__important"> 豊かな生態系を守っていくためにも、持続的な森林利用を考えていく必要</span>があります。
-					</div><!-- /.meaning__content -->
-				</div><!-- /.meaning__body -->
-			</div><!-- /.meaning__item -->		
-			<div class="meaning__item ">
-				<div class="meaning__img">
-						<%= image_tag "meaning-3.png", :alt => '3' %>
-				</div><!-- /.meaning__img -->
-				<div class="meaning__body">
-					<div class="meaning__title">環境資源としての価値は年間70兆円</div><!-- /.meaning__title -->
-					<div class="meaning__content">森林は降った雨を蓄え、浄化をしながら少しずつ川に流します。そして、水と一緒に、たくさんの栄養が、川や海、そして農地に流れます。
-					<br><br>それにより、<span class="text__important">魚はもちろん豊かな農作物の生産にも繋がります。</span>それ以外にも、森林にはレクリエーションの役割から、キノコや木材の生産など多様な機能があります。そして、<span class="text__important">これらの機能を経済的価値に換算すると、年間70兆円にもなると言われています。</span>
-					<br><br>つまり、豊かな森林を守ることは、私達の豊かな生活を守ることにもつながるのです。
-					</div><!-- /.meaning__content -->
-				</div><!-- /.meaning__body -->
-			</div><!-- /.meaning__item -->	
+		<% end %>	
 		</div><!-- /.meaning__items -->
 		<div class="meaning__reference">
-			<div class="meaning__reference__title">参考文献(閲覧日:2020/09/06)</div>
-			<div class="meaning__content"><a href="https://www.rinya.maff.go.jp/j/kaigai/attach/pdf/index-2.pdf">森林は生物の宝庫:世界森林資源評価（FRA）２０１５-世界の森林はどのように変化しているか-</a>
+		<% if @meaning.first.external_url.present? %>
+			<% @meaning.each do |meaning| %>
+			<div class="meaning__reference__title">参考文献</div>
+			<div class="meaning__content"><a href="<%= meaning.external_url  %>"><%= meaning.title %>:<%= meaning.url_references %></a>閲覧日(<%= meaning.updated_at.strftime('%Y/%m/%d') || meaasage.created_at.strftime('%Y/%m/%d') %>)</div><!-- /.meaning__reference -->
 			</div><!-- /.meaning__reference -->
-			<div class="meaning__content"><a href="https://www.maff.go.jp/j/kanbo/kankyo/seisaku/s_senryaku/seibutu_tayo/14/pdf/siryo1-2.pdf">環境資源としての価値は年間70兆円:森林における生物多様性の保全及び 持続可能な利用の推進方策・平成２１年７月 森林における生物多様性保全の推進方策検討会</a>
-			</div><!-- /.meaning__reference -->
+	     	<% end %>
+		<% end %>	 	
 		</div>
 	</div><!-- /.meaning__inner -->
 </section><!-- /.meaning -->
+<% end %>
 
 <% if @about.present? %>
 <section class="course content section wow fadeInUp">
@@ -103,6 +87,7 @@
 </section><!-- /.course -->
 <% end %>
 
+<% if @about.present? %>
 <section id="" class="teacher section  wow fadeInUp">
 	<div class="teacher__inner inner">
 		<h2 class="section-title">先生の紹介</h2><!-- /.section-title -->
@@ -123,6 +108,7 @@
 </div><!-- /.teacher__inner --> 
 <%= link_to "動画で詳しく見る", "http://www.kochi-u.ac.jp/agrimar-skg/movie/teachers.mp4", class:"button-home" %>
 </section><!-- /.teacher -->
+<% end %>
 
 <% if @lessons.present? %>
 <section class="lesson content section wow fadeInUp">
