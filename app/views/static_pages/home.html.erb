@@ -188,6 +188,7 @@
 </section><!-- ./lesson-->
 <% end %>
 
+<% if @alumnus.present? %>
 <section id="alumni" class="alumni section wow fadeInUp">
 	<div class="alumni__inner inner">
 		<h2 class="section-title">卒業生の声</h2><!-- /.section-title -->
@@ -203,6 +204,7 @@
 	</div><!-- /.alumni__inner -->
 	<%= link_to "他の卒業生も見る", alumni_path, class:"button-home" %>
 </section><!-- /.alumni -->
+<% end %>
 
 <section id="" class="skill section wow fadeInUp">
 	<div class="skill__top__inner inner">
