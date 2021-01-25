@@ -93,16 +93,16 @@
 		<h2 class="section-title">先生の紹介</h2><!-- /.section-title -->
 		<div class="teacher__items">
 		<% @teacher.each do |teacher| %>
-			<div class="teacher__item teacher__item__1">
-				<div class="teacher__media teacher__media__1" >
-					<div class="teacher__media__img"><%= image_tag teacher.images.first.variant(gravity: :center, resize:'800x600').processed %></div><!-- /.teacher__media -->
-					<div class="teacher__media__body">
-						<div class="teacher__media__title"><%= teacher.name %></div><!-- /.teacher__media__title -->
-						<div class="teacher__media__job"><%= teacher.job %></div><!--./teacher__media__job-->
-						<div class="teacher__media__content"><%= teacher.content %></div><!-- /.teacher__media__content -->
-					</div><!-- teacher__/.media__body -->
-				</div><!-- /.teacher__media -->
+		<% if teacher.teacher_url.present? %>
+			<a class="teacher__item teacher__item__link" href="<%= teacher.teacher_url%>">
+				<%= render 'layouts/teacher-media', object:teacher %>
+				<span class="see-details">研究室HP<i class="fas fa-arrow-right"></i></span>
+			</a><!-- /.teacher__item -->
+		<% else %>	
+			<div class="teacher__item teacher__item__no_link">
+				<%= render 'layouts/teacher-media', object:teacher %>
 			</div><!-- /.teacher__item -->
+			<% end %>
 		<% end %>	
 	</div><!-- /.teacher__items -->
 </div><!-- /.teacher__inner --> 

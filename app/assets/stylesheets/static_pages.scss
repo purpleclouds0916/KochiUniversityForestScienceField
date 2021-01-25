@@ -448,6 +448,15 @@
 .teacher__items {
 	display: flex;
 	flex-wrap: wrap;
+
+	a {
+		color: #6f7579;
+		text-decoration: none;
+
+		&:hover {
+			color: #fff;
+		}
+	}
 }
 
 .teacher__item {
@@ -464,75 +473,66 @@
 		margin-right: 0;
 	}
 
-	&:nth-of-type(4) {
-		margin-left: auto;
-	}
-
-	&:nth-of-type(5) {
-		margin-right: auto;
-	}
-
-	&:nth-of-type(n+2) {
-		&:hover {
-			background-color: $color-main;
-	
-			.see-details {
-				border: 2px solid #fff;
-			}
-	
-			.teacher__media {
-				color: #fff;
-			}
-		}
-	}
-
 	@media (max-width: 900px) {
 		width: 100%;
 		height: auto;
 		margin-right: 0;
 		margin-bottom: 32px;
 	}
+}
 
+.teacher__item__link {
+	&:hover {
+		background-color: $color-main;
 
-	.teacher__media {
-		display: block;
-		text-decoration: none;
-		transition: all 0.15s ease 0s;
-		color: #6f7579;
-
-		.teacher__media__img {
-			text-align: center;
-		
-			img {
-				vertical-align: bottom;
-				width: 80px;
-				height: 80px;
-				margin-top: -33px;
-				border-radius: 999%;
-			}
+		.see-details {
+			border: 2px solid #fff;
 		}
 
-		.teacher__media__body {
-			margin-top: 12px;
+		.teacher__media {
+			color: #fff;
 		}
-		
-		.teacher__media__title {
-			font-weight: 700;
-			font-size: 20px;
-			text-align: center;
-		}
-		
-		.teacher__media__job {
-			text-align: center;
-			font-size: $font-size-base - 4;
-		}
-		
-		.teacher__media__content {
-			font-weight: 700;
-			margin-top: 4px;
-			line-height: 1.8;
-		}		
 	}
+}
+
+.teacher__media {
+	display: block;
+	text-decoration: none;
+	transition: all 0.15s ease 0s;
+	color: #6f7579;
+
+	.teacher__media__img {
+		text-align: center;
+	
+		img {
+			vertical-align: bottom;
+			width: 80px;
+			height: 80px;
+			margin-top: -33px;
+			border-radius: 999%;
+		}
+	}
+
+	.teacher__media__body {
+		margin-top: 12px;
+	}
+	
+	.teacher__media__title {
+		font-weight: 700;
+		font-size: 20px;
+		text-align: center;
+	}
+	
+	.teacher__media__job {
+		text-align: center;
+		font-size: $font-size-base - 4;
+	}
+	
+	.teacher__media__content {
+		font-weight: 700;
+		margin-top: 4px;
+		line-height: 1.8;
+	}		
 }
 
 .button-home {
