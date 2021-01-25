@@ -11,6 +11,7 @@
 #  learning         :text
 #  memories         :text
 #  name             :string
+#  occupation       :string
 #  original_content :text
 #  original_title   :string
 #  reason           :text

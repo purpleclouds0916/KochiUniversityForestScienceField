@@ -107,57 +107,18 @@
 	<div class="teacher__inner inner">
 		<h2 class="section-title">先生の紹介</h2><!-- /.section-title -->
 		<div class="teacher__items">
+		<% @teacher.each do |teacher| %>
 			<div class="teacher__item teacher__item__1">
 				<div class="teacher__media teacher__media__1" >
-					<div class="teacher__media__img"><%= image_tag "Ichie-teacher.jpg", :alt => '市栄 智明' %></div><!-- /.teacher__media -->
+					<div class="teacher__media__img"><%= image_tag teacher.images.first.variant(gravity: :center, resize:'800x600').processed %></div><!-- /.teacher__media -->
 					<div class="teacher__media__body">
-						<div class="teacher__media__title">市栄 智明</div><!-- /.teacher__media__title -->
-						<div class="teacher__media__job">教授</div><!--./teacher__media__job-->
-						<div class="teacher__media__content">森林を構成する多様な樹木は、それぞれ様々な個性を持ち、厳しい自然界の競争に打ち勝って今日存在しています。</br>私の研究室では、日本や東南アジアの森林に生育する樹木の個性を森林生態学や生理生態学の観点からひも解き、それを森林の保全や生態系修復・再生に活かす研究に取り組んでいます。</div><!-- /.teacher__media__content -->
+						<div class="teacher__media__title"><%= teacher.name %></div><!-- /.teacher__media__title -->
+						<div class="teacher__media__job"><%= teacher.job %></div><!--./teacher__media__job-->
+						<div class="teacher__media__content"><%= teacher.content %></div><!-- /.teacher__media__content -->
 					</div><!-- teacher__/.media__body -->
 				</div><!-- /.teacher__media -->
 			</div><!-- /.teacher__item -->
-			<div class="teacher__item  teacher__item__2">
-				<a class="teacher__media" href="http://www.cc.kochi-u.ac.jp/~ysuzuki/">
-					<div class="teacher__media__img"><%= image_tag "suzuki-teacher.jpg", :alt => '鈴木 保志' %></div><!-- /.teacher__media__img -->
-					<div class="teacher__media__body">
-						<div class="teacher__media__title">鈴木 保志</div><!-- /.teacher__media__title -->
-						<div class="teacher__media__job">教授</div><!--./teacher__media__job-->
-						<div class="teacher__media__content">森林や山の自然に素朴に憧れて森林科学を学ぼうと大学に進学し、山と共に生きる林業技術者のすばらしさに触れ、林業工学（森林利用学）を専門としています。</br>高知には全国一の先進的林業技術と活気ある現場が多数あり、見学や実習でこれからの森林・林業を学ぶには最適の場所です。<br><span class="see-details">研究室HP<i class="fas fa-arrow-right"></i></span></div><!-- /.teacher__media__content -->
-					</div><!-- teacher__/.media__body -->
-				</a><!-- /.teacher__media -->
-			</div><!-- /.teacher__item -->
-			<div class="teacher__item  teacher__item__3">
-				<a class="teacher__media" href="http://www.cc.kochi-u.ac.jp/~ichiura/woodchem/ichiura/ichiurahome.html">
-					<div class="teacher__media__img"><%= image_tag "iciura-teacher.jpg", :alt => '市浦 英明' %></div><!-- /.teacher__media__img -->
-					<div class="teacher__media__body">
-						<div class="teacher__media__title">市浦 英明</div><!-- /.teacher__media__title -->
-						<div class="teacher__media__job">准教授</div><!--./teacher__media__job-->
-						<div class="teacher__media__content">木材は、マテリアルとしての機能およびエネルギーとしての機能を提供しています。その中で、紙パルプ分野の中心材料であるセルロースの研究を行っています。<br>具体的には、紙の機能化、紙おむつのリサイクル、さらにはプラスチック代替材料の研究による社会貢献を目指ています。<br><span class="see-details">研究室HP<i class="fas fa-arrow-right"></i></span></div><!-- /.teacher__media__content -->
-					</div><!-- teacher__/.media__body -->
-				</a><!-- /.teacher__media -->
-			</div><!-- /.teacher__item -->
-			<div class="teacher__item  teacher__item__4">
-				<a class="teacher__media teacher__media__4" href="http://www.cc.kochi-u.ac.jp/~matsumoto-mika/">
-					<div class="teacher__media__img"><%= image_tag "matumoto-teacher.png", :alt => '松本 美香' %></div><!-- /.teacher__media__img -->
-					<div class="teacher__media__body">
-						<div class="teacher__media__title">松本 美香</div><!-- /.teacher__media__title -->
-						<div class="teacher__media__job">講師</div><!--./teacher__media__job-->
-						<div class="teacher__media__content">持続可能な社会への転換が急務な今、木質資源は再生産可能な資源
-						として注目を浴びています。<br>この木質資源を社会が活用していくためには、森林からの安定的な木材供給の仕組みづくり、育林・伐採・加工・流通を支える社会づくりが必要になります。私は、林業・林産業を題材にしつつ、社会構造や産業構造の分析、各種政策の影響評価等を行い、森林と人とのより良い関係づくりに取り組んでいます。</br><span class="see-details">研究室HP<i class="fas fa-arrow-right"></i></span></div><!-- /.teacher__media__content -->
-					</div><!-- teacher__/.media__body -->
-				</a><!-- /.teacher__media -->
-			</div><!-- /.teacher__item -->
-			<div class="teacher__item  teacher__item__5">
-				<a class="teacher__media teacher__media__5" href="https://kfplab.wordpress.com/home/">
-					<div class="teacher__media__img"><%= image_tag "moriguti-teacher.png", :alt => '守口 海' %></div><!-- /.teacher__media__img -->
-					<div class="teacher__media__body">
-						<div class="teacher__media__title">守口 海</div><!-- /.teacher__media__title -->
-						<div class="teacher__media__job">講師</div><!--./teacher__media__job-->
-						<div class="teacher__media__content">森林を持続的に管理・利用していくために、どのようなスケジュールで間伐などの森林の手入れをするかといった問題を主に扱っています。</br>また、森林の管理を行っていくために必要な情報の収集方法や長期的な計画の立て方といった、森林の持続的利用に関連するさまざまな課題を併せて扱っています。<br><span class="see-details">研究室HP<i class="fas fa-arrow-right"></i></span></div><!-- /.teacher__media__content -->
-					</div><!-- teacher__/.media__body -->
-				</a><!-- /.teacher__media -->
-			</div><!-- /.teacher__item -->
+		<% end %>	
 	</div><!-- /.teacher__items -->
 </div><!-- /.teacher__inner --> 
 <%= link_to "動画で詳しく見る", "http://www.kochi-u.ac.jp/agrimar-skg/movie/teachers.mp4", class:"button-home" %>
