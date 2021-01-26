@@ -59,7 +59,7 @@ class PostsController < ApplicationController
     else
       render 'edit'
     end
-end
+  end
 
   def destroy
     @post = Post.find(params[:id])
@@ -67,10 +67,7 @@ end
     @post.destroy
     flash[:success] = "投稿を削除しました。"
     redirect_to request.referer
-    
-    
   end
-
 
   private
 
