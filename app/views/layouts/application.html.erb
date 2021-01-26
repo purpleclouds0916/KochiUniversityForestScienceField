@@ -11,6 +11,10 @@
 	  <%= stylesheet_link_tag params[:controller] %>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'main' %>
+    <%= javascript_pack_tag 'post' %>
+    <%= javascript_pack_tag 'swiper' %>
+    <%= javascript_pack_tag 'wow' %>
     <!-- OGP 
     <meta property="og:url" content="http://www.kochi-u.ac.jp/agrimar-skg/isikawaizumi.html" />
     <meta property="og:type" content="website" />
@@ -28,5 +32,77 @@
       <%= render 'layouts/footer' %>
       <%= debug(params) if Rails.env.development? %>
       <%= render 'layouts/move-page-top' %>
+
+      <%
+=begin%>
+ <h1>Ajax#index</h1>
+<p id="hoge">赤色になるよ</p>
+
+
+<script>
+jQuery(".js-drawer").on("click", function(e) {
+  e.preventDefault();
+  let targetClass = jQuery(this).attr("data-target");
+  jQuery("." + targetClass).toggleClass("is-checked");
+  return false;
+});
+
+jQuery('.accordion__head').click(function() {
+  jQuery(this).nextAll().slideToggle();
+  jQuery(this).children('.accordion__icon').toggleClass('is-open');
+});
+
+  $("#hoge").css("color","red")
+
+</script> 
+<%
+=end%>
+<script>
+$(function(){
+
+  var switchBtn = $('input[name=post[tag_ids]]');
+  var switchItems = $('.switchItems');
+  var inputField = 'input, textarea';
+
+  switchBtn.on('change', function(){
+  
+    var inputValue = $(this).val();
+    
+  function buildItems() {
+    switchItems.show();
+        switchItems.find(inputField).each(function(){
+          $(this).prop('disabled', false);
+        });
+        hideAndDisabledItems.hide();
+        hideAndDisabledItems.find(inputField).each(function(){
+          $(this).prop('disabled', true);
+        });
+  }
+
+    if(inputValue === 'スライダー'){
+      var hideAndDisabledItems = $('.switch_movie, .switch_link, .switch_og');
+      buildItems();
+    }else if(inputValue === '森林を学ぶ価値'){
+      var hideAndDisabledItems = $('.switch_movie, .switch_link, .switch_og, .switch_sb_title');
+      buildItems();
+    }else if(inputValue === '森林科学領域'){ 
+      var hideAndDisabledItems = $('.switch_link, .switch_og, .switch_sb_title');
+      buildItems();
+    }else if(inputValue === '先生の紹介'){
+      var hideAndDisabledItems = $('.switch_og');
+      buildItems();
+    }else if(inputValue === '授業の紹介'){ 
+      var hideAndDisabledItems = $('.switch_link, .switch_og, .switch_sb_title');
+      buildItems();
+    }else if(inputValue === '卒業生の声'){
+      var hideAndDisabledItems = $('.switch_movie, .switch_title');
+      buildItems();
+    }else if(inputValue === '資格'){ 
+      var hideAndDisabledItems = $('.switch_og, .switch_sb_title, .switch_movie');
+      buildItems();
+    }
+  });
+});
+</script>
   </body>
 </html>
