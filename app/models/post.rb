@@ -36,8 +36,8 @@
 #
 class Post < ApplicationRecord
   belongs_to :user
-  has_many :post_tag_relations
-  has_many :tags, through: :post_tag_relations
+  has_many :post_tag_relations, dependent: :destroy
+  has_many :tags, through: :post_tag_relations, dependent: :destroy
   has_many_attached :images
   has_rich_text :content
   default_scope -> { order(created_at: :desc) }
