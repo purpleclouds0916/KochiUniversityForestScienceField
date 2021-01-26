@@ -21,12 +21,12 @@ users = User.order(:created_at).take(6)
   users.each { |user| user.posts.create!(title: title) }
 end
 
-# Tag.create([
-#   { name: 'スライダー' },
-#   { name: '森林を学ぶ価値' },
-#   { name: '森林科学領域' },
-#   { name: '先生の紹介' },
-#   { name: '授業の紹介' },
-#   { name: '卒業生の声' },
-#   { name: '資格' }
-# ])
+Tag.create([
+  { name: 'スライダー' },
+  { name: '森林を学ぶ価値' },
+  { name: '森林科学領域' },
+  { name: '先生の紹介' },
+  { name: '授業の紹介' },
+  { name: '卒業生の声' },
+  { name: '資格' }
+])
