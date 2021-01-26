@@ -87,7 +87,7 @@
 </section><!-- /.course -->
 <% end %>
 
-<% if @about.present? %>
+<% if @teacher.present? %>
 <section id="" class="teacher section  wow fadeInUp">
 	<div class="teacher__inner inner">
 		<h2 class="section-title">先生の紹介</h2><!-- /.section-title -->
@@ -106,7 +106,9 @@
 		<% end %>	
 	</div><!-- /.teacher__items -->
 </div><!-- /.teacher__inner --> 
-<%= link_to "動画で詳しく見る", "http://www.kochi-u.ac.jp/agrimar-skg/movie/teachers.mp4", class:"button-home" %>
+<% if @teacher_video.present? %>
+<%= link_to "動画で詳しく見る", @teacher_video.last.video_url, class:"button-home" %>
+<% end %>
 </section><!-- /.teacher -->
 <% end %>
 

@@ -6,6 +6,7 @@ class StaticPagesController < ApplicationController
     @about = Tag.find(3).posts.limit(1)
     @skills  = Tag.find(7).posts.limit(8)
     @teacher = Tag.find(4).posts.limit(6)
+    @teacher_video = Tag.find(8).posts
   end
 
   def alumni
