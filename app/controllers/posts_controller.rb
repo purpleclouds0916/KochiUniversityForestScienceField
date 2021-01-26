@@ -66,7 +66,9 @@ end
     @user = @post.user
     @post.destroy
     flash[:success] = "投稿を削除しました。"
-    redirect_to user_path(@user)
+    redirect_to request.referer
+    
+    
   end
 
 
