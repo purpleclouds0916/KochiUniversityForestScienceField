@@ -5,16 +5,14 @@
     <%= favicon_link_tag('icon.jpg') %>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 　	<!--fontawesome-->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<%= stylesheet_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
 	  <script src="https://kit.fontawesome.com/c93c1bab3a.js" crossorigin="anonymous"></script>
 	  <%= stylesheet_link_tag params[:controller] %>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'main' %>
     <%= javascript_pack_tag 'post' %>
-    <%= javascript_pack_tag 'swiper' %>
-    <%= javascript_pack_tag 'wow' %>
     <!-- OGP 
     <meta property="og:url" content="http://www.kochi-u.ac.jp/agrimar-skg/isikawaizumi.html" />
     <meta property="og:type" content="website" />
@@ -58,51 +56,26 @@ jQuery('.accordion__head').click(function() {
 <%
 =end%>
 <script>
-$(function(){
-
-  var switchBtn = $('input[name=post[tag_ids]]');
-  var switchItems = $('.switchItems');
-  var inputField = 'input, textarea';
-
-  switchBtn.on('change', function(){
-  
-    var inputValue = $(this).val();
-    
-  function buildItems() {
-    switchItems.show();
-        switchItems.find(inputField).each(function(){
-          $(this).prop('disabled', false);
-        });
-        hideAndDisabledItems.hide();
-        hideAndDisabledItems.find(inputField).each(function(){
-          $(this).prop('disabled', true);
-        });
-  }
-
-    if(inputValue === 'スライダー'){
-      var hideAndDisabledItems = $('.switch_movie, .switch_link, .switch_og');
-      buildItems();
-    }else if(inputValue === '森林を学ぶ価値'){
-      var hideAndDisabledItems = $('.switch_movie, .switch_link, .switch_og, .switch_sb_title');
-      buildItems();
-    }else if(inputValue === '森林科学領域'){ 
-      var hideAndDisabledItems = $('.switch_link, .switch_og, .switch_sb_title');
-      buildItems();
-    }else if(inputValue === '先生の紹介'){
-      var hideAndDisabledItems = $('.switch_og');
-      buildItems();
-    }else if(inputValue === '授業の紹介'){ 
-      var hideAndDisabledItems = $('.switch_link, .switch_og, .switch_sb_title');
-      buildItems();
-    }else if(inputValue === '卒業生の声'){
-      var hideAndDisabledItems = $('.switch_movie, .switch_title');
-      buildItems();
-    }else if(inputValue === '資格'){ 
-      var hideAndDisabledItems = $('.switch_og, .switch_sb_title, .switch_movie');
-      buildItems();
-    }
-  });
+var mySwiper = new Swiper('.swiper-container', {
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
+  loop: true,
+  pagination: {
+    el: '.swiper-pagination',
+    type: 'bullets',
+    clickable: true,
+  },
+  autoplay: {
+   delay: 6000,
+   disableOnInteraction: true
+ },
+ speed: 1500,
+ 
 });
+
+
 </script>
   </body>
 </html>

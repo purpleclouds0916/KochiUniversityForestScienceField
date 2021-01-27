@@ -15,28 +15,22 @@
               <% end %>
               </dd>  
             </div> 
-      
             <div class="post__control switchItems switch_title">
               <dt><%= f.label :title, "タイトル" %></dt>
               <dd><%= f.text_field :title, class: "form-input" %></dd>
             </div>
-            <div class="post__control switchItems switch_title">
+            <div class="post__control switchItems switch_name">
               <dt><%= f.label :name, "名前" %></dt>
               <dd><%= f.text_area :name, class: "form-input" %></dd>
             </div>
-            <div class="post__control switchItems switch_title">
+            <div class="post__control switchItems switch_content">
               <dt><%= f.label :content %></dt>
               <dd><%= f.rich_text_area :content, class: "form-textarea "%></dd>
             </div>
-            <%
-=begin%>
- <div class="post__control switchItems switch_sb_title">
-              <dt>サブタイトル</dt>
-              <dd><input class="form-input" required></dd>
+            <div class="post__control switchItems switch_sb_title">
+              <dt><%= f.label :sb_title %></dt>
+              <dd><input class="form-input"></dd>
             </div> 
-<%
-=end%>
-      
              <div class="post__control switchItems switch_img">
               <dt>画像</dt>
               <dd><%= f.file_field :images , accept: "image/jpeg,image/gif,image/png", multiple: true %></dd>
@@ -45,7 +39,7 @@
               <dt><%= f.label :birthplace, "出身地" %></dt>
               <dd><%= f.text_field :birthplace, class: "form-input" %></dd>
             </div>
-            <div class="post__control switchItems switch_og">
+            <div class="post__control switchItems switch_job switch_og ">
               <dt><%= f.label :job, "職業" %></dt>
               <dd><%= f.text_field :job, class: "form-input" %></dd>
             </div>
@@ -57,19 +51,19 @@
               <dt><%= f.label :research_field, "研究分野" %></dt>
               <dd><%= f.text_field :research_field, class: "form-input" %></dd>
             </div>
-            <div class="post__control switchItems switch_content">
+            <div class="post__control switchItems switch_og">
               <dt><%= f.label :reason, "森林科学科への進学理由" %></dt>
               <dd><%= f.text_area :reason, class: "form-textarea" %></dd>
             </div>
-            <div class="post__control switchItems switch_content">
+            <div class="post__control switchItems switch_og">
               <dt><%= f.label :learning, "今の仕事につながる森林領域での学び" %></dt>
               <dd><%= f.text_area :learning, class: "form-textarea" %></dd>
             </div>
-                        <div class="post__control switchItems switch_content">
+            <div class="post__control switchItems switch_og">
               <dt><%= f.label :job_description, "今の職場での仕事内容" %></dt>
               <dd><%= f.text_area :job_description, class: "form-textarea" %></dd>
             </div>
-            <div class="post__control switchItems switch_content">
+            <div class="post__control switchItems switch_og">
               <dt><%= f.label :memories, "高知大学での経験や思い出" %></dt>
               <dd><%= f.text_area :memories, class: "form-textarea" %></dd>
             </div>
@@ -77,41 +71,26 @@
               <dt><%= f.label :original_title, "好きなタイトルを入力してください" %></dt>
               <dd><%= f.text_field :original_title, class: "form-input" %></dd>
             </div>
-            <div class="post__control switchItems switch_content">
+            <div class="post__control switchItems switch_og">
               <dt><%= f.label :original_content, "上のタイトルについて好きに書いてください" %></dt>
               <dd><%= f.text_area :original_content, class: "form-textarea" %></dd>
             </div>
-            <div class="post__control switchItems switch_link">
+            <div class="post__control switchItems switch_movie_url">
               <dt><%= f.label :video_url, "動画のURL" %></dt>
               <dd><%= f.text_field :video_url, class: "form-input" %></dd>
             </div>
-            <div class="post__control switchItems switch_link">
+            <div class="post__control switchItems switch_external_url">
               <dt><%= f.label :external_url , "参考文献URL" %></dt>
               <dd><%= f.text_field :external_url , class: "form-input" %></dd>
             </div>
-            <div class="post__control switchItems switch_link">
-              <dt><%= f.label :teacher_url , "先生HPのURL" %></dt>
-              <dd><%= f.text_field :teacher_url , class: "form-input" %></dd>
-            </div>
-            <div class="post__control switchItems switch_link">
+            <div class="post__control switchItems switch_external_url">
               <dt><%= f.label :url_references , "参照先の名前" %></dt>
               <dd><%= f.text_field :url_references , class: "form-input" %></dd>
             </div>
-            
-            <%
-=begin%>
-
-            <div class="post__control switchItems switch_movie">
-              <dt>動画</dt>
-              <dd><input class="form-input" required></dd>
+            <div class="post__control switchItems switch_teacher_url">
+              <dt><%= f.label :teacher_url , "先生HPのURL" %></dt>
+              <dd><%= f.text_field :teacher_url , class: "form-input" %></dd>
             </div>
-            <div class="post__control switchItems switch_link">
-              <dt>リンク先</dt>
-              <dd><input class="form-input" required></dd>
-            </div>
-
-<%
-=end%>
           </dl><!-- /.post__controls -->
           <div class="post__submit">
             <input type="submit" value="送信" class="button-arrow-right">
