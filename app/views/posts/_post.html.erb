@@ -2,9 +2,19 @@
 <td class="table-titles" data-label="">        
         <%= gravatar_for post.user, size: 50 %>
     <div>
-        <%= post.title %>      <% post.tags.each do |tag| %>
+        <% post.tags.each do |tag| %>
         <span class="badge badge-light"><%= tag.name %></span>
       <% end %>
+      <% if post.title.present?%>
+      <%= post.title %>
+      <% elsif post.name.present?%>
+      <%= post.name %>
+     <% elsif post.content.present? %>
+     <%= post.content %>
+      <%end%>
+   
+      
+
     <nav class="table-nav">
         <ul>
             <% if current_user.admin? || current_user?(post.user)%>

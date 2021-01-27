@@ -239,6 +239,10 @@ window.wow.init();
 //         });
 //   }
 
+// $(function(){
+//   $("#post_content_trix_input_post").addClass("switch_content");
+// })
+
 //フォームのタグによりフォームの出しわけ
 $(function(){
 
@@ -249,7 +253,7 @@ $(function(){
     switchBtn.on('change', function(){
     
       var inputValue = $(this).val();
-      
+      //リッチエディタの無効化と有効かがうまくできていない！
     function buildItems() {
       switchItems.hide();
           switchItems.find(inputField).each(function(){
@@ -261,36 +265,46 @@ $(function(){
           });
     }
 
-    //  1 == スライダー
-    //  2 == 森林を学ぶ価値
-    //  3 == 森林科学領域
-    //  4 == 先生の紹介
-    //  5 == 授業の紹介
-    //  6 == 卒業生の声
-    //  7 == 資格
-    //  8 == 先生の紹介動画
-
+        function buildItems() {
+      switchItems.hide();
+          switchItems.find(inputField).each(function(){
+            $(this).prop('disabled', false);
+          });
+          showAndAbleItems.show();
+          showAndAbleItems.find(inputField).each(function(){
+            $(this).prop('disabled', false);
+          });
+    }
+    
+      //  1 == スライダー
      if(inputValue === '1'){
        var showAndAbleItems = $('.switch_img, .switch_title, .switch_sb_title' );
        buildItems();
+       //  2 == 森林を学ぶ価値
      }else if(inputValue === '2'){
        var showAndAbleItems = $('.switch_img, .switch_title, .switch_content, .switch_external_url');
         buildItems();
+       //  3 == 森林科学領域
       }else if(inputValue === '3'){ 
         var showAndAbleItems = $('.switch_img, .switch_content, .switch_movie_url');
         buildItems();
+       //  4 == 先生の紹介
       }else if(inputValue === '4'){
         var showAndAbleItems = $('.switch_img, .switch_name, .switch_content, .switch_job, .switch_teacher_url');
         buildItems();
+      //  5 == 授業の紹介
       }else if(inputValue === '5'){ 
         var showAndAbleItems = $('.switch_img, .switch_content, .switch_movie_url');
         buildItems();
+      //  6 == 卒業生の声
       }else if(inputValue === '6'){
         var showAndAbleItems = $('switch_img, .switch_name, .switch_og');
         buildItems();
+      //  7 == 資格
       }else if(inputValue === '7'){ 
         var showAndAbleItems = $('switch_img, .switch_name, .switch_content, .switch_external_url' );
         buildItems();
+      //  8 == 先生の紹介動画
       }else if(inputValue === '8'){ 
         var showAndAbleItems = $('.switch_movie_url' );
         buildItems();
@@ -298,7 +312,3 @@ $(function(){
     });
   });
   
-//卒業生の声を checked にする
-  $(function(){
-    $("#post_tag_ids_6").prop('checked', true);
-});

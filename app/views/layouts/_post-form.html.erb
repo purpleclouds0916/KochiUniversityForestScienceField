@@ -25,7 +25,12 @@
             </div>
             <div class="post__control switchItems switch_content">
               <dt><%= f.label :content %></dt>
-              <dd><%= f.rich_text_area :content, class: "form-textarea "%></dd>
+              <dd><%= f.text_area :content, class: "form-textarea "%></dd>
+              <%
+=begin%>
+ <dd><%= f.rich_text_area :content, class: "form-textarea "%></dd> 
+<%
+=end%>
             </div>
             <div class="post__control switchItems switch_sb_title">
               <dt><%= f.label :sb_title %></dt>

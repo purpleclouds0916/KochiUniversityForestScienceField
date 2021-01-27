@@ -40,7 +40,7 @@ class Post < ApplicationRecord
   has_many_attached :images
   has_rich_text :content
   default_scope -> { order(created_at: :desc) }
-  validates :title,  presence: true
+ 
   validates :images,   content_type: { in: %w[image/jpeg image/gif image/png],
     message: "の拡張子はPNG,JPEG,GIFのいずれかのみです。" },
 size:         { less_than: 5.megabytes,
