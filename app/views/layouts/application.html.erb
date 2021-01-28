@@ -13,21 +13,38 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'main' %>
   
-    <meta property="og:url" content="<%= request.url %>" />
+    <%
+=begin%>
+ <meta property="og:url" content="<%= request.url %>" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content="高知大学 森林科学領域" />
     <meta property="og:description" content="森林率全国1位の高知県!林業や自然を学ぶためには絶好の環境です"/>
     <meta property="og:site_name" content="高知大学 農林海洋科学部 農林資源環境科学科 森林科学領域" />
     <meta property="og:image" content="http://www.kochi-u.ac.jp/agrimar-skg/img/isikawa-prof.jpg" />
     <meta name="twitter:card" content="summary_large_image" /> 
-    <meta name="twitter:site" content="@KochiU_News"/>
+    <meta name="twitter:site" content="@KochiU_News"/> 
+<%
+=end%>
+
+  <%
+=begin%>
+ <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@McBattleChannel" />
+  <meta property="og:title" content="<%= full_title(yield(:title)) %>" />
+  <meta property="og:url" content="<%= request.url %>" />
+  <meta property="og:description"
+    content="<%= content_for?(:description) ? yield(:description) : '森林科学領域の公式HP(高知大学)' %>" />
+  <meta property="og:image"
+    content="<%= content_for?(:image_url) ? yield(:image_url) : full_url('/assets/images/ogp.png') %>" />
   </head>
     <body>
       <%= render 'layouts/header' %>
       <%= yield %>
       <%= render 'layouts/footer' %>
       <%= debug(params) if Rails.env.development? %>
-      <%= render 'layouts/move-page-top' %>
+      <%= render 'layouts/move-page-top' %> 
+<%
+=end%>
 
       <%
 =begin%>

@@ -9,4 +9,13 @@ module ApplicationHelper
       page_title + " | " + base_title                 
     end
   end
+
+  # def full_url(path)
+  #   domain = if Rails.env.development?
+  #              'http://localhost:3000'
+  #            else
+  #              'https://ltqphygm.herokuapp.com'
+  #            end
+  #   "#{domain}#{path}"
+  # end
 end
