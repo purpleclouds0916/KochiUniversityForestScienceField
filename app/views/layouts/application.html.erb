@@ -36,6 +36,8 @@
     content="<%= content_for?(:description) ? yield(:description) : '森林科学領域の公式HP(高知大学)' %>" />
   <meta property="og:image"
     content="<%= content_for?(:image_url) ? yield(:image_url) : full_url('/assets/images/ogp.png') %>" />
+    <%
+=end%>
   </head>
     <body>
       <%= render 'layouts/header' %>
@@ -43,8 +45,7 @@
       <%= render 'layouts/footer' %>
       <%= debug(params) if Rails.env.development? %>
       <%= render 'layouts/move-page-top' %> 
-<%
-=end%>
+
 
       <%
 =begin%>
