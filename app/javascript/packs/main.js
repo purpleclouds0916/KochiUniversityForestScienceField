@@ -116,17 +116,6 @@ $(function(){
             $(this).prop('disabled', false);
           });
     }
-
-        function buildItems() {
-      switchItems.hide();
-          switchItems.find(inputField).each(function(){
-            $(this).prop('disabled', false);
-          });
-          showAndAbleItems.show();
-          showAndAbleItems.find(inputField).each(function(){
-            $(this).prop('disabled', false);
-          });
-    }
     
       //  1 == スライダー
      if(inputValue === '1'){
