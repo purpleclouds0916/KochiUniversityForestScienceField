@@ -112,7 +112,6 @@ body {
 
 .button {
   text-align: right;
-  padding: 0 16px;
   margin-bottom: 24px;
 
   a {
@@ -136,7 +135,11 @@ body {
 
 .posts_search_form {
   width: 300px;
-  margin-bottom: 24px;
+  margin-bottom: 32px;
+
+  @include mq('sp') {
+    margin: 24px auto;
+  }
 }
 
 
