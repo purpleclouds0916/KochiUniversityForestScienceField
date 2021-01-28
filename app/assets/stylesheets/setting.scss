@@ -269,34 +269,38 @@ strong{
 }
 
 // ページネーション 
-.pagination__center {
-	text-align: center;
-	margin-top: 24px;
-  }
+
   
 .pagination{
+	margin: 32px 0;
+	justify-content: center;
+
 li {
+	
 	a {          
 	border: 1px solid #e2e2e2;
-	color: $color-text-base;  
-	
-	
+	color: $color-text-base;
+	background-color: #ffffff;  
+	padding: 14px;
+	text-decoration: none;
 	transition: all 0.3s ease 0s;
 
-	&:first-child {
-		
+	@include mq('sp') {
+		padding: 10px;
 	}
-	&:hover {
-		color: #fff;
-		background: $color-main;
-		border: 1px solid $color-main;   
-	}
+	
+		&:hover {
+			color: #fff;
+			background: $color-main;
+			border: 1px solid $color-main;   
+		}
 	}
 }
 
 .active {
 	a {
 	background: $color-main;
+	color: #ffffff;
 	border: 1px solid $color-main; 
 
 	&:hover {

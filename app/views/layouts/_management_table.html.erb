@@ -18,9 +18,7 @@
         <% end %>
       <% end %>  
       </div>
-      <div class="pagination__center">
-         <%= paginate object,window: 2%>
-      </div><!-- ./paginations -->
+       <%= paginate object,window: 2%>  
     </div>
     <%= render 'layouts/posts_search_form' %>
     <table class="post__table">
@@ -47,8 +45,6 @@
     <% end %>
      <%= render object %>
     </table>
-    <div class="pagination__center" >
        <%= paginate object,window: 2%>
-    </div><!-- ./paginations -->
   </div><!-- /.contact__inner -->
 </section><!-- /.contact -->
