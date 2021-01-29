@@ -10,7 +10,7 @@
       <% elsif post.name.present?%>
       <%= post.name %>
      <% elsif post.content.present? %>
-     <%= post.content %>
+    <%= post.content.truncate(30)  %> 
       <%end%>
    
       
