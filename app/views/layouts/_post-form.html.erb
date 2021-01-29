@@ -14,6 +14,7 @@
             </dd>  
             </div> 
             <div class="post__control switchItems switch_title">
+<<<<<<< HEAD
               <dt><%= f.label :title, "タイトル", class: "contact__label--required" %></dt>
               <dd><%= f.text_field :title, class: "form-input", :required => true %></dd>
             </div>
@@ -23,10 +24,22 @@
             </div>
             <div class="post__control switchItems switch_content">
               <dt><%= f.label :content, "コンテンツ", class: "contact__label--required" %></dt>
+=======
+              <dt><%= f.label :title, "タイトル" %></dt>
+              <dd><%= f.text_field :title, class: "form-input", :required => true %></dd>
+            </div>
+            <div class="post__control switchItems switch_name">
+              <dt><%= f.label :name, "名前" %></dt>
+              <dd><%= f.text_area :name, class: "form-input", :required => true %></dd>
+            </div>
+            <div class="post__control switchItems switch_content">
+              <dt><%= f.label :content %></dt>
+>>>>>>> b330b17e2ecc60e5a2f327fc6cbc93ac0c8ffa28
               <dd><%= f.text_area :content, class: "form-textarea ", :required => true %></dd>
             </div>
             <div class="post__control switchItems switch_sb_title">
               <dt><%= f.label :sb_title %></dt>
+<<<<<<< HEAD
               <dd><%= f.text_area :name, class: "form-input" %></dd>
             </div> 
              <div class="post__control switchItems switch_img">
@@ -71,6 +84,52 @@
             </div>
             <div class="post__control switchItems switch_og">
               <dt><%= f.label :original_content, "上のタイトルについて好きに書いてください", class: "contact__label--required" %></dt>
+=======
+              <dd><%= f.text_area :name, class: "form-input", :required => true %></dd>
+            </div> 
+             <div class="post__control switchItems switch_img">
+              <dt><%= f.label :images %></dt>
+              <dd><%= f.file_field :images , accept: "image/jpeg,image/gif,image/png", multiple: true, :required => true %></dd>
+            </div>
+            <div class="post__control switchItems switch_og">
+              <dt><%= f.label :birthplace, "出身地" %></dt>
+              <dd><%= f.text_field :birthplace, class: "form-input", :required => true %></dd>
+            </div>
+            <div class="post__control switchItems switch_job switch_og ">
+              <dt><%= f.label :job, "職業" %></dt>
+              <dd><%= f.text_field :job, class: "form-input", :required => true %></dd>
+            </div>
+            <div class="post__control switchItems switch_og">
+              <dt><%= f.label :research_office, "研究室" %></dt>
+              <dd><%= f.text_field :research_office, class: "form-input", :required => true %></dd>
+            </div>
+          　 <div class="post__control switchItems switch_og">
+              <dt><%= f.label :research_field, "研究分野" %></dt>
+              <dd><%= f.text_field :research_field, class: "form-input", :required => true %></dd>
+            </div>
+            <div class="post__control switchItems switch_og">
+              <dt><%= f.label :reason, "森林科学科への進学理由" %></dt>
+              <dd><%= f.text_area :reason, class: "form-textarea", :required => true %></dd>
+            </div>
+            <div class="post__control switchItems switch_og">
+              <dt><%= f.label :learning, "今の仕事につながる森林領域での学び" %></dt>
+              <dd><%= f.text_area :learning, class: "form-textarea", :required => true %></dd>
+            </div>
+            <div class="post__control switchItems switch_og">
+              <dt><%= f.label :job_description, "今の職場での仕事内容" %></dt>
+              <dd><%= f.text_area :job_description, class: "form-textarea", :required => true %></dd>
+            </div>
+            <div class="post__control switchItems switch_og">
+              <dt><%= f.label :memories, "高知大学での経験や思い出" %></dt>
+              <dd><%= f.text_area :memories, class: "form-textarea", :required => true %></dd>
+            </div>
+            <div class="post__control switchItems switch_og">
+              <dt><%= f.label :original_title, "好きなタイトルを入力してください" %></dt>
+              <dd><%= f.text_field :original_title, class: "form-input", :required => true %></dd>
+            </div>
+            <div class="post__control switchItems switch_og">
+              <dt><%= f.label :original_content, "上のタイトルについて好きに書いてください" %></dt>
+>>>>>>> b330b17e2ecc60e5a2f327fc6cbc93ac0c8ffa28
               <dd><%= f.text_area :original_content, class: "form-textarea", :required => true %></dd>
             </div>
             <div class="post__control switchItems switch_movie_url">
