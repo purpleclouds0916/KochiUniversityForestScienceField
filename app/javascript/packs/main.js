@@ -77,21 +77,6 @@ $(function(){
 
 window.wow.init();
 
-// function buildItems() {
-//     switchItems.show();
-//         switchItems.find(inputField).each(function(){
-//           $(this).prop('disabled', false);
-//         });
-//         showAndAbleItems.hide();
-//         showAndAbleItems.find(inputField).each(function(){
-//           $(this).prop('disabled', true);
-//         });
-//   }
-
-// $(function(){
-//   $("#post_content_trix_input_post").addClass("switch_content");
-// })
-
  //以下管理者画面のjs
  // -----
 // 投稿タグとフォームの出しわけ
@@ -101,16 +86,25 @@ $(function(){
     var switchBtn = $('input[type=radio]');
     var switchItems = $('.switchItems');
     var inputField = 'input, textarea';
-  
-    switchBtn.on('change', function(){
-    
-      var inputValue = $(this).val();
-      //リッチエディタの無効化と有効かがうまくできていない！
-    function buildItems() {
-      switchItems.hide();
+    //リッチエディタを使用した場合の無効化と有効かがうまくできていない！
+    // var inputField = 'input, textarea, trix_area';
+
+   function hideItems() {
+    switchItems.hide();
           switchItems.find(inputField).each(function(){
             $(this).prop('disabled', true);
           });
+   }
+
+   //最初は非表示にする&入力必須
+    hideItems();
+    $('#post_tag_ids_1').prop('required', true);
+
+    switchBtn.on('change', function(){
+    
+      var inputValue = $(this).val();
+    function buildItems() {
+      hideItems()
           showAndAbleItems.show();
           showAndAbleItems.find(inputField).each(function(){
             $(this).prop('disabled', false);
@@ -139,11 +133,11 @@ $(function(){
         buildItems();
       //  6 == 卒業生の声
       }else if(inputValue === '6'){
-        var showAndAbleItems = $('switch_img, .switch_name, .switch_og');
+        var showAndAbleItems = $('.switch_img, .switch_name, .switch_og');
         buildItems();
       //  7 == 資格
       }else if(inputValue === '7'){ 
-        var showAndAbleItems = $('switch_img, .switch_name, .switch_content, .switch_external_url' );
+        var showAndAbleItems = $('.switch_img, .switch_name, .switch_content, .switch_external_url' );
         buildItems();
       //  8 == 先生の紹介動画
       }else if(inputValue === '8'){ 
@@ -152,6 +146,12 @@ $(function(){
       }
     });
   });
+
+  $(function(){
+    
+   
+
+  });  
 
     //画面サイズの変更でリロードして、デザインが崩れるのを防止
     $(function(){
