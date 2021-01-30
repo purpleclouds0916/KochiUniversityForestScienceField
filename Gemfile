@@ -35,6 +35,8 @@ gem 'faker',                   '2.1.2'
 gem 'kaminari'
 # japanese install
 gem 'rails-i18n'
+# Saving images in a production environment
+gem 'aws-sdk-s3',              '1.46.0', require: false
 
 gem 'rails-controller-testing'
 

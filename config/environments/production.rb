@@ -129,4 +129,8 @@ Rails.application.configure do
       password:Rails.application.credentials.gmail[:password],
       authentication: :login
     }
+
+
+  # アップロードされたファイルをAWSに保存する
+  config.active_storage.service = :amazon
 end
