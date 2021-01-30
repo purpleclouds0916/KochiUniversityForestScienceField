@@ -27,7 +27,7 @@ Tag.create([
 ])
 
 users = User.order(:created_at).take(6)
-filenames = Dir.open("app/assets/images/samples/",&:to_a)
+filenames = Dir.open("db/fixtures/",&:to_a)
 10.times do
   users.each do |user|
     name  = Faker::Name.name
@@ -42,13 +42,13 @@ filenames = Dir.open("app/assets/images/samples/",&:to_a)
     sentence7 = Faker::Lorem.sentence(word_count: 100)
     sentence8 = Faker::Lorem.sentence(word_count: 100)
     filename = filenames[3..22].shuffle.first
- file_path = "app/assets/images/samples/#{filename}"
+ file_path = "db/fixtures/#{filename}"
     
     user.posts.create!(tag_ids: '6',
       name:name, birthplace: birthplace, job:job, research_field:sentence1, research_office:sentence2,
       reason:sentence4, learning:sentence5, job_description: sentence6, memories:sentence7, original_title:sentence3, original_content:sentence8
     ).images.attach(io: File.open("#{file_path}"),
-    filename: "samples/#{filename}")
+    filename: "fixtures/#{filename}")
 end
 end
 # user.posts.create!(tag_ids: '2',
