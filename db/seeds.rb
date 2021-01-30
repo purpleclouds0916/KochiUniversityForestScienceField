@@ -27,12 +27,7 @@ Tag.create([
 ])
 
 users = User.order(:created_at).take(6)
-# 10.times do
-#   content = Faker::Lorem.sentence(word_count: 20)
-#   aa = Faker::Address.city
-#   job = Faker::Job
-#   users.each { |user| user.posts.create!(content: content, birthplace: aa, job:aa, job_description: aa,learning:aa,memories:aa,name:aa,original_content:aa,original_title:aa,reason:aa,research_field:aa,research_office:aa) }
-# end
+filenames = Dir.open("app/assets/images/samples/",&:to_a)
 10.times do
   users.each do |user|
     name  = Faker::Name.name
@@ -46,36 +41,17 @@ users = User.order(:created_at).take(6)
     sentence6 = Faker::Lorem.sentence(word_count: 100)
     sentence7 = Faker::Lorem.sentence(word_count: 100)
     sentence8 = Faker::Lorem.sentence(word_count: 100)
+    filename = filenames[3..22].shuffle.first
+ file_path = "app/assets/images/samples/#{filename}"
     
     user.posts.create!(tag_ids: '6',
       name:name, birthplace: birthplace, job:job, research_field:sentence1, research_office:sentence2,
       reason:sentence4, learning:sentence5, job_description: sentence6, memories:sentence7, original_title:sentence3, original_content:sentence8
-    )
-    # post.tags << Tag.find_by({name:"卒業生の声"})
-    # filename = filenames[3..22].shuffle.first
-    #  file_path = "app/assets/images/samples/#{filename}"
-    #   post.images.attach(io: File.open("#{file_path}"),
-    # filename: "samples/#{filename}")
-  end
+    ).images.attach(io: File.open("#{file_path}"),
+    filename: "samples/#{filename}")
 end
 
-
-
-# > user.posts.first.tags.first
-posts = Post.all
-filenames = Dir.open("app/assets/images/samples/",&:to_a)
-
-posts.each do |post|
-  # post.tags << Tag.find_by({name:"卒業生の声"})
-filename = filenames[3..22].shuffle.first
- file_path = "app/assets/images/samples/#{filename}"
-  post.images.attach(io: File.open("#{file_path}"),
-filename: "samples/#{filename}")
-end  
-
-
-
-
-
-
-
+# user.posts.create!(tag_ids: '2',
+#   title:"テスト"
+# ).images.attach(io: File.open("app/assets/images/samples/sample1.jpg"),
+# filename: "samples/sample1.jpg")
