@@ -50,7 +50,7 @@ filenames = Dir.open("app/assets/images/samples/",&:to_a)
     ).images.attach(io: File.open("#{file_path}"),
     filename: "samples/#{filename}")
 end
-
+end
 # user.posts.create!(tag_ids: '2',
 #   title:"テスト"
 # ).images.attach(io: File.open("app/assets/images/samples/sample1.jpg"),
