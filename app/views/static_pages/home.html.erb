@@ -32,12 +32,12 @@
 	</div><!-- /.swiper-container -->
 </div><!-- /.mainvisual -->
 
-<% if @meaning.present? %>
+<% if @meanings.present? %>
 <section id="" class="meaning section">
 	<div class="meaning__inner inner">
 		<h2 class="section-title">森林を学ぶ価値</h2><!-- /.section-title -->
 		<div class="meaning__items">
-		<% @meaning.each do |meaning| %>
+		<% @meanings.each do |meaning| %>
 			<div class="meaning__item ">
 				<div class="meaning__img">
 					<%= image_tag  meaning.images.first.variant(resize:'1200x800').processed %>
@@ -50,12 +50,12 @@
 		<% end %>	
 		</div><!-- /.meaning__items -->
 		<div class="meaning__reference">
-		<% if @meaning.first.external_url.present? %>
-			<% @meaning.each do |meaning| %>
+		<% if @external_urls.present? %>
 			<div class="meaning__reference__title">参考文献</div>
+			<% @meanings.each do |meaning| %>
 			<div class="meaning__content"><a href="<%= meaning.external_url  %>"><%= meaning.title %>:<%= meaning.url_references %></a>閲覧日(<%= meaning.updated_at.strftime('%Y/%m/%d') || meaasage.created_at.strftime('%Y/%m/%d') %>)</div><!-- /.meaning__reference -->
-			</div><!-- /.meaning__reference -->
 	     	<% end %>
+			 </div><!-- /.meaning__reference -->
 		<% end %>	 	
 		</div>
 	</div><!-- /.meaning__inner -->
