@@ -37,6 +37,8 @@ gem 'kaminari'
 gem 'rails-i18n'
 # Saving images in a production environment
 gem 'aws-sdk-s3',              '1.46.0', require: false
+# Migrate data from development environment to production
+gem 'seed_dump'
 
 gem 'rails-controller-testing'
 
