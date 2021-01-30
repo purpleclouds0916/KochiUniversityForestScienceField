@@ -43,8 +43,8 @@
 					<%= image_tag  meaning.images.first.variant(resize:'1200x800').processed %>
 				</div><!-- /.meaning__img -->
 				<div class="meaning__body">
-					<div class="meaning__title"><%= meaning.title %></div><!-- /.meaning__title -->
-					<div class="meaning__content"><%= meaning.content %></div><!-- /.meaning__content -->
+					<div class="meaning__title"><%= simple_format(meaning.title) %></div><!-- /.meaning__title -->
+					<div class="meaning__content"><%= simple_format(meaning.content) %></div><!-- /.meaning__content -->
 				</div><!-- /.meaning__body -->
 			</div><!-- /.meaning__item -->
 		<% end %>	
