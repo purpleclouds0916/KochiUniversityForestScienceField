@@ -44,5 +44,5 @@ class Post < ApplicationRecord
     message: "の拡張子はPNG,JPEG,GIFのいずれかのみです。" },
 size:         { less_than: 5.megabytes,
     message: "ファイルは5MB未満にしてください。" }
-  validates :tags,presence: true  
+  # validates :tags,presence: true  
 end
