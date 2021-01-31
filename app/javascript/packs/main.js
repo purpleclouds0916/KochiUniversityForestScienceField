@@ -113,7 +113,7 @@ $(function(){
     
       //  1 == スライダー
      if(inputValue === '1'){
-       var showAndAbleItems = $('.switch_img, .switch_title, .switch_sb_title' );
+       var showAndAbleItems = $('.switch_img, .switch_title, .switch_lead' );
        buildItems();
        //  2 == 森林を学ぶ価値
      }else if(inputValue === '2'){

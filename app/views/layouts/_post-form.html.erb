@@ -25,9 +25,9 @@
               <dt><%= f.label :content, "コンテンツ", class: "contact__label--required" %></dt>
               <dd><%= f.text_area :content, class: "form-textarea ", :required => true %></dd>
             </div>
-            <div class="post__control switchItems switch_sb_title">
-              <dt><%= f.label :sb_title %></dt>
-              <dd><%= f.text_area :name, class: "form-input" %></dd>
+            <div class="post__control switchItems switch_lead">
+              <dt><%= f.label :lead, "リード文" %></dt>
+              <dd><%= f.text_area :lead, class: "form-input" %></dd>
             </div> 
              <div class="post__control switchItems switch_img">
               <dt><%= f.label :images, class: "contact__label--required" %></dt>

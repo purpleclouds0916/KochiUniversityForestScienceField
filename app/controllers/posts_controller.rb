@@ -72,7 +72,7 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:content, :title, :name, :birthplace, :job, :research_field, :research_office, :reason, :learning, :job_description, :memories, :original_title, :original_content, :video_url , :external_url, :teacher_url, :url_references,:tag_ids, images: [])
+    params.require(:post).permit(:content, :title, :lead, :name, :birthplace, :job, :research_field, :research_office, :reason, :learning, :job_description, :memories, :original_title, :original_content, :video_url , :external_url, :teacher_url, :url_references,:tag_ids, images: [])
   end
 
   def correct_user

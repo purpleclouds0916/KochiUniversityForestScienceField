@@ -8,6 +8,7 @@
 #  external_url     :text
 #  job              :string
 #  job_description  :text
+#  lead             :string
 #  learning         :text
 #  memories         :text
 #  name             :string

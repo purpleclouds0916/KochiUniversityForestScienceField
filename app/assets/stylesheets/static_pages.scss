@@ -36,8 +36,6 @@
 	}
 }
 
-
-
 .mainvisual__title {
 	font-size: 56px;
 	font-weight: 900;
@@ -70,10 +68,13 @@
 }
 
 .swiper-slide {
+	
+}
+
+.swiper-slide {
 	height: 650px;
 	width: 100%;
 	color: black;
-	// position: relative;
 
 	@include mq('tab') {
 		height: 500px;
@@ -92,35 +93,32 @@
 		left: 0;
 		content: ' ';
 	}
-}
 
-// .swiper-slide-1 {
-// 	background: transparent url(../img/mainvisual-2.JPG) no-repeat top center / cover;
-
-// 	@include mq('sp') {
-// 		background-position: top right 35%;
-// 	}
-// }
-
-// .swiper-slide-2 {	
-// 	background: transparent url(../img/mainvisual-1.JPG) no-repeat top center / cover;
-
-// 	@include mq('sp') {
-// 		background-position: top left;
-// 	}
-// }
-
-// .swiper-slide-3 {
-// 	background: transparent url(../img/mainvisual-3.JPG) no-repeat center / cover;
-// }
-.swiper-slide {
 	img {
 		width: 100%;
 		height: 100%;
 		object-fit: cover;
 	}
-}
 
+	&:nth-of-type(2) {
+		.mainvisual__content {
+			top: 70%;
+		}
+	}
+	
+	&:nth-of-type(3) {
+		.mainvisual__content {
+			top: 35%;
+		}
+	}
+
+	&:nth-of-type(4) {
+		.mainvisual__content {
+			top: 35%;
+			text-align: right;
+		}
+	}
+}
 
 .swiper-button-prev,
 .swiper-button-next {
@@ -216,22 +214,9 @@
 	}
 }
 
-.mainvisual__content__1 {
-	top: 70%;
+.swiper-wrapper {
+	
 }
-
-.mainvisual__content__2 {
-	top: 35%;
-}
-
-.mainvisual__content__3 {
-	top: 35%;
-	text-align: right;
-}
-
-
-
-
 
 // -----
 // 森林を学ぶ意義

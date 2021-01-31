@@ -1,36 +1,25 @@
 <% provide(:title, "メインページ") %>
 
+<% if @swipers.present? %>
 <div class="mainvisual">
 	<div class="swiper-container">
 		<div class="swiper-wrapper">
+			<% @swipers.each do |swiper| %>
 			<div class="swiper-slide swiper-slide-1">
-				<%= image_tag "mainvisual-2.JPG", :alt => '景色1' %>
-				<div class="mainvisual__content__1 mainvisual__content" id="a">
-					<div class="mainvisual__title__1 mainvisual__title"><span class="text-bg">木材は再生可能資源</span></div><!-- /.mainvisual__title -->
-					<div class="mainvisual__lead mainvisual__lead__1"><span class="text-bg">持続的な社会の構築に、木材は必要不可欠です</span></div>	<!-- /.mainvisual__lead -->
+				<%= image_tag  swiper.images.first.variant(resize:'1200x800').processed %>
+				<div class="mainvisual__content__1 mainvisual__content" id="<%= swiper.id %>">
+					<div class="mainvisual__title__1 mainvisual__title"><span class="text-bg"><%= swiper.title %></span></div><!-- /.mainvisual__title -->
+					<div class="mainvisual__lead mainvisual__lead__1"><span class="text-bg"><%= swiper.lead %></span></div>	<!-- /.mainvisual__lead -->
 				</div><!-- /.mainvisual__content -->
 			</div><!-- /.swiper-slide -->
-			<div class="swiper-slide swiper-slide-2">
-				<%= image_tag "mainvisual-1.JPG", :alt => '景色2' %>
-				<div class="mainvisual__content__2 mainvisual__content">
-					<div class="mainvisual__title__2 mainvisual__title"><span class="text-bg">森林は生物の宝庫</span></div><!-- /.mainvisual__title -->
-					<div class="mainvisual__lead mainvisual__lead__2"><span class="text-bg">森林は生態系の保全に重要な役割を担っています</span></div>	<!-- /.mainvisual__lead -->
-				</div><!-- /.mainvisual__content -->
-			</div><!-- /.swiper-slide -->
-			<div class="swiper-slide swiper-slide-3">
-				<%= image_tag "mainvisual-3.JPG", :alt => '景色3' %>
-				<div class="mainvisual__content__3 mainvisual__content">
-					<div class="mainvisual__title__3 mainvisual__title"><span class="text-bg">森林の多面的機能</span></div><!-- /.mainvisual__title -->
-					<div class="mainvisual__lead mainvisual__lead__3"><span class="text-bg">CO2の吸収、空気の浄化など森林には様々な機能があります
-					</span></div>	<!-- /.mainvisual__lead -->
-				</div><!-- /.mainvisual__content -->
-			</div><!-- /.swiper-slide -->
+			<% end %>
 		</div><!-- /.swiper-wrapper -->
 		<div class="swiper-button-prev"></div>
 		<div class="swiper-button-next"></div>
 		<div class="swiper-pagination"></div>
 	</div><!-- /.swiper-container -->
 </div><!-- /.mainvisual -->
+<% end %>
 
 <% if @meanings.present? %>
 <section id="" class="meaning section">
