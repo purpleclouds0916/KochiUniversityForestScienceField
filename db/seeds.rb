@@ -52,6 +52,8 @@
 # end
 # end
 
+
+
 Tag.create!([
   {name: "スライダー"},
   {name: "森林を学ぶ価値"},
@@ -437,4 +439,5 @@ ActiveStorage::Attachment.create!([
   {name: "images", record_type: "Post", record_id: 78, blob_id: 113},
   {name: "images", record_type: "Post", record_id: 78, blob_id: 114}
 ])
+
 
