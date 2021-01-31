@@ -41,7 +41,7 @@ filenames = Dir.open("db/fixtures/",&:to_a)
     sentence6 = Faker::Lorem.sentence(word_count: 100)
     sentence7 = Faker::Lorem.sentence(word_count: 100)
     sentence8 = Faker::Lorem.sentence(word_count: 100)
-    filename = filenames[3..22].shuffle.first
+    filename = filenames[3..32].shuffle.first
  file_path = "db/fixtures/#{filename}"
     
     user.posts.create!(tag_ids: '6',
