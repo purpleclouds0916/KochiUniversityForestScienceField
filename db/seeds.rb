@@ -51,9 +51,5 @@ filenames = Dir.open("db/fixtures/",&:to_a)
     filename: "fixtures/#{filename}")
 end
 end
-# user.posts.create!(tag_ids: '2',
-#   title:"テスト"
-# ).images.attach(io: File.open("app/assets/images/samples/sample1.jpg"),
-# filename: "samples/sample1.jpg")
 
 
