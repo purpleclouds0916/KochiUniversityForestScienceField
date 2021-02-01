@@ -40,6 +40,7 @@ gem 'aws-sdk-s3',              '1.46.0', require: false
 # Migrate data from development environment to production
 gem 'seed_dump'
 
+# gem 'mysql2'
 gem 'rails-controller-testing'
 
 gem 'dotenv-rails'
@@ -51,6 +52,7 @@ gem 'dotenv-rails'
 gem 'bootsnap', '>= 1.4.2', require: false
 
 gem 'annotate'
+gem 'pry-rails', :group => :development
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
