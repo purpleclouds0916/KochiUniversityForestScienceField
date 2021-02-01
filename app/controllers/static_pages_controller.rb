@@ -19,6 +19,6 @@ class StaticPagesController < ApplicationController
     # binding.pry
     # @alumnus = Post.where(tag_id:6).page(params[:page]).per(10)
      ids = PostTagRelation.where(tag_id: 6).pluck(:post_id)
-     @alumnus = Post.where(id: ids).page(params[:pge]).per(10)
+     @alumnus = Post.where(id: ids).page(params[:page]).per(10)
   end
 end
