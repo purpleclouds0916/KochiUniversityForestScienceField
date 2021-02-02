@@ -30,9 +30,5 @@
                 </div><!-- /.alumni__media__table -->
             </div><!-- /.alumni__media__body -->
         <div class="alumni__media__img"> 
-     <%
-=begin%>
- <%= image_tag object.images.first.variant(gravity: :center, resize:'800x600').processed %> 
-<%
-=end%>
+     <%= image_tag object.images.first.variant(gravity: :center, resize:'800x600').processed %>
         </div><!-- /.media__img -->
