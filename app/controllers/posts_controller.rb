@@ -35,7 +35,7 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = current_user.posts.build()
+    @post = current_user.posts.build(post_params)
     @post.images.attach(params[:post][:images])
     if @post.save
       flash[:success] = "投稿を作成しました"

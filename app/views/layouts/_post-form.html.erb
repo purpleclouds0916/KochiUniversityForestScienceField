@@ -4,7 +4,7 @@
             <div class="post__control">
               <dt><%= f.label :tag_ids_1, "投稿場所",class: "contact__label--required" %></dt>
               <dd class="post__tag">
-                <%= f.collection_radio_buttons(:tag_ids, Tag.all, :id, :name) do |tag| %>
+                <%= f.collection_radio_buttons(:tag_id, Tag.all, :id, :name) do |tag| %>
                   <%= tag.label class: 'form-check-label' do %>
                     <%= tag.radio_button class: 'form-check-input' %>
                     <span class="outside"><span class="inside"></span></span>

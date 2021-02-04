@@ -17,7 +17,7 @@ class StaticPagesController < ApplicationController
   end
 
   def alumni
-    # binding.pry
+    binding.pry
     # @alumnus = Post.where(tag_id:6).page(params[:page]).per(10)
     @alumnus = Tag.find(6).posts.page(params[:page]).per(10)
     #  ids = PostTagRelation.where(tag_id: 6).pluck(:post_id)

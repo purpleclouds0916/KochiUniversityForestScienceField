@@ -38,7 +38,6 @@
 class Post < ApplicationRecord
   belongs_to :user
   belongs_to :tag
-  has_many :tags,dependent: :destroy
   has_many_attached :images
   # has_rich_text :content
   default_scope -> { order(created_at: :desc) }
@@ -46,5 +45,5 @@ class Post < ApplicationRecord
     message: "の拡張子はPNG,JPEG,GIFのいずれかのみです。" },
 size:         { less_than: 5.megabytes,
     message: "ファイルは5MB未満にしてください。" }
-  # validates :tags,presence: true  
+  
 end
