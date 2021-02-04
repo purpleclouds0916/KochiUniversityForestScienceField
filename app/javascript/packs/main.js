@@ -153,16 +153,3 @@ $(function(){
 
   });  
 
-    //画面サイズの変更でリロードして、デザインが崩れるのを防止
-    $(function(){
-      var timer = false;
-      $(window).resize(function() {
-        if (timer !== false) {
-        clearTimeout(timer);
-        }
-        timer = setTimeout(function() {
-        //リロードする
-        location.reload();
-        }, 200);
-      });
-    });

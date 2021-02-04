@@ -4,3 +4,19 @@
     <div class="greet"><%= current_user.name %>さん こんにちは!</div>
   </div>
 <%= render 'layouts/management_table',  object: @posts %>
+
+<script>
+    //画面サイズの変更でリロードして、デザインが崩れるのを防止
+    $(function(){
+      var timer = false;
+      $(window).resize(function() {
+        if (timer !== false) {
+        clearTimeout(timer);
+        }
+        timer = setTimeout(function() {
+        //リロードする
+        location.reload();
+        }, 200);
+      });
+    });
+</script>
