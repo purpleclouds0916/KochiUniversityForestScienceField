@@ -3,12 +3,10 @@
 # Table name: tags
 #
 #  id         :integer          not null, primary key
-#  name       :string           not null
+#  name       :string
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #
 class Tag < ApplicationRecord
-    has_many :post_tag_relations
-    has_many :posts, through: :post_tag_relations
-    validates :name,  presence: true
+    has_many :posts, dependent: :destroy
 end

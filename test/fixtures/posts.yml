@@ -23,6 +23,7 @@
 #  video_url        :text
 #  created_at       :datetime         not null
 #  updated_at       :datetime         not null
+#  tag_id           :integer
 #  user_id          :integer          not null
 #
 # Indexes

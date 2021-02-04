@@ -44,7 +44,7 @@ filenames = Dir.open("db/fixtures/",&:to_a)
     filename = filenames[3..32].shuffle.first
  file_path = "db/fixtures/#{filename}"
     
-    user.posts.create!(tag_ids: '6',
+    user.posts.create!(tag_id: '6',
       name:name, birthplace: birthplace, job:job, research_field:sentence1, research_office:sentence2,
       reason:sentence4, learning:sentence5, job_description: sentence6, memories:sentence7, original_title:sentence3, original_content:sentence8
     ).images.attach(io: File.open("#{file_path}"),
