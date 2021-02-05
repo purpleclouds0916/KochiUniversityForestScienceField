@@ -30,10 +30,17 @@ class PostsController < ApplicationController
   def new
     if logged_in?
       @post = current_user.posts.build
-    end  
+    end
+    
+    # binding.pry
+    
+    @tag = Tag.find(params[:tag_id]) if params[:tag_id].present? 
   end
 
   def create
+    
+    # binding.pry
+    
     @post = current_user.posts.build(post_params)
     @post.images.attach(params[:post][:images])
     if @post.save
@@ -46,6 +53,7 @@ class PostsController < ApplicationController
 
   def edit
     @post = Post.find(params[:id])
+    @tag = Tag.find(params[:tag_id]) if params[:tag_id].present? 
   end
 
   def update
@@ -70,7 +78,7 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:content, :title, :lead, :name, :birthplace, :job, :research_field, :research_office, :reason, :learning, :job_description, :memories, :original_title, :original_content, :video_url , :external_url, :teacher_url, :url_references,:tag_id, images: [])
+    params.require(:post).permit(:content, :title, :lead, :name, :birthplace, :job, :research_field, :research_office, :reason, :learning, :job_description, :memories, :original_title, :original_content, :video_url , :external_url, :teacher_url, :url_references,:tag_id,:tags, images: [])
   end
 
   def correct_user

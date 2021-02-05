@@ -1,0 +1,12 @@
+<div class="post__control">
+    <dt><%= object.label :content, "コンテンツ", class: "contact__label--required" %></dt>
+    <dd><%= object.text_area :content, class: "form-textarea " %></dd>
+</div>
+<div class="post__control">
+    <dt><%= object.label :images, class: "contact__label--required" %></dt>
+    <dd><%= object.file_field :images, accept: "image/jpeg,image/gif,image/png", multiple: true %></dd>
+</div>
+<div class="post__control">
+    <dt><%= object.label :video_url, "動画のURL" %></dt>
+    <dd><%= object.text_field :video_url, class: "form-input" %></dd>
+</div>

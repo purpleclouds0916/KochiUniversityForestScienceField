@@ -1,0 +1,20 @@
+<div class="post__control">
+    <dt><%= object.label :name, "名前", class: "contact__label--required" %></dt>
+    <dd><%= object.text_area :name, class: "form-input" %></dd>
+</div>
+<div class="post__control">
+    <dt><%= object.label :content, "コンテンツ", class: "contact__label--required" %></dt>
+    <dd><%= object.text_area :content, class: "form-textarea " %></dd>
+</div>
+    <div class="post__control">
+    <dt><%= object.label :images, class: "contact__label--required" %></dt>
+    <dd><%= object.file_field :images, accept: "image/jpeg,image/gif,image/png", multiple: true %></dd>
+</div>
+<div class="post__control">
+    <dt><%= object.label :external_url , "参考文献URL" %></dt>
+    <dd><%= object.text_field :external_url , class: "form-input" %></dd>
+</div>
+<div class="post__control">
+    <dt><%= object.label :url_references , "参照先の名前" %></dt>
+    <dd><%= object.text_field :url_references , class: "form-input" %></dd>
+</div>

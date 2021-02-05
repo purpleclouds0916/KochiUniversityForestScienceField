@@ -77,79 +77,79 @@ $(function(){
 
 window.wow.init();
 
- //以下管理者画面のjs
- // -----
-// 投稿タグとフォームの出しわけ
-// -----
-$(function(){
+//  //以下管理者画面のjs
+//  // -----
+// // 投稿タグとフォームの出しわけ
+// // -----
+// $(function(){
 
-    var switchBtn = $('input[type=radio]');
-    var switchItems = $('.switchItems');
-    var inputField = 'input, textarea';
-    //リッチエディタを使用した場合の無効化と有効かがうまくできていない！
-    // var inputField = 'input, textarea, trix_area';
+//     var switchBtn = $('input[type=radio]');
+//     var switchItems = $('.switchItems');
+//     var inputField = 'input, textarea';
+//     //リッチエディタを使用した場合の無効化と有効かがうまくできていない！
+//     // var inputField = 'input, textarea, trix_area';
 
-   function hideItems() {
-    switchItems.hide();
-          switchItems.find(inputField).each(function(){
-            $(this).prop('disabled', true);
-          });
-   }
+//    function hideItems() {
+//     switchItems.hide();
+//           switchItems.find(inputField).each(function(){
+//             $(this).prop('disabled', true);
+//           });
+//    }
 
-   //最初は非表示にする&入力必須
-    hideItems();
-    $('#post_tag_ids_1').prop('required', true);
+//    //最初は非表示にする&入力必須
+//     hideItems();
+//     $('#post_tag_ids_1').prop('required', true);
 
-    switchBtn.on('change', function(){
+//     switchBtn.on('change', function(){
     
-      var inputValue = $(this).val();
-    function buildItems() {
-      hideItems()
-          showAndAbleItems.show();
-          showAndAbleItems.find(inputField).each(function(){
-            $(this).prop('disabled', false);
-          });
-    }
+//       var inputValue = $(this).val();
+//     function buildItems() {
+//       hideItems()
+//           showAndAbleItems.show();
+//           showAndAbleItems.find(inputField).each(function(){
+//             $(this).prop('disabled', false);
+//           });
+//     }
     
-      //  1 == スライダー
-     if(inputValue === '1'){
-       var showAndAbleItems = $('.switch_img, .switch_title, .switch_lead' );
-       buildItems();
-       //  2 == 森林を学ぶ価値
-     }else if(inputValue === '2'){
-       var showAndAbleItems = $('.switch_img, .switch_title, .switch_content, .switch_external_url');
-        buildItems();
-       //  3 == 森林科学領域
-      }else if(inputValue === '3'){ 
-        var showAndAbleItems = $('.switch_img, .switch_content, .switch_movie_url');
-        buildItems();
-       //  4 == 先生の紹介
-      }else if(inputValue === '4'){
-        var showAndAbleItems = $('.switch_img, .switch_name, .switch_content, .switch_job, .switch_teacher_url');
-        buildItems();
-      //  5 == 授業の紹介
-      }else if(inputValue === '5'){ 
-        var showAndAbleItems = $('.switch_img, .switch_content, .switch_movie_url');
-        buildItems();
-      //  6 == 卒業生の声
-      }else if(inputValue === '6'){
-        var showAndAbleItems = $('.switch_img, .switch_name, .switch_og');
-        buildItems();
-      //  7 == 資格
-      }else if(inputValue === '7'){ 
-        var showAndAbleItems = $('.switch_img, .switch_name, .switch_content, .switch_external_url' );
-        buildItems();
-      //  8 == 先生の紹介動画
-      }else if(inputValue === '8'){ 
-        var showAndAbleItems = $('.switch_movie_url' );
-        buildItems();
-      }
-    });
-  });
+//       //  1 == スライダー
+//      if(inputValue === '1'){
+//        var showAndAbleItems = $('.switch_img, .switch_title, .switch_lead' );
+//        buildItems();
+//        //  2 == 森林を学ぶ価値
+//      }else if(inputValue === '2'){
+//        var showAndAbleItems = $('.switch_img, .switch_title, .switch_content, .switch_external_url');
+//         buildItems();
+//        //  3 == 森林科学領域
+//       }else if(inputValue === '3'){ 
+//         var showAndAbleItems = $('.switch_img, .switch_content, .switch_movie_url');
+//         buildItems();
+//        //  4 == 先生の紹介
+//       }else if(inputValue === '4'){
+//         var showAndAbleItems = $('.switch_img, .switch_name, .switch_content, .switch_job, .switch_teacher_url');
+//         buildItems();
+//       //  5 == 授業の紹介
+//       }else if(inputValue === '5'){ 
+//         var showAndAbleItems = $('.switch_img, .switch_content, .switch_movie_url');
+//         buildItems();
+//       //  6 == 卒業生の声
+//       }else if(inputValue === '6'){
+//         var showAndAbleItems = $('.switch_img, .switch_name, .switch_og');
+//         buildItems();
+//       //  7 == 資格
+//       }else if(inputValue === '7'){ 
+//         var showAndAbleItems = $('.switch_img, .switch_name, .switch_content, .switch_external_url' );
+//         buildItems();
+//       //  8 == 先生の紹介動画
+//       }else if(inputValue === '8'){ 
+//         var showAndAbleItems = $('.switch_movie_url' );
+//         buildItems();
+//       }
+//     });
+//   });
 
-  $(function(){
+//   $(function(){
     
    
 
-  });  
+//   });  
 
