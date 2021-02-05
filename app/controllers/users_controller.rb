@@ -9,7 +9,9 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    @posts = @user.posts.page(params[:page]).per(10)
+    posts = params[:tag_id].present? ? Tag.find(params[:tag_id]).posts.where(user_id: @user.id) : @user.posts
+    @posts = posts.page(params[:page]).per(10)
+    @test = users_path
   end
     
   def new

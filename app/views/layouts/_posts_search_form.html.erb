@@ -1,11 +1,11 @@
 <% unless controller.controller_name == "users" && controller.action_name == "index" %>
-    <%= form_tag posts_path, method: :get, class: 'posts_search_form' do %>
-                <%= select_tag :tag_id,
-                                options_from_collection_for_select(Tag.all, :id, :name, params[:tag_id]),
-                                {
-                                prompt: 'タグで絞り込み',
-                                class: 'form-control posts__select',
-                                onchange: 'submit(this.form);'
-                                } %>
-    <% end %>
+    <% if controller.controller_name == "users" %>
+        <%= form_tag user_path, method: :get, class: 'posts_search_form' do %>
+            <% render 'layouts/posts_search_select_tag.html' %>
+        <% end %>
+    <% else %>
+        <%= form_tag posts_path, method: :get, class: 'posts_search_form' do %>
+            <% render 'layouts/posts_search_select_tag.html' %>
+        <% end %>
+    <% end %>              
 <% end %>
