@@ -8,7 +8,7 @@ class PostsController < ApplicationController
     @posts = @posts.page(params[:page]).per(10)
   end
 
-  #機能はするが修正が必要,2回もDBにアクセスしている&あとでリダイレクト先を変更
+  #機能はするが修正が必要あとでリダイレクト先を変更
   def show
     if Post.find_by(id:params[:id]).present?
       post = Post.find_by(id:params[:id])
@@ -30,7 +30,6 @@ class PostsController < ApplicationController
   def new
     if logged_in?
       @post = current_user.posts.build
-      #@feed_items = current_user.feed.paginate(page: params[:page])
     end  
   end
 
@@ -41,7 +40,6 @@ class PostsController < ApplicationController
       flash[:success] = "投稿を作成しました"
       redirect_to current_user
     else
-      # @feed_items = current_user.feed.paginate(page: params[:page])
     render :action => 'new'
     end
   end
