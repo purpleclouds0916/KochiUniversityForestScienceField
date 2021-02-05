@@ -11,13 +11,13 @@ class PostsController < ApplicationController
   #機能はするが修正が必要,2回もDBにアクセスしている&あとでリダイレクト先を変更
   def show
     if Post.find_by(id:params[:id]).present?
-      post_id = Post.find_by(id:params[:id])
-      post_tag = post_id.tags.all.ids
+      post = Post.find_by(id:params[:id])
+      post_tag_name = post.tag.name
         #卒業生の声の記事なら表示する
-      if post_tag.include?(6)
-        @post = post_id 
+      if post_tag_name = "卒業生の声"
+        @post = post 
         @posts = Tag.find(6).posts.limit(4)
-        #それ以外の記事は404扱い     
+        #それ以外のタグ記事は404扱い     
       else
         redirect_to root_url 
       end
