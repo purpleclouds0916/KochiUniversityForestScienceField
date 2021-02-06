@@ -31,6 +31,7 @@ class PostsController < ApplicationController
     if logged_in?
       @post = current_user.posts.build
       @post.build_alumni
+      @post.build_teacher
     end
     @tag = Tag.find(params[:tag_id]) if params[:tag_id].present? 
   end
@@ -75,8 +76,10 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:content, :title, :lead, :video_url , :external_url, :teacher_url, :url_references,:tag_id,:tags, images: [], 
-      alumni_attributes: [:id, :name, :birthplace, :job, :research_field, :research_office, :reason, :learning, :job_description, :memories, :original_title, :original_content,])
+    params.require(:post).permit(:id, :content, :title, :lead, :video_url , :external_url, :teacher_url, :url_references,:tag_id,:tags, images: [], 
+      alumni_attributes: [:id, :name, :birthplace, :job, :research_field, :research_office, :reason, :learning, :job_description, :memories, :original_title, :original_content,],
+      teacher_attributes: [:id, :name, :job, :post_id]
+    )
   end
 
   def correct_user

@@ -1,8 +1,8 @@
 <div class="teacher__media">
     <div class="teacher__media__img"><%= image_tag object.images.first.variant(gravity: :center, resize:'800x600').processed %></div><!-- /.teacher__media -->
     <div class="teacher__media__body">
-        <div class="teacher__media__title"><%= object.name %></div><!-- /.teacher__media__title -->
-        <div class="teacher__media__job"><%= object.job %></div><!--./teacher__media__job-->
+        <div class="teacher__media__title"><%= object.teacher.name %></div><!-- /.teacher__media__title -->
+        <div class="teacher__media__job"><%= object.teacher.job %></div><!--./teacher__media__job-->
         <div class="teacher__media__content"><%= object.content %></div><!-- /.teacher__media__content -->
     </div><!-- teacher__/.media__body -->
 </div><!-- /.teacher__media -->

@@ -28,8 +28,9 @@ class Post < ApplicationRecord
   belongs_to :user
   belongs_to :tag
   has_one :alumni
+  has_one :teacher
   accepts_nested_attributes_for :alumni
-  # accepts_nested_attributes_for :teacher
+  accepts_nested_attributes_for :teacher
   has_many_attached :images
   # has_rich_text :content
   default_scope -> { order(created_at: :desc) }
