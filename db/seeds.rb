@@ -43,13 +43,21 @@ filenames = Dir.open("db/fixtures/",&:to_a)
     sentence8 = Faker::Lorem.sentence(word_count: 100)
     filename = filenames[5..32].shuffle.first
  file_path = "db/fixtures/#{filename}"
+
+#  post = user.posts.create!(tag_id: '6')
+#  post.build_alumni(name:name, birthplace: birthplace, job:job, research_field:sentence1, research_office:sentence2,
+#    reason:sentence4, learning:sentence5, job_description: sentence6, memories:sentence7, original_title:sentence3, original_content:sentence8 )
+#  post.images.attach(io: File.open("#{file_path}"),
+#  filename: "fixtures/#{filename}")
     
-    user.posts.create!(tag_id: '6',
-      name:name, birthplace: birthplace, job:job, research_field:sentence1, research_office:sentence2,
-      reason:sentence4, learning:sentence5, job_description: sentence6, memories:sentence7, original_title:sentence3, original_content:sentence8
-    ).images.attach(io: File.open("#{file_path}"),
+    post = user.posts.new(tag_id: '6')
+    post.build_alumni(name:name, birthplace: birthplace, job:job, research_field:sentence1, research_office:sentence2,
+      reason:sentence4, learning:sentence5, job_description: sentence6, memories:sentence7, original_title:sentence3, original_content:sentence8 ).save
+    post.images.attach(io: File.open("#{file_path}"),
     filename: "fixtures/#{filename}")
-end
+    post.save
+  end
+
 end
 
 # Post.create {[

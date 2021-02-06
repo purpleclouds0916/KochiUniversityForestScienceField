@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_04_054231) do
+ActiveRecord::Schema.define(version: 2021_02_06_052037) do
 
   create_table "action_text_rich_texts", force: :cascade do |t|
     t.string "name", null: false
@@ -43,6 +43,23 @@ ActiveRecord::Schema.define(version: 2021_02_04_054231) do
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
   end
 
+  create_table "alumnis", force: :cascade do |t|
+    t.string "name"
+    t.string "job"
+    t.string "birthplace"
+    t.string "job_description"
+    t.text "original_content"
+    t.string "original_title"
+    t.text "reason"
+    t.string "research_field"
+    t.string "research_office"
+    t.text "learning"
+    t.text "memories"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.integer "post_id"
+  end
+
   create_table "inquiries", force: :cascade do |t|
     t.string "name"
     t.string "message"
@@ -58,17 +75,6 @@ ActiveRecord::Schema.define(version: 2021_02_04_054231) do
     t.integer "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.string "birthplace"
-    t.string "job"
-    t.string "research_office"
-    t.string "research_field"
-    t.string "name"
-    t.text "reason"
-    t.text "learning"
-    t.text "job_description"
-    t.text "memories"
-    t.string "original_title"
-    t.text "original_content"
     t.text "video_url"
     t.text "external_url"
     t.text "teacher_url"

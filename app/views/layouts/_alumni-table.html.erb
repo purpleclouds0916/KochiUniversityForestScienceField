@@ -1,26 +1,26 @@
 <div class="alumni__media__body">
-            <div class="alumni__media__title"><%= object.name %>さん</div><!-- /.media__title -->
+            <div class="alumni__media__title"><%= object.alumni.name %>さん</div><!-- /.media__title -->
                 <div class="alumni__media__table">
                     <table class="table-default">
                     <tr>
                         <th>出身</th>
                         <td>：</td>
-                        <td><%= object.birthplace %></td>
+                        <td><%= object.alumni.birthplace %></td>
                     </tr>
                     <tr>
                         <th>職業</th>
                         <td>：</td>
-                        <td><%= object.job %></td>
+                        <td><%= object.alumni.job %></td>
                     </tr>
                     <tr>
                         <th>研究室</th>
                         <td>：</td>
-                        <td><%= object.research_office %></td>
+                        <td><%= object.alumni.research_office %></td>
                     </tr>
                     <tr>
                         <th>研究分野</th>
                         <td>：</td>
-                        <td><%= object.research_field %></td>
+                        <td><%= object.alumni.research_field %></td>
                     </tr>
                     </table> 	
                     <% if controller.action_name == "home"%>

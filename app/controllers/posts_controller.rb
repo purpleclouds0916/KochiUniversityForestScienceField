@@ -30,6 +30,7 @@ class PostsController < ApplicationController
   def new
     if logged_in?
       @post = current_user.posts.build
+      @post.build_alumni
     end
     @tag = Tag.find(params[:tag_id]) if params[:tag_id].present? 
   end
@@ -37,6 +38,7 @@ class PostsController < ApplicationController
   def create
     @post = current_user.posts.build(post_params)
     @post.images.attach(params[:post][:images])
+    
     if @post.save
       flash[:success] = "投稿を作成しました"
       redirect_to current_user
@@ -73,7 +75,7 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:content, :title, :lead, :name, :birthplace, :job, :research_field, :research_office, :reason, :learning, :job_description, :memories, :original_title, :original_content, :video_url , :external_url, :teacher_url, :url_references,:tag_id,:tags, images: [])
+    params.require(:post).permit(:content, :title, :lead, :video_url , :external_url, :teacher_url, :url_references,:tag_id,:tags, images: [], alumni_attributes: [:id, :name])
   end
 
   def correct_user

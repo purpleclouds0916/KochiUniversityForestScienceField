@@ -1,0 +1,46 @@
+# == Schema Information
+#
+# Table name: alumnis
+#
+#  id               :integer          not null, primary key
+#  birthplace       :string
+#  job              :string
+#  job_description  :string
+#  learning         :text
+#  memories         :text
+#  name             :string
+#  original_content :text
+#  original_title   :string
+#  reason           :text
+#  research_field   :string
+#  research_office  :string
+#  created_at       :datetime         not null
+#  updated_at       :datetime         not null
+#  post_id          :integer
+#
+
+one:
+  name: MyString
+  job: MyString
+  birthplace: MyString
+  job_description: MyString
+  original_content: MyText
+  original_title: 
+  reason: MyText
+  research_field: MyString
+  research_office: MyString
+  learning: MyText
+  memories: MyText
+
+two:
+  name: MyString
+  job: MyString
+  birthplace: MyString
+  job_description: MyString
+  original_content: MyText
+  original_title: 
+  reason: MyText
+  research_field: MyString
+  research_office: MyString
+  learning: MyText
+  memories: MyText

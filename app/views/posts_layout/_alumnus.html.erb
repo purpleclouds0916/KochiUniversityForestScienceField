@@ -1,48 +1,50 @@
+<%= object.fields_for :alumni do |a| %>
 <div class="post__control">
-    <dt><%= object.label :name, "名前", class: "contact__label--required" %></dt>
-    <dd><%= object.text_area :name, class: "form-input" %></dd>
+    <dt><%= a.label :name, "名前", class: "contact__label--required" %></dt>
+    <dd><%= a.text_area :name, class: "form-input" %></dd>
 </div>
-    <div class="post__control">
-    <dt><%= object.label :images, class: "contact__label--required" %></dt>
-    <dd><%= object.file_field :images, accept: "image/jpeg,image/gif,image/png", multiple: true %></dd>
-</div>
-        <div class="post__control" >
-    <dt><%= object.label :birthplace, "出身地", class: "contact__label--required" %></dt>
-    <dd><%= object.text_field :birthplace, class: "form-input" %></dd>
+<div class="post__control" >
+    <dt><%= a.label :birthplace, "出身地", class: "contact__label--required" %></dt>
+    <dd><%= a.text_field :birthplace, class: "form-input" %></dd>
 </div>
 <div class="post__control">
-    <dt><%= object.label :job, "職業", class: "contact__label--required" %></dt>
-    <dd><%= object.text_field :job, class: "form-input" %></dd>
+    <dt><%= a.label :job, "職業", class: "contact__label--required" %></dt>
+    <dd><%= a.text_field :job, class: "form-input" %></dd>
 </div>
 <div class="post__control">
-    <dt><%= object.label :research_office, "研究室", class: "contact__label--required" %></dt>
-    <dd><%= object.text_field :research_office, class: "form-input" %></dd>
+    <dt><%= a.label :research_office, "研究室", class: "contact__label--required" %></dt>
+    <dd><%= a.text_field :research_office, class: "form-input" %></dd>
 </div>
 　 <div class="post__control">
-    <dt><%= object.label :research_field, "研究分野", class: "contact__label--required" %></dt>
-    <dd><%= object.text_field :research_field, class: "form-input" %></dd>
+    <dt><%= a.label :research_field, "研究分野", class: "contact__label--required" %></dt>
+    <dd><%= a.text_field :research_field, class: "form-input" %></dd>
 </div>
 <div class="post__control">
-    <dt><%= object.label :reason, "森林科学科への進学理由", class: "contact__label--required" %></dt>
-    <dd><%= object.text_area :reason, class: "form-textarea" %></dd>
+    <dt><%= a.label :reason, "森林科学科への進学理由", class: "contact__label--required" %></dt>
+    <dd><%= a.text_area :reason, class: "form-textarea" %></dd>
 </div>
 <div class="post__control">
-    <dt><%= object.label :learning, "今の仕事につながる森林領域での学び", class: "contact__label--required" %></dt>
-    <dd><%= object.text_area :learning, class: "form-textarea" %></dd>
+    <dt><%= a.label :learning, "今の仕事につながる森林領域での学び", class: "contact__label--required" %></dt>
+    <dd><%= a.text_area :learning, class: "form-textarea" %></dd>
 </div>
 <div class="post__control">
-    <dt><%= object.label :job_description, "今の職場での仕事内容", class: "contact__label--required" %></dt>
-    <dd><%= object.text_area :job_description, class: "form-textarea" %></dd>
+    <dt><%= a.label :job_description, "今の職場での仕事内容", class: "contact__label--required" %></dt>
+    <dd><%= a.text_area :job_description, class: "form-textarea" %></dd>
 </div>
 <div class="post__control">
-    <dt><%= object.label :memories, "高知大学での経験や思い出", class: "contact__label--required" %></dt>
-    <dd><%= object.text_area :memories, class: "form-textarea" %></dd>
+    <dt><%= a.label :memories, "高知大学での経験や思い出", class: "contact__label--required" %></dt>
+    <dd><%= a.text_area :memories, class: "form-textarea" %></dd>
 </div>
 <div class="post__control">
-    <dt><%= object.label :original_title, "好きなタイトルを入力してください", class: "contact__label--required" %></dt>
-    <dd><%= object.text_field :original_title, class: "form-input" %></dd>
+    <dt><%= a.label :original_title, "好きなタイトルを入力してください", class: "contact__label--required" %></dt>
+    <dd><%= a.text_field :original_title, class: "form-input" %></dd>
 </div>
 <div class="post__control">
-    <dt><%= object.label :original_content, "上のタイトルについて好きに書いてください", class: "contact__label--required" %></dt>
-    <dd><%= object.text_area :original_content, class: "form-textarea" %></dd>
+    <dt><%= a.label :original_content, "上のタイトルについて好きに書いてください", class: "contact__label--required" %></dt>
+    <dd><%= a.text_area :original_content, class: "form-textarea" %></dd>
+</div>
+<% end %>
+<div class="post__control">
+    <dt><%= object.label :images, class: "contact__label--required" %></dt>
+    <dd><%= object.file_field :images, accept: "image/jpeg,image/gif,image/png", multiple: true %></dd>
 </div>

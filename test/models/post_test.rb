@@ -2,29 +2,18 @@
 #
 # Table name: posts
 #
-#  id               :integer          not null, primary key
-#  birthplace       :string
-#  content          :text
-#  external_url     :text
-#  job              :string
-#  job_description  :text
-#  lead             :string
-#  learning         :text
-#  memories         :text
-#  name             :string
-#  original_content :text
-#  original_title   :string
-#  reason           :text
-#  research_field   :string
-#  research_office  :string
-#  teacher_url      :text
-#  title            :string
-#  url_references   :string
-#  video_url        :text
-#  created_at       :datetime         not null
-#  updated_at       :datetime         not null
-#  tag_id           :integer
-#  user_id          :integer          not null
+#  id             :integer          not null, primary key
+#  content        :text
+#  external_url   :text
+#  lead           :string
+#  teacher_url    :text
+#  title          :string
+#  url_references :string
+#  video_url      :text
+#  created_at     :datetime         not null
+#  updated_at     :datetime         not null
+#  tag_id         :integer
+#  user_id        :integer          not null
 #
 # Indexes
 #

@@ -5,8 +5,12 @@
         <span class="badge badge-light"><%= post.tag.name %></span>
       <% if post.title.present?%>
       <%= post.title %>
-      <% elsif post.name.present?%>
-      <%= post.name %>
+      <%
+=begin%>
+ <% elsif post.alumni.name.present?%>
+      <%= post.alumni.name %> 
+<%
+=end%>
      <% elsif post.content.present? %>
     <%= post.content.truncate(30)  %> 
       <%end%>
