@@ -75,7 +75,8 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:content, :title, :lead, :video_url , :external_url, :teacher_url, :url_references,:tag_id,:tags, images: [], alumni_attributes: [:id, :name])
+    params.require(:post).permit(:content, :title, :lead, :video_url , :external_url, :teacher_url, :url_references,:tag_id,:tags, images: [], 
+      alumni_attributes: [:id, :name, :birthplace, :job, :research_field, :research_office, :reason, :learning, :job_description, :memories, :original_title, :original_content,])
   end
 
   def correct_user
