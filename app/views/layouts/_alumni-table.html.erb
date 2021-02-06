@@ -23,8 +23,7 @@
                         <td><%= object.research_field %></td>
                     </tr>
                     </table> 	
-                    <% case controller.action_name %>
-                    <% when "home" %>
+                    <% if controller.action_name == "home"%>
                     <span class="see-details">詳しく見る<i class="fas fa-arrow-right"></i></span>
                     <% end %>
                 </div><!-- /.alumni__media__table -->
