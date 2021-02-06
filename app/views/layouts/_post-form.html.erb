@@ -1,17 +1,13 @@
 
+ <% if controller.action_name == "new" %>
 <div class="post__control">
   <dt><label class="contact__label--required">投稿場所</label></dt>
   <dd>
-    <% if controller.action_name == "new" %>
     <%= form_tag new_post_path, method: :get, class: '' do %>
     <% render 'layouts/post_place_select_tag' %>
     <% end %>
-    <% elsif controller.action_name == "edit" %>
-    <%= form_tag edit_post_path, method: :get, class: '' do %>
-    <% render 'layouts/post_place_select_tag' %>
-    <% end %>
-<% end %>
 </dd>  
+<% end %>
 </div> 
 <%= form_with(model: @post, local: true) do |f| %>
   <%= render 'shared/error_messages', object: f.object %>

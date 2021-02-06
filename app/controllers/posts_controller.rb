@@ -31,9 +31,6 @@ class PostsController < ApplicationController
     if logged_in?
       @post = current_user.posts.build
     end
-    
-    
-    
     @tag = Tag.find(params[:tag_id]) if params[:tag_id].present? 
   end
 
@@ -49,9 +46,9 @@ class PostsController < ApplicationController
     end
   end
 
-  def edit
+  def edit    
     @post = Post.find(params[:id])
-    @tag = Tag.find(params[:tag_id]) if params[:tag_id].present? 
+    @tag = Tag.find(@post.tag_id)
   end
 
   def update
