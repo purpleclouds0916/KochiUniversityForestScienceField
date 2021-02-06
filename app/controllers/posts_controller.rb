@@ -32,22 +32,20 @@ class PostsController < ApplicationController
       @post = current_user.posts.build
     end
     
-    # binding.pry
+    
     
     @tag = Tag.find(params[:tag_id]) if params[:tag_id].present? 
   end
 
   def create
-    
-    # binding.pry
-    
     @post = current_user.posts.build(post_params)
     @post.images.attach(params[:post][:images])
     if @post.save
       flash[:success] = "投稿を作成しました"
       redirect_to current_user
     else
-    render :action => 'new'
+      @tag = Tag.find(@post.tag_id)
+      render 'new'
     end
   end
 
