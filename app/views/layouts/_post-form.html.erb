@@ -4,11 +4,15 @@
   <dt><label class="contact__label--required">投稿場所</label></dt>
   <dd>
     <%= form_tag new_post_path, method: :get, class: '' do %>
-    <% render 'layouts/post_place_select_tag' %>
+      <%= select_tag :tag_id, options_from_collection_for_select(Tag.all, :id, :name, params[:tag_id]),{
+      prompt: '投稿場所',
+      class: 'form-control posts__select',
+      onchange: 'submit(this.form);'
+      } %>
     <% end %>
-</dd>  
-<% end %>
+  </dd>  
 </div> 
+<% end %>
 <%= form_with(model: @post, local: true) do |f| %>
   <%= render 'shared/error_messages', object: f.object %>
   <dl class="post__controls">    
