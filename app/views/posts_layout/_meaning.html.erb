@@ -10,11 +10,8 @@
     <dt><%= object.label :images, class: "contact__label--required" %></dt>
     <dd><%= object.file_field :images, accept: "image/jpeg,image/gif,image/png", multiple: true %></dd>
 </div>
-<div class="post__control">
-    <dt><%= object.label :external_url , "参考文献URL" %></dt>
-    <dd><%= object.text_field :external_url , class: "form-input" %></dd>
+<div class="cocoon__links">
+    <%= link_to_add_association '参考文献を追加', object, :url,
+data: { association_insertion_method: 'before' } %>
 </div>
-<div class="post__control">
-    <dt><%= object.label :url_references , "参照先の名前" %></dt>
-    <dd><%= object.text_field :url_references , class: "form-input" %></dd>
-</div>
+  </div>

@@ -32,13 +32,16 @@ class PostsController < ApplicationController
       @post = current_user.posts.build
       @post.build_alumni
       @post.build_teacher
+      @post.url.build
     end
     @tag = Tag.find(params[:tag_id]) if params[:tag_id].present? 
   end
 
   def create
+ 
     @post = current_user.posts.build(post_params)
     @post.images.attach(params[:post][:images])
+    @post.save
     
     if @post.save
       flash[:success] = "投稿を作成しました"
@@ -77,9 +80,9 @@ class PostsController < ApplicationController
 
   def post_params
     params.require(:post).permit(:id, :content, :title, :lead, :video_url , :external_url, :teacher_url, :url_references,:tag_id,:tags, images: [], 
-      alumni_attributes: [:id, :name, :birthplace, :job, :research_field, :research_office, :reason, :learning, :job_description, :memories, :original_title, :original_content,],
-      teacher_attributes: [:id, :name, :job, :post_id]
-    )
+      alumni_attributes: [:id, :name, :birthplace, :job, :research_field, :research_office, :reason, :learning, :job_description, :memories, :original_title, :original_content],
+      teacher_attributes: [:id, :name, :job, :post_id],
+      url_attributes: [:id, :name, :url])
   end
 
   def correct_user
