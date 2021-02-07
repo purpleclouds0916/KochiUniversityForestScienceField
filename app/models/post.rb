@@ -31,10 +31,12 @@ class Post < ApplicationRecord
   has_one :teacher
   accepts_nested_attributes_for :alumni
   accepts_nested_attributes_for :teacher
+  has_many :url, dependent: :destroy
+  accepts_nested_attributes_for :url
   has_many_attached :images
   # has_rich_text :content
   default_scope -> { order(created_at: :desc) }
-
+validates :title, presence: true
 
 
 
