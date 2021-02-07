@@ -58,10 +58,8 @@ class PostsController < ApplicationController
   end
 
   def update
-    
-    # binding.pry
-    
     @post = Post.find_by(id: params[:id])
+    @tag = Tag.find(@post.tag_id)
     if @post.update(post_params)
       flash[:success] = "投稿を更新しました"
       redirect_to posts_path
