@@ -8,10 +8,6 @@
     <dd><%= t.text_field :job, class: "form-input" %></dd>
 </div>
 <% end %> 
-<div class="post__control cher_url">
-    <dt><%= object.label :teacher_url , "先生HPのURL" %></dt>
-    <dd><%= object.text_field :teacher_url , class: "form-input" %></dd>
-</div>
 <div class="post__control">
     <dt><%= object.label :content, "コンテンツ", class: "contact__label--required" %></dt>
     <dd><%= object.text_area :content, class: "form-textarea " %></dd>
@@ -20,3 +16,6 @@
     <dt><%= object.label :images, class: "contact__label--required" %></dt>
     <dd><%= object.file_field :images, accept: "image/jpeg,image/gif,image/png", multiple: true %></dd>
 </div>
+<%= object.fields_for :url do |t| %>
+    <%= render "url_fields", f: t %>   
+<% end %>

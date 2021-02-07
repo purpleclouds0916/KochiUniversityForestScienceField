@@ -1,4 +1,3 @@
-<div class="post__control switchItems switch_movie_url">
-  <dt><%= object.label :video_url, "動画のURL" %></dt>
-  <dd><%= object.text_field :video_url, class: "form-input" %></dd>
-</div>
+<%= object.fields_for :url do |t| %>
+    <%= render "url_fields", f: t %>   
+<% end %>
