@@ -35,14 +35,83 @@ class Post < ApplicationRecord
   # has_rich_text :content
   default_scope -> { order(created_at: :desc) }
 # validates :title, presence: true
-validates :images,   content_type: { in: %w[image/jpeg image/gif image/png],
-  message: "must be a valid image format" },
-size:         { less_than: 5.megabytes,
-  message: "should be less than 5MB" }
+  validates :images,   content_type: { in: %w[image/jpeg image/gif image/png],
+    message: "must be a valid image format" },
+  size:         { less_than: 5.megabytes,
+    message: "should be less than 5MB" }
 
-
-
-  def paid_with_card?
-    tag_id == 1
+#スタイダーのバリデーション
+  with_options if: :seiper? do |swiper|
+    swiper.validates :images, presence: true
+    swiper.validates :title, presence: true
   end
+
+#森林を学ぶ意義のバリデーション
+  with_options if: :meaning? do |meaning|
+    meaning.validates :images, presence: true
+    meaning.validates :title, presence: true
+    meaning.validates :content, presence: true
+  end
+
+  #森林科学領域のバリデーション
+  with_options if: :about? do |about|
+    about.validates :images, presence: true
+    about.validates :content, presence: true
+  end
+
+  #先生の紹介のバリデーション
+  with_options if: :teacher? do |teacher|
+    teacher.validates :images, presence: true
+    teacher.validates :content, presence: true
+  end
+
+  #授業の紹介のバリデーション
+  with_options if: :lesson? do |lesson|
+    lesson.validates :images, presence: true
+    lesson.validates :content, presence: true
+  end
+
+  #卒業生の声のバリデーション
+  with_options if: :alumni? do |alumni|
+    alumni.validates :images, presence: true
+  end
+
+  #資格のバリデーション
+  with_options if: :skill? do |skill|
+    skill.validates :images, presence: true
+    skill.validates :content, presence: true
+  end
+
+  
+    def seiper?
+      tag_id == 1
+    end
+
+    def meaning?
+      tag_id == 2
+    end
+
+    def about?
+      tag_id == 3
+    end
+
+    def teacher?
+      tag_id == 4
+    end
+
+    def lesson?
+      tag_id == 5
+    end
+
+    def alumni?
+      tag_id == 6
+    end
+
+    def skill?
+      tag_id == 7
+    end
+
+    def teacher_movie?
+      tag_id == 8
+    end
 end
