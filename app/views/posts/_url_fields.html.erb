@@ -1,5 +1,6 @@
 
 <div class="field nested-fields">
+<% if @tag.name == "森林を学ぶ価値" || @tag.name == "資格" %>
 <%= link_to_remove_association "削除する", f , class: 'post__delete__btn'%>
     <div class="post__control">
         <dt><%= f.label :name, "参考文献の名前", class: "contact__label--required" %></dt>
@@ -9,5 +10,16 @@
         <dt><%= f.label :external_url, "参考文献のURL", class: "contact__label--required" %></dt>
         <dd><%= f.text_field :external_url, class: "form-input" %></dd>
     </div>
+<% elsif  @tag.name == "森林科学領域" || @tag.name == "授業の紹介" || @tag.name == "先生の紹介動画"%>
+    <div class="post__control post__control__link">
+        <dt><%= f.label :movie_url, "動画のURL", class: "contact__label--required" %></dt>
+        <dd><%= f.text_field :movie_url, class: "form-input" %></dd>
+    </div>
+<% elsif @tag.name == "先生の紹介" %>  
+    <div class="post__control post__control__link">
+        <dt><%= f.label :teacher_hp_url, "先生HPのURL", class: "contact__label--required" %></dt>
+        <dd><%= f.text_field :teacher_hp_url, class: "form-input" %></dd>
+    </div>
+<% end %>
 </div>
  
