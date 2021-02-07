@@ -1,0 +1,13 @@
+
+<div class="field nested-fields">
+<%= link_to_remove_association "削除する", f , class: 'post__delete__btn'%>
+    <div class="post__control">
+        <dt><%= f.label :name, "名前", class: "contact__label--required" %></dt>
+        <dd><%= f.text_area :name, class: "form-input" %></dd>
+    </div>
+    <div class="post__control post__control__link">
+        <dt><%= f.label :url, "リンク", class: "contact__label--required" %></dt>
+        <dd><%= f.text_field :url, class: "form-input" %></dd>
+    </div>
+</div>
+ 
