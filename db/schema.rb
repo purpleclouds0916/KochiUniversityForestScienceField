@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_07_040111) do
+ActiveRecord::Schema.define(version: 2021_02_07_062103) do
 
   create_table "action_text_rich_texts", force: :cascade do |t|
     t.string "name", null: false
@@ -101,6 +101,9 @@ ActiveRecord::Schema.define(version: 2021_02_07_040111) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "post_id"
+    t.string "movie_url"
+    t.string "teacher_hp_url"
+    t.string "external_url"
   end
 
   create_table "users", force: :cascade do |t|
