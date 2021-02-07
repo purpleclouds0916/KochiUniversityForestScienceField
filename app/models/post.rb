@@ -35,23 +35,10 @@ class Post < ApplicationRecord
   # has_rich_text :content
   default_scope -> { order(created_at: :desc) }
 # validates :title, presence: true
-
-
-
-
-
-  validates :images,   content_type: { in: %w[image/jpeg image/gif image/png],
-    message: "の拡張子はPNG,JPEG,GIFのいずれかのみです。" },
+validates :images,   content_type: { in: %w[image/jpeg image/gif image/png],
+  message: "must be a valid image format" },
 size:         { less_than: 5.megabytes,
-    message: "ファイルは5MB未満にしてください。" }
-  # validates :title, presence: true, unless: :paid_with_card?
-
-
-
-
-
-
-
+  message: "should be less than 5MB" }
 
 
 
