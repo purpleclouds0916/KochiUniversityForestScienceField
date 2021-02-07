@@ -156,7 +156,7 @@
 			<% @skills.each do |skill| %>
 				<div class="skill__top__item">
 					 <%= image_tag skill.images.first.variant(gravity: :center, resize:'800x600').processed %>
-					<p>測量士補</p>
+					<p><%= skill.skill.name %></p>
 				</div>
 			<% end %>	
 			</div><!--./skill__top__items -->
@@ -167,15 +167,17 @@
 		<dl class="skill__bottom__items">
 			<% @skills.each do |skill| %>
 			<div class="skill__bottom__content accordion">
-				<dt class="accordion__head"><%= image_tag skill.images.first.variant(gravity: :center, resize:'800x600').processed %><%= skill.name %><span class="accordion__icon accordion__icon__first"></span></dt>
+				<dt class="accordion__head"><%= image_tag skill.images.first.variant(gravity: :center, resize:'800x600').processed %><%= skill.skill.name %><span class="accordion__icon accordion__icon__first"></span></dt>
 				<dd class="accordion__body accordion__body__first">
 					<div class="accordion__body-in">
 						<%= skill.content %>
 					</div><!-- /.accordion__body-in -->
 					<div class="accordion__body__link">
 						<p>より詳しい情報は下記リンクをご覧ください。</p>
-						<% if skill.external_url.present? %>
-						<a href="<%= skill.external_url %>"><%= skill.url_references %></a>
+						<% if skill.url.first.external_url.present? %>
+							<% skill.url.each do |u| %>
+							<a href="<%= u.external_url %>"><%= u.name %></a>
+							<% end %>
 						<% end %>
 					</div><!-- /.accordion__body__link -->
 				</dd><!-- /.accordion__body -->

@@ -32,6 +32,7 @@ class PostsController < ApplicationController
       @post = current_user.posts.build
       @post.build_alumni
       @post.build_teacher
+      @post.build_skill
       @post.url.build
     end
     @tag = Tag.find(params[:tag_id]) if params[:tag_id].present? 
@@ -83,6 +84,7 @@ class PostsController < ApplicationController
     params.require(:post).permit(:id, :content, :title, :lead, :video_url , :external_url, :teacher_url, :url_references,:tag_id,:tags, images: [], 
       alumni_attributes: [:id, :name, :birthplace, :job, :research_field, :research_office, :reason, :learning, :job_description, :memories, :original_title, :original_content],
       teacher_attributes: [:id, :name, :job, :post_id],
+      skill_attributes: [:id, :name],
       url_attributes: [:id, :name, :external_url, :teacher_hp_url, :movie_url, :_destroy])
   end
 

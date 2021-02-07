@@ -25,14 +25,16 @@ class Post < ApplicationRecord
   belongs_to :tag
   has_one :alumni
   has_one :teacher
+  has_one :skill
   accepts_nested_attributes_for :alumni
   accepts_nested_attributes_for :teacher
+  accepts_nested_attributes_for :skill
   has_many :url, dependent: :destroy
   accepts_nested_attributes_for :url, allow_destroy: true
   has_many_attached :images
   # has_rich_text :content
   default_scope -> { order(created_at: :desc) }
-validates :title, presence: true
+# validates :title, presence: true
 
 
 

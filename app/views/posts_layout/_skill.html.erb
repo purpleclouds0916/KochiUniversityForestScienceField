@@ -1,7 +1,9 @@
+<%= object.fields_for :skill do |s| %>
 <div class="post__control">
-    <dt><%= object.label :name, "名前", class: "contact__label--required" %></dt>
-    <dd><%= object.text_area :name, class: "form-input" %></dd>
+    <dt><%= s.label :name, "名前", class: "contact__label--required" %></dt>
+    <dd><%= s.text_area :name, class: "form-input" %></dd>
 </div>
+<% end %>
 <div class="post__control">
     <dt><%= object.label :content, "コンテンツ", class: "contact__label--required" %></dt>
     <dd><%= object.text_area :content, class: "form-textarea " %></dd>
@@ -10,11 +12,9 @@
     <dt><%= object.label :images, class: "contact__label--required" %></dt>
     <dd><%= object.file_field :images, accept: "image/jpeg,image/gif,image/png", multiple: true %></dd>
 </div>
-<div class="post__control">
-    <dt><%= object.label :external_url , "参考文献URL" %></dt>
-    <dd><%= object.text_field :external_url , class: "form-input" %></dd>
-</div>
-<div class="post__control">
-    <dt><%= object.label :url_references , "参照先の名前" %></dt>
-    <dd><%= object.text_field :url_references , class: "form-input" %></dd>
+<%= object.fields_for :url do |t| %>
+    <%= render "url_fields", f: t %>   
+<% end %>
+<div class="cocoon__links">
+    <%= link_to_add_association '参考文献を追加', object, :url,force_non_association_create: true  %>
 </div>
