@@ -28,7 +28,7 @@ class Post < ApplicationRecord
   accepts_nested_attributes_for :alumni
   accepts_nested_attributes_for :teacher
   has_many :url, dependent: :destroy
-  accepts_nested_attributes_for :url
+  accepts_nested_attributes_for :url, allow_destroy: true
   has_many_attached :images
   # has_rich_text :content
   default_scope -> { order(created_at: :desc) }

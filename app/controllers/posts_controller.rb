@@ -41,7 +41,6 @@ class PostsController < ApplicationController
  
     @post = current_user.posts.build(post_params)
     @post.images.attach(params[:post][:images])
-    @post.save
     
     if @post.save
       flash[:success] = "投稿を作成しました"
@@ -58,8 +57,10 @@ class PostsController < ApplicationController
   end
 
   def update
-    @post = Post.find(params[:id])
-    @post.update(post_params)
+    
+    # binding.pry
+    
+    @post = Post.find_by(id: params[:id])
     if @post.update(post_params)
       flash[:success] = "投稿を更新しました"
       redirect_to posts_path
@@ -82,7 +83,7 @@ class PostsController < ApplicationController
     params.require(:post).permit(:id, :content, :title, :lead, :video_url , :external_url, :teacher_url, :url_references,:tag_id,:tags, images: [], 
       alumni_attributes: [:id, :name, :birthplace, :job, :research_field, :research_office, :reason, :learning, :job_description, :memories, :original_title, :original_content],
       teacher_attributes: [:id, :name, :job, :post_id],
-      url_attributes: [:id, :name, :url])
+      url_attributes: [:id, :name, :url, :_destroy])
   end
 
   def correct_user

@@ -12,7 +12,7 @@ class StaticPagesController < ApplicationController
     @skills  = Tag.find(7).posts.limit(8)
     @teacher_video = Tag.find(8).posts.limit(1)
     @external_urls = @meanings.each do |meaning|
-       puts meaning.external_url
+       puts meaning.url
     end
   end
 

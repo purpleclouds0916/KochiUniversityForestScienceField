@@ -10,8 +10,10 @@
     <dt><%= object.label :images, class: "contact__label--required" %></dt>
     <dd><%= object.file_field :images, accept: "image/jpeg,image/gif,image/png", multiple: true %></dd>
 </div>
+<%= object.fields_for :url do |t| %>
+    <%= render "url_fields", f: t %>   
+<% end %>
 <div class="cocoon__links">
-    <%= link_to_add_association '参考文献を追加', object, :url,
-data: { association_insertion_method: 'before' } %>
+    <%= link_to_add_association '参考文献を追加', object, :url,force_non_association_create: true  %>
 </div>
   </div>
