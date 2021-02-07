@@ -67,7 +67,7 @@
 				<div class="course__video content__video">
 					<h3 class="video__title">森林科学領域の紹介動画</h3>
 					<div class="video__img" id="btn_modal_1" href="">
-						<a class="alumni__media posts__alumni__media" href="<%= @about[0].video_url %>">
+						<a class="alumni__media posts__alumni__media" href="<%= @about[0].url.first.movie_url %>">
 							<%= image_tag  @about[0].images.first.variant(resize:'1200x800').processed %>
 						</a><!-- /.alumni__media -->	
 					</div><!-- /.video__img -->
@@ -84,8 +84,8 @@
 		<h2 class="section-title">先生の紹介</h2><!-- /.section-title -->
 		<div class="teacher__items">
 		<% @teacher.each do |teacher| %>
-		<% if teacher.teacher_url.present? %>
-			<a class="teacher__item teacher__item__link" href="<%= teacher.teacher_url%>">
+		<% if teacher.url.first.teacher_hp_url.present? %>
+			<a class="teacher__item teacher__item__link" href="<%= teacher.url.first.teacher_hp_url%>">
 				<%= render 'layouts/teacher-media', object:teacher %>
 				<span class="see-details">研究室HP<i class="fas fa-arrow-right"></i></span>
 			</a><!-- /.teacher__item -->
@@ -98,7 +98,7 @@
 	</div><!-- /.teacher__items -->
 </div><!-- /.teacher__inner --> 
 <% if @teacher_video.present? %>
-<%= link_to "動画で詳しく見る", @teacher_video.last.video_url, class:"button-home" %>
+<%= link_to "動画で詳しく見る", @teacher_video.first.url.first.movie_url, class:"button-home" %>
 <% end %>
 </section><!-- /.teacher -->
 <% end %>
@@ -112,7 +112,7 @@
 				<div class="lesson__video content__video">
 					<h3 class="video__title">授業の紹介動画</h3>
 					<div class="video__img">
-						<a class="alumni__media posts__alumni__media" href="<%= @lessons[0].video_url %>">
+						<a class="alumni__media posts__alumni__media" href="<%= @lessons[0].url.first.movie_url %>">
 							<%= image_tag  @lessons[0].images.first.variant(resize:'800').processed %>
 						</a><!-- /.alumni__media -->		
 					</div><!-- ./video__img-->
