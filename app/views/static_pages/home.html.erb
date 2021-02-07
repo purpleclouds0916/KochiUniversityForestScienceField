@@ -41,8 +41,10 @@
 		<div class="meaning__reference">
 		<% if @external_urls.present? %>
 			<div class="meaning__reference__title">参考文献</div>
-			<% @meanings.each do |meaning| %>
-			<div class="meaning__content"><a href="<%= meaning.external_url  %>"><%= meaning.title %>:<%= meaning.url_references %></a>閲覧日(<%= meaning.updated_at.strftime('%Y/%m/%d') || meaasage.created_at.strftime('%Y/%m/%d') %>)</div><!-- /.meaning__reference -->
+				<% @meanings.each do |meaning| %>
+					<% meaning.url.each do |u| %>
+					<div class="meaning__content"><a href="<%= u.url  %>"><%= meaning.title %>:<%= u.name %></a>閲覧日(<%= meaning.updated_at.strftime('%Y/%m/%d') || meaasage.created_at.strftime('%Y/%m/%d') %>)</div><!-- /.meaning__reference -->
+				<% end %>
 	     	<% end %>
 			 </div><!-- /.meaning__reference -->
 		<% end %>	 	
