@@ -33,6 +33,8 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'faker',                   '2.1.2'
 # pagenatation
 gem 'kaminari'
+# 親子関係モデルの複数データ保存
+gem 'cocoon'
 # japanese install
 gem 'rails-i18n'
 # Saving images in a production environment
