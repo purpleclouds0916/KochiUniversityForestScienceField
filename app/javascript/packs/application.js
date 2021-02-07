@@ -9,6 +9,7 @@ require("channels")
 require("jquery")
 //リッチエディタ
 require("trix")
+require("@nathanvda/cocoon")
 require("@rails/actiontext")
 
 const swiper = new Swiper
