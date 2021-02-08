@@ -1,7 +1,7 @@
 
 <div class="field nested-fields">
 <% if @tag.name == "森林を学ぶ価値" || @tag.name == "資格" %>
-<%= link_to_remove_association "削除する", f , class: 'post__delete__btn'%>
+<div class="button posts_button remove_association"><%= link_to_remove_association "削除する", f , class: 'post__delete__btn'%></div>
     <div class="post__control">
         <dt><%= f.label :name, "参考文献の名前", class: "contact__label--required" %></dt>
         <dd><%= f.text_area :name, class: "form-input" %></dd>

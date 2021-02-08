@@ -13,7 +13,7 @@
 <%= object.fields_for :url do |t| %>
     <%= render "url_fields", f: t %>   
 <% end %>
-<div class="cocoon__links">
+<div class="button posts_button add_association">
     <%= link_to_add_association '参考文献を追加', object, :url,force_non_association_create: true  %>
 </div>
   </div>

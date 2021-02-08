@@ -223,8 +223,13 @@
 }
 
 .post__delete__btn {
-	display: block;
+	display: inline;
+	margin: auto;
 	text-align: right;
+}
+
+.add_association {
+	text-align: left;
 }
 
 .post__submit {
