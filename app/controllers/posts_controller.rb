@@ -28,14 +28,19 @@ class PostsController < ApplicationController
   end
 
   def new
+    @tag = Tag.find(params[:tag_id]) if params[:tag_id].present? 
     if logged_in?
       @post = current_user.posts.build
-      @post.build_alumni
-      @post.build_teacher
-      @post.build_skill
-      @post.url.build
+      if @tag.name == "森林科学領域" || @tag.name == "授業の紹介" || @tag.name == "先生の紹介動画"
+        @post.url.build
+      elsif @tag.name == "先生の紹介"
+        @post.build_teacher
+      elsif @tag.name == "資格"
+        @post.build_skill
+      elsif @tag.name == "卒業生の声"  
+        @post.build_alumni
+      end 
     end
-    @tag = Tag.find(params[:tag_id]) if params[:tag_id].present? 
   end
 
   def create
