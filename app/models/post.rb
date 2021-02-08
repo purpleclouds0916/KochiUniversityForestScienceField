@@ -34,55 +34,47 @@ class Post < ApplicationRecord
   has_many_attached :images
   # has_rich_text :content
   default_scope -> { order(created_at: :desc) }
-# validates :title, presence: true
   validates :images,   content_type: { in: %w[image/jpeg image/gif image/png],
     message: "must be a valid image format" },
   size:         { less_than: 5.megabytes,
     message: "should be less than 5MB" }
+  validates :url, url: true 
+  validates :teacher, teacher: true
+  validates :alumni, alumni: true 
+  validates :images, images: true 
 
 #スタイダーのバリデーション
   with_options if: :seiper? do |swiper|
-    swiper.validates :images, presence: true
     swiper.validates :title, presence: true
   end
 
 #森林を学ぶ意義のバリデーション
   with_options if: :meaning? do |meaning|
-    meaning.validates :images, presence: true
     meaning.validates :title, presence: true
     meaning.validates :content, presence: true
   end
 
   #森林科学領域のバリデーション
   with_options if: :about? do |about|
-    about.validates :images, presence: true
     about.validates :content, presence: true
   end
 
   #先生の紹介のバリデーション
   with_options if: :teacher? do |teacher|
-    teacher.validates :images, presence: true
     teacher.validates :content, presence: true
   end
 
   #授業の紹介のバリデーション
   with_options if: :lesson? do |lesson|
-    lesson.validates :images, presence: true
     lesson.validates :content, presence: true
-  end
-
-  #卒業生の声のバリデーション
-  with_options if: :alumni? do |alumni|
-    alumni.validates :images, presence: true
   end
 
   #資格のバリデーション
   with_options if: :skill? do |skill|
-    skill.validates :images, presence: true
     skill.validates :content, presence: true
   end
 
-  
+  private
     def seiper?
       tag_id == 1
     end
