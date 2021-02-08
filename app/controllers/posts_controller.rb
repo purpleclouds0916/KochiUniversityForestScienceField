@@ -84,7 +84,7 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:id, :content, :title, :lead, :video_url , :external_url, :teacher_url, :url_references,:tag_id,:tags, images: [], 
+    params.require(:post).permit(:id, :content, :title, :lead, :tag_id, images: [], 
       alumni_attributes: [:id, :name, :birthplace, :job, :research_field, :research_office, :reason, :learning, :job_description, :memories, :original_title, :original_content],
       teacher_attributes: [:id, :name, :job, :post_id],
       skill_attributes: [:id, :name],
