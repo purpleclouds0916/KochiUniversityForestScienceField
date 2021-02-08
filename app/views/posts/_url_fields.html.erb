@@ -3,11 +3,11 @@
 <% if @tag.name == "森林を学ぶ価値" || @tag.name == "資格" %>
 <div class="button posts_button remove_association"><%= link_to_remove_association "削除する", f , class: 'post__delete__btn'%></div>
     <div class="post__control">
-        <dt><%= f.label :name, "参考文献の名前", class: "contact__label--required" %></dt>
+        <dt><%= f.label :name, "参考文献の名前" %></dt>
         <dd><%= f.text_area :name, class: "form-input" %></dd>
     </div>
     <div class="post__control post__control__link">
-        <dt><%= f.label :external_url, "参考文献のURL", class: "contact__label--required" %></dt>
+        <dt><%= f.label :external_url, "参考文献のURL" %></dt>
         <dd><%= f.text_field :external_url, class: "form-input" %></dd>
     </div>
 <% elsif  @tag.name == "森林科学領域" || @tag.name == "授業の紹介" || @tag.name == "先生の紹介動画"%>
