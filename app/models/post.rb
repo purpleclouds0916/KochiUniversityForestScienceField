@@ -46,6 +46,7 @@ class Post < ApplicationRecord
 #スタイダーのバリデーション
   with_options if: :seiper? do |swiper|
     swiper.validates :title, presence: true
+    swiper.validates :lead, presence: true
   end
 
 #森林を学ぶ意義のバリデーション

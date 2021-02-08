@@ -13,6 +13,7 @@ ja:
         title: タイトル
         images: 画像  
         content: コンテンツ
+        lead: リード文
         tags: 投稿場所
       inquiry:
         email: メールアドレス
