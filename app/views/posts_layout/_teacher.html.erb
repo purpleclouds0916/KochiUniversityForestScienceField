@@ -1,10 +1,10 @@
 <%= object.fields_for :teacher do |t| %>
 <div class="post__control">
-    <dt><%= t.label :name, "名前", class: "contact__label--required" %></dt>
+    <dt><%= t.label :name, "先生の名前", class: "contact__label--required" %></dt>
     <dd><%= t.text_area :name, class: "form-input" %></dd>
 </div>
 <div class="post__control">
-    <dt><%= t.label :job, "職業", class: "contact__label--required" %></dt>
+    <dt><%= t.label :job, "先生の役職", class: "contact__label--required" %></dt>
     <dd><%= t.text_field :job, class: "form-input" %></dd>
 </div>
 <% end %> 

@@ -1,6 +1,6 @@
 <%= object.fields_for :skill do |s| %>
 <div class="post__control">
-    <dt><%= s.label :name, "名前", class: "contact__label--required" %></dt>
+    <dt><%= s.label :name, "資格の名前", class: "contact__label--required" %></dt>
     <dd><%= s.text_area :name, class: "form-input" %></dd>
 </div>
 <% end %>
