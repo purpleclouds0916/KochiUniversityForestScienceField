@@ -12,6 +12,7 @@ ja:
       post:
         title: タイトル
         images: 画像  
+        content: コンテンツ
         tags: 投稿場所
       inquiry:
         email: メールアドレス
