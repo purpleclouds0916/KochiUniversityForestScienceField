@@ -6,7 +6,7 @@
 		<div class="swiper-wrapper">
 			<% @swipers.each do |swiper| %>
 			<div class="swiper-slide swiper-slide-1">
-				<%= image_tag  swiper.images.first.variant(resize:'1200x800').processed %>
+				<%= image_tag  swiper.images.first %>
 				<div class="mainvisual__content__1 mainvisual__content" id="<%= swiper.id %>">
 					<div class="mainvisual__title__1 mainvisual__title"><span class="text-bg"><%= swiper.title %></span></div><!-- /.mainvisual__title -->
 					<div class="mainvisual__lead mainvisual__lead__1"><span class="text-bg"><%= swiper.lead %></span></div>	<!-- /.mainvisual__lead -->
@@ -29,7 +29,7 @@
 		<% @meanings.each do |meaning| %>
 			<div class="meaning__item ">
 				<div class="meaning__img">
-					<%= image_tag  meaning.images.first.variant(resize:'1200x800').processed %>
+					<%= image_tag  meaning.images.first %>
 				</div><!-- /.meaning__img -->
 				<div class="meaning__body">
 					<div class="meaning__title"><%= simple_format(meaning.title) %></div><!-- /.meaning__title -->
@@ -68,7 +68,7 @@
 					<h3 class="video__title">森林科学領域の紹介動画</h3>
 					<div class="video__img" id="btn_modal_1" href="">
 						<a class="alumni__media posts__alumni__media" href="<%= @about[0].url.first.movie_url %>">
-							<%= image_tag  @about[0].images.first.variant(resize:'1200x800').processed %>
+							<%= image_tag  @about[0].images.first %>
 						</a><!-- /.alumni__media -->	
 					</div><!-- /.video__img -->
 				</div><!-- /.course__video -->
@@ -113,7 +113,7 @@
 					<h3 class="video__title">授業の紹介動画</h3>
 					<div class="video__img">
 						<a class="alumni__media posts__alumni__media" href="<%= @lessons[0].url.first.movie_url %>">
-							<%= image_tag  @lessons[0].images.first.variant(resize:'800').processed %>
+							<%= image_tag  @lessons[0].images.first %>
 						</a><!-- /.alumni__media -->		
 					</div><!-- ./video__img-->
 				</div><!-- ./lesson__video -->
@@ -155,7 +155,7 @@
 			<div class="skill__top__items">
 			<% @skills.each do |skill| %>
 				<div class="skill__top__item">
-					 <%= image_tag skill.images.first.variant(gravity: :center, resize:'800x600').processed %>
+					 <%= image_tag skill.images.first %>
 					<p><%= skill.skill.name %></p>
 				</div>
 			<% end %>	
@@ -167,7 +167,7 @@
 		<dl class="skill__bottom__items">
 			<% @skills.each do |skill| %>
 			<div class="skill__bottom__content accordion">
-				<dt class="accordion__head"><%= image_tag skill.images.first.variant(gravity: :center, resize:'800x600').processed %><%= skill.skill.name %><span class="accordion__icon accordion__icon__first"></span></dt>
+				<dt class="accordion__head"><%= image_tag skill.images.first %><%= skill.skill.name %><span class="accordion__icon accordion__icon__first"></span></dt>
 				<dd class="accordion__body accordion__body__first">
 					<div class="accordion__body-in">
 						<%= skill.content %>

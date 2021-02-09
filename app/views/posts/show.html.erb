@@ -38,7 +38,7 @@
     </div><!-- /.main__content -->
     <div class="main__content">
     <% unless @post.images.second.nil? %>  
-        <%= image_tag @post.images.second.variant(gravity: :center, resize:'800x600').processed %>
+        <%= image_tag @post.images.second %>
     <% end %>
     </div><!-- /.main__content -->
 </div><!-- /.main__inner -->
