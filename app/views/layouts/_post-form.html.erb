@@ -37,7 +37,8 @@
     <%end%>
   </dl><!-- /.post__controls -->
   <div class="post__submit">
-    <input type="submit" value="送信" class="button-arrow-right">
+  <%= f.submit '送信する', class: 'btn btn-default button-arrow-right',
+    data: { disable_with: '送信中...' } %>
   </div><!-- /.post__submit -->
   <% end %>
 <% end %>

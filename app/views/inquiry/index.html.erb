@@ -53,7 +53,8 @@
 						</div><!-- /.contact__control -->
 					</dl><!-- /.contact__controls -->
 					<div class="contact__submit">
-                    <%= f.submit "送信", class: "button-arrow-right" %>
+                      <%= f.submit '送信する', class: 'btn btn-default button-arrow-right',
+    						data: { disable_with: '送信中...' } %>
 					</div><!-- /.contact__submit -->
 				</form>
 			</div><!-- /#formWrapper -->
