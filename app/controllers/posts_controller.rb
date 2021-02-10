@@ -45,16 +45,18 @@ class PostsController < ApplicationController
     end
   end
 
-  def create
- 
+  def create    
     @post = current_user.posts.build(post_params)
-    @post.images.attach(params[:post][:images])
-    
+    @tag = Tag.find(@post.tag_id)
+    if @post.images.present?
+      resize_image_by_tag()
+      @post.images.attach(params[:post][:images])
+    end
+
     if @post.save
       flash[:success] = "投稿を作成しました"
       redirect_to current_user
     else
-      @tag = Tag.find(@post.tag_id)
       render 'new'
     end
   end
@@ -67,6 +69,12 @@ class PostsController < ApplicationController
   def update
     @post = Post.find_by(id: params[:id])
     @tag = Tag.find(@post.tag_id)
+
+    if @post.images.present?
+      resize_image_by_tag()
+      @post.images.attach(params[:post][:images])
+    end
+    
     if @post.update(post_params)
       flash[:success] = "投稿を更新しました"
       redirect_to posts_path
@@ -96,5 +104,23 @@ class PostsController < ApplicationController
   def correct_user
     @post = current_user.posts.find_by(id: params[:id])
     redirect_to root_url if @post.nil?
+  end
+
+  def resize_image(width = 1280,height = 1280) 
+    post_params[:images].each do |image|
+        image.tempfile = ImageProcessing::MiniMagick.source(image.tempfile).resize_to_fit(width, height).call
+    end
+  end   
+
+  def resize_image_by_tag
+    if @tag.name == "スライダー"
+      resize_image(1200,1200) 
+    elsif @tag.name == "森林を学ぶ価値" || @tag.name == "資格" || @tag.name == "先生の紹介" 
+      resize_image(150,150) 
+    elsif @tag.name == "森林科学領域" || @tag.name == "授業の紹介" || @tag.name == "卒業生の声" 
+      resize_image(800,800)
+    else
+      resize_image()
+    end    
   end
 end
