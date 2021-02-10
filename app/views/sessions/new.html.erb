@@ -1,6 +1,5 @@
 <% provide(:title, 'ログイン') %>
 <section id="" class="login section">
-
   <div class="loggin__inner inner">
   <h1 class="header__logo"><%= image_tag "login.png", :alt => '学森林科学領域ホームページ' %></h1><!-- /.header__logo -->
     <h2 class="section-title">管理者ログイン</h2><!-- /.section-title -->
@@ -38,6 +37,9 @@
           　 <%= f.submit "ログイン", class: "button-arrow-right" %>
           </div><!-- /.contact__submit -->
         <% end %>
+        <div class="contact__submit">
+          　<%= link_to 'ゲストログイン', users_guest_sign_in_path, method: :post, class: "button-arrow-right" %>
+          </div><!-- /.contact__submit -->
         <p class="forget__password"><%= link_to "・パスワードをお忘れですか?", new_password_reset_path %></p>
       </div>
     </div><!-- /.contact__item -->

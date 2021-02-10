@@ -4,3 +4,13 @@
     padding-top: 0;
 }
 
+.contact__submit {
+    cursor: pointer;
+    a {
+        text-decoration: none;
+        
+        &:hover {
+            color: #fff;
+        }
+    }
+}

@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   resources :users
   resources :password_resets, only: [:new, :create, :edit, :update]
   resources :posts
+  post 'users/guest_sign_in', to: 'sessions#new_guest'
   # post '/password_resets', to: 'password_resets#create'
 
  
