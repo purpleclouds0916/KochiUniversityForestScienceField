@@ -1,6 +1,8 @@
 class AlumniValidator < ActiveModel::EachValidator
     def validate(record)      
     #卒業生の声のバリデーション
+    #モデルの設計ミスにより重複が多い
+    #Postモデルを削除して、並列の関係のモデルに変える必要がある
 
       if record.tag_id == 6
         unless record.alumni.name.present?
