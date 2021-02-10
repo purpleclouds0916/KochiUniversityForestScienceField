@@ -1,6 +1,6 @@
 class PostsController < ApplicationController  
   before_action :logged_in_user
-  #　↓本来のaction　*すでに公開しているので、全てにおいてログイン制限。　
+  #↓本来のaction*すでに公開しているので、全てにおいてログイン制限。
   # before_action :logged_in_user, only: [:index, :new, :create, :edit, :update, :destroy]
 
   def index
