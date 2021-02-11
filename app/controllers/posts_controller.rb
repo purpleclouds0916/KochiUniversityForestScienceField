@@ -70,7 +70,7 @@ class PostsController < ApplicationController
     @post = Post.find_by(id: params[:id])
     @tag = Tag.find(@post.tag_id)
 
-    if @post.images.present?
+    if post_params[:images].present?
       resize_image_by_tag()
       @post.images.attach(params[:post][:images])
     end
@@ -106,10 +106,12 @@ class PostsController < ApplicationController
     redirect_to root_url if @post.nil?
   end
 
-  def resize_image(width = 1280,height = 1280) 
-    post_params[:images].each do |image|
-        image.tempfile = ImageProcessing::MiniMagick.source(image.tempfile).resize_to_fit(width, height).call
-    end
+  def resize_image(width = 1280,height = 1280)
+    if post_params[:images].present?
+        post_params[:images].each do |image|
+          image.tempfile = ImageProcessing::MiniMagick.source(image.tempfile).resize_to_fit(width, height).call
+      end
+    end   
   end   
 
   def resize_image_by_tag
