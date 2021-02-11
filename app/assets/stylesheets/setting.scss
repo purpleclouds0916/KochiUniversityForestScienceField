@@ -167,6 +167,10 @@ img {
 	max-width: 100%;
 	line-height: 1.6;
 
+	&:hover {
+		color: #fff;
+	}
+
 	@include mq('sp') {
 		padding: 14px 32px;
 		width: 100%;
