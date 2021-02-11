@@ -9,7 +9,7 @@
     <li><%= link_to "入試情報", "https://nyusi.kochi-u.jp/" %></li>
     <li><%= link_to "お問い合わせ", inquiry_path %></li>
     <% else %>
-    <li><%= link_to "サイト表示", root_url %></li>
+    <li><%= link_to "サイト表示", root_url, target: :_blank, rel: "noopener noreferrer"%></li>
     <li><%= link_to "投稿する", new_post_path %></li>
     <li><%= link_to "投稿一覧", posts_path %></li>
     <li><%= link_to "管理者一覧", users_path %></li>
