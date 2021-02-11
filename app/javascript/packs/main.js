@@ -74,8 +74,16 @@ $(function(){
 // -----
 // wow-puraguinn
 // -----
-
 window.wow.init();
+
+//  //画面サイズの変更でリロードして、デザインが崩れるのを防止
+$(function(){
+  if( document.getElementById('management__table').className == 'management__table' ){
+    $(window).resize(function() {
+      location.reload();
+    });
+   }
+});
 
 //  //以下管理者画面のjs
 //  // -----

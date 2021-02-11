@@ -21,7 +21,7 @@
        <%= paginate object,window: 2%>  
     </div>
     <%= render 'layouts/posts_search_form' %>
-    <table class="post__table">
+    <table  id="management__table" class="management__table">
     <% if controller.controller_name == "users" && controller.action_name == "index"%>
       <tr class="post__thead__pc">
         <th>管理者名</th>
