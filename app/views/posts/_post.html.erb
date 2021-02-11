@@ -3,20 +3,13 @@
         <%= gravatar_for post.user, size: 50 %>
     <div>
         <span class="badge badge-light"><%= post.tag.name %></span>
-      <% if post.title.present?%>
-      <%= post.title %>
-      <%
-=begin%>
- <% elsif post.alumni.name.present?%>
-      <%= post.alumni.name %> 
-<%
-=end%>
-     <% elsif post.content.present? %>
-    <%= post.content.truncate(30)  %> 
-      <%end%>
-   
-      
-
+        <% if post.title.present?%>
+        <%= post.title %>
+        <% elsif post.alumni.name.present?%>
+        <%= post.alumni.name %> 
+        <% elsif post.content.present? %>
+        <%= post.content.truncate(30)  %> 
+        <%end%>
     <nav class="table-nav">
         <ul>
             <% if current_user.admin? || current_user?(post.user)%>
