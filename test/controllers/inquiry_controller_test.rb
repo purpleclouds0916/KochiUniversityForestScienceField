@@ -1,7 +1,13 @@
 require 'test_helper'
 
 class InquiryControllerTest < ActionDispatch::IntegrationTest
+  # ログイン制限のためログインする
+  def setup
+    @user = users(:michael)
+  end
+
   test "should get index" do
+    log_in_as(@user)
     get inquiry_path
     assert_response :success
   end

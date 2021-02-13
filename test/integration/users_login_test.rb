@@ -36,8 +36,9 @@ class UsersLoginTest < ActionDispatch::IntegrationTest
     assert_not is_logged_in?
     assert_template 'sessions/new'
     assert_not flash.empty?
-    get root_path
-    assert flash.empty?
+    # ログイン制限のため削除
+    # get root_path
+    # assert flash.empty?
   end
 
   test "login with invalid information" do
@@ -46,8 +47,9 @@ class UsersLoginTest < ActionDispatch::IntegrationTest
     post login_path, params: { session: { email: "", password: "" } }
     assert_template 'sessions/new'
     assert_not flash.empty?
-    get root_path
-    assert flash.empty?
+    # ログイン制限のため削除
+    # get root_path
+    # assert flash.empty?
   end
 
   test "login with remembering" do
